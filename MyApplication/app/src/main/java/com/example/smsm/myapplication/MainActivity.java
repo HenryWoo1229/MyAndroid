@@ -14,6 +14,7 @@ import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
 
 import java.io.File;
 
@@ -35,30 +36,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         com.lidroid.xutils.ViewUtils.inject(this);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                httpGet();
-            }
-        });
-
-        bn_download.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                httpDownload();
-                Toast.makeText(MainActivity.this, "downloading", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        bn_cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                handler.cancel();  //stop download
-                Toast.makeText(MainActivity.this, "download cancel", Toast.LENGTH_SHORT).show();
-            }
-        });
-
 
     }
 
@@ -118,4 +95,25 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    @OnClick(R.id.button)
+    public void hGet(View view){
+        httpGet();
+    }
+
+    @OnClick(R.id.download)
+    public void hDownload(View view){
+        httpDownload();
+        Toast.makeText(MainActivity.this,"downloading",Toast.LENGTH_SHORT).show();
+    }
+
+    @OnClick(R.id.cancel)
+    public void hCancel(View view){
+        handler.cancel();
+        Toast.makeText(MainActivity.this,"download cancel",Toast.LENGTH_LONG).show();
+    }
+
+
+
+
 }
