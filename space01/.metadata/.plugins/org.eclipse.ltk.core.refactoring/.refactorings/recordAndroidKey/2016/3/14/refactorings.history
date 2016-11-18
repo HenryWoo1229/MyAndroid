@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;RecordKey.java&apos; to &apos;Excel/src/com.suma.test&apos;&#x0D;&#x0A;- Original project: &apos;recordAndroidKey&apos;&#x0D;&#x0A;- Destination element: &apos;Excel/src/com.suma.test&apos;&#x0D;&#x0A;- Original element: &apos;RecordKey.java&apos;" description="Copy compilation unit" destination="=Excel/src&lt;com.suma.test" element1="/src&lt;{RecordKey.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1459146561578" units="1" version="1.0"/>
+</session>

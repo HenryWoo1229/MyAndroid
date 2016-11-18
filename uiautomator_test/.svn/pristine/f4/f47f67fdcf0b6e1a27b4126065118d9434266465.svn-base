@@ -1,0 +1,168 @@
+package test.android.dvb.jingzhou;
+
+
+public class ChannelSearch extends MyTestCaseHelper {
+
+	@Override
+	protected void setUp() throws Exception {
+		super.setUp();
+		int i = 0;
+		while (i < 4) {
+			getUiDevice().pressBack(); // 连按几次back键，确保菜单不处于打开状态
+			printLog("Press Key Back.");
+			i++;
+		}
+
+	}
+
+	/**
+	 * 测试目的：频道列表为空时，测试自动搜索主频点是否成功
+	 * 
+	 * @param 步骤1
+	 *            判断频道列表是否为空，不为空则测试fail
+	 * @param 步骤2
+	 *            设置主频点，然后执行自动搜索，若搜索失败，则测试fail；成功，则pass
+	 * 
+	 * @param 编写者
+	 *            吴昊
+	 */
+	public void test01_ChannelEmpty() {
+		String tag = "test01_ChannelEmpty ";
+		printLog(tag + " enter");
+
+		try {
+			// 频道列表不为空，测试fail
+			if (isChannel()) {
+				printLog(tag + "channel is not null");
+				setTestResult(tag, false);
+				return;
+			}
+
+			// 频道列表为空，执行搜索
+			String freq = "251";
+			autoSearch(freq);
+			printLog(tag + "excute autoSearch " + freq);
+
+			// 搜索失败，则测试fail
+			if (!isSearchOK()) {
+				setTestResult(tag, false);
+				return;
+			}
+
+			// 打印搜索成功
+			setTestResult(tag, true);
+
+		} catch (Exception e) {
+			printLog("err msg: " + e.getMessage());
+			setTestResult(tag, false);
+		}
+
+	}
+
+	/**
+	 * 测试目的：测试手动搜索是否成功
+	 * 
+	 * @param 步骤1
+	 *            ：进入手动搜索菜单，输入频点，开始搜索，若搜索失败，则测试fail；成功，则pass
+	 * 
+	 * @param 编写者
+	 *            吴昊
+	 */
+	public void test02_ManualSearch() {
+		String tag = "test02_ManualSearch ";
+		printLog(tag + " enter");
+
+		try {
+			String freq = "251";
+			manualSearch(freq);
+			printLog(tag + "excute ManualSearch " + freq);
+
+			// 搜索失败，则测试fail
+			boolean searchResult = isSearchOK();
+			if (!searchResult) {
+				setTestResult(tag, false);
+				return;
+			}
+
+			// 打印搜索成功
+			setTestResult(tag, true);
+
+		} catch (Exception e) {
+			printLog("err msg: " + e.getMessage());
+			setTestResult(tag, false);
+		}
+	}
+
+	/**
+	 * 测试目的：测试自动搜索不存在的频点是否提示搜索失败
+	 * 
+	 * @param 步骤1
+	 *            进入主频点设置，设置一个不存在的频点
+	 * @param 步骤2
+	 *            点击自动搜索，若搜索失败并且有搜索失败提示，则测试pass；否则fail
+	 * 
+	 * @param 编写者
+	 *            吴昊
+	 */
+	public void test03_AutoSearchFail() {
+		String tag = "test03_AutoSearchFail ";
+		printLog(tag + " enter");
+
+		try {
+			String freq = "514";
+			autoSearch(freq);
+			printLog(tag + "excute autoSearch " + freq);
+
+			// 搜索成功，则测试fail
+			if (isSearchOK()) {
+				printLog(tag + " search is ok");
+				setTestResult(tag, false);
+				return;
+			}
+
+			// 打印搜索成功
+			setTestResult(tag, true);
+
+		} catch (Exception e) {
+			printLog("err msg: " + e.getMessage());
+			setTestResult(tag, false);
+		}
+	}
+
+	/**
+	 * 测试目的：测试手动搜索不存在的频点是否提示搜索失败
+	 * 
+	 * @param 步骤1
+	 *            进入手动搜索，设置一个不存在的频点
+	 * @param 步骤2
+	 *            点击开始搜索，若搜索失败并且有搜索失败提示，则测试pass；否则fail
+	 * 
+	 * @param 编写者
+	 *            吴昊
+	 */
+	public void test04_ManualSearchFail() {
+		String tag = "test04_ManualSearchFail ";
+		printLog(tag + " enter");
+
+		try {
+			String freq = "514";
+			manualSearch(freq);
+			printLog(tag + "excute manualSearch " + freq);
+
+			// 搜索成功，则测试fail
+			if (isSearchOK()) {
+				printLog(tag + " search is ok");
+				setTestResult(tag, false);
+				return;
+			}
+
+			// 打印搜索成功
+			setTestResult(tag, true);
+
+		} catch (Exception e) {
+			printLog("err msg: " + e.getMessage());
+			setTestResult(tag, false);
+		}
+	}
+
+}

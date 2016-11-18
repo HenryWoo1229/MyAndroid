@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Autodiscover xmlns="http://schemas.microsoft.com/exchange/autodiscover/responseschema/2006"><Response xmlns="http://schemas.microsoft.com/exchange/autodiscover/outlook/responseschema/2006a">
+  <Account>
+    <AccountType>email</AccountType>
+    <Action>settings</Action>
+    <Protocol name="pop">
+      <Type>POP3</Type>
+      <Server>pop.mail.yahoo.com</Server>
+      <Port>110</Port>
+      <SPA>off</SPA>
+      <SSL>off</SSL>
+      <AuthRequired>on</AuthRequired>
+    </Protocol>
+    <Protocol>
+      <Type>SMTP</Type>
+      <Server>smtp.mail.yahoo.com</Server>
+      <Port>25</Port>
+      <SPA>off</SPA>
+      <SSL>off</SSL>
+      <AuthRequired>on</AuthRequired>
+      <UsePOPAuth>on</UsePOPAuth>
+    </Protocol>
+  </Account>
+</Response></Autodiscover>

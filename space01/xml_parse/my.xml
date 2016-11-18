@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root><!--这是一个根节点-->
+<Node1 name="nam1" type="str"><!--这是节点1-->
+<SubNode1>subNode1</SubNode1>
+</Node1>
+</Root>

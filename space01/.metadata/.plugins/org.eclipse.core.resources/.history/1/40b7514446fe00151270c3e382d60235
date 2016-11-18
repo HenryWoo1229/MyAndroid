@@ -1,0 +1,277 @@
+package com.suma.test;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.List;
+import java.util.Scanner;
+
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFFont;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+
+public class MyExcel extends BUG {
+
+	static boolean flag = false;
+
+	public List<String> readConfig(String path) {
+		File txt = new File(path);
+		try {
+			FileInputStream input = new FileInputStream(txt);
+			InputStreamReader reader = new InputStreamReader(input);
+			BufferedReader read = new BufferedReader(reader);
+			String line = "";
+			while (null != (line = read.readLine())) 
+				basic.add(line);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return basic;
+	}
+
+	/**
+	 * 抓打印
+	 * 
+	 * @param name
+	 *            待保存的文件名
+	 */
+	public void logcat(String name) {
+		Process pid = null;
+		String[] cmd = { "/system/bin/sh", "-c", "logcat -c; logcat -v time" };
+		try {
+
+			String bugFolder = baseDir + name;
+			createFolder(bugFolder); // 创建log对应缺陷的文件夹
+			System.out.println(bugFolder + "/" + name + ".log");
+			createFile(bugFolder + "/" + name + ".log");
+
+			FileWriter fw = new FileWriter(new File(bugFolder + "/" + name
+					+ ".log"));
+			BufferedWriter bw = new BufferedWriter(fw);
+
+			pid = Runtime.getRuntime().exec(cmd);
+			if (pid != null) {
+				BufferedReader input = new BufferedReader(
+						new InputStreamReader(pid.getInputStream()));
+				String line = "";
+				while ((line = input.readLine()) != null) {
+					System.out.println(line);
+					bw.write(line + "\n");
+					if (flag) {
+						System.out.println("===>Log保存路径:" + baseDir + name
+								+ "/" + name + ".log");
+						break;
+					}
+				}
+				input.close();
+				bw.close();
+
+			} else {
+				System.out.println("pid is null, cannot save log!!!");
+			}
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 截图
+	 * 
+	 * @param name
+	 *            待保存的文件名
+	 */
+	public void screencap(String name) {
+		String bugFolder = baseDir + name;
+		createFolder(bugFolder); // 创建对应缺陷的文件夹
+
+		String filePath = baseDir + name + "/" + name + ".png";
+		String[] cmd = { "/system/bin/sh", "-c", "screencap -p " + filePath };
+
+		try {
+			Runtime.getRuntime().exec(cmd);
+			System.out.println("===>截图保存路径:" + baseDir + name + "/" + name
+					+ ".png");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 同时抓包和抓打印
+	 * 
+	 * @param name
+	 *            待保存的文件名
+	 */
+	public void tcpdump_Logcat(String name) {
+		String bugFolder = baseDir + name;
+		createFolder(bugFolder); // 创建对应缺陷的文件夹
+
+		String filePathPcap = baseDir + name + "/" + name + ".pcap";
+		String filePathLog = baseDir + name + "/" + name + ".log";
+		String[] cmd = {
+				"/system/bin/sh",
+				"-c",
+				"logcat -v time > " + filePathLog
+						+ "&& tcpdump -i any -s 0 -w " + filePathPcap };
+
+		try {
+			Runtime.getRuntime().exec(cmd);
+			System.out.println("===>抓包保存路径:" + baseDir + name + "/" + name
+					+ ".pcap");
+			System.out.println("===>打印保存路径:" + baseDir + name + "/" + name
+					+ ".log");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	public void writeBug() {
+		File myxls = new File(baseDir + "/BUG.xls");
+		POIFSFileSystem poifsFileSystem = null;
+		collectInfo();
+
+		try {
+			poifsFileSystem = new POIFSFileSystem(new FileInputStream(myxls));
+			HSSFWorkbook hssfWorkbook = new HSSFWorkbook(poifsFileSystem);
+			HSSFSheet sheet = hssfWorkbook.getSheet("BUG");
+			int row = sheet.getFirstRowNum();
+
+			HSSFCellStyle setBorder = hssfWorkbook.createCellStyle();
+			setBorder.setBorderBottom(HSSFCellStyle.BORDER_THIN); // 下边框
+			setBorder.setBorderLeft(HSSFCellStyle.BORDER_THIN);// 左边框
+			setBorder.setBorderTop(HSSFCellStyle.BORDER_THIN);// 上边框
+			setBorder.setBorderRight(HSSFCellStyle.BORDER_THIN);// 右边框
+
+			HSSFFont font = hssfWorkbook.createFont();
+			font.setFontHeightInPoints((short) 10); // 设置字体大小
+			font.setFontName("宋体"); // 设置字体
+			setBorder.setFont(font);
+
+			while (true) {
+				HSSFRow rowdata = sheet.getRow(row);
+				if (null != rowdata) { // 找到空行再往下走
+					row++;
+					continue;
+				}
+
+				rowdata = sheet.createRow(row);
+
+				for (int j = 0; j < basic.size(); j++) {
+					rowdata.createCell(j);
+					// 填写数据
+					rowdata.getCell(j).setCellValue(basic.get(j));
+					rowdata.getCell(j).setCellStyle(setBorder);
+
+				}
+				FileOutputStream out = new FileOutputStream(myxls);
+				hssfWorkbook.write(out);
+				out.close();
+				hssfWorkbook.close();
+
+				break;
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 根据指定路径，创建文件
+	 * 
+	 * @param path
+	 *            文件路径
+	 * @return true 创建成功 false 创建失败
+	 */
+	public boolean createFile(String path) {
+		boolean ret = false;
+		File file = new File(path);
+		// if (!file.isDirectory())
+		try {
+			ret = file.createNewFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ret;
+	}
+
+	/**
+	 * 根据指定路径，创建文件夹
+	 * 
+	 * @param path
+	 *            文件夹路径
+	 * @return true 创建成功 false 创建失败
+	 */
+	public boolean createFolder(String path) {
+		boolean ret = false;
+		File file = new File(path);
+		// if (file.isDirectory())
+		ret = file.mkdir();
+		return ret;
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println("");
+		System.out
+				.println("========================================================");
+		System.out
+				.println("==================Android集成BUG编写系统=================");
+		System.out
+				.println("====================测试三组 研发六部=====================");
+		System.out
+				.println("=========================================================");
+		System.out.println("");
+
+		MyExcel myexcel = new MyExcel();
+		myexcel.readConfig(baseDir + "/参数配置表.xls");
+
+//		myexcel.writeBug();
+
+//		System.out.println("===>是否抓log [logcat -v time]?（输入1抓，0不抓）");
+//		int isLog = new Scanner(System.in).nextInt();
+//		if (isLog == 1) {
+//			System.out
+//					.println("===>按键盘Enter键后开始抓log，期间操作遥控器即可，再按Enter则停止抓并会自动保存");
+//			new Scanner(System.in).nextLine();
+//			new Thread(new Runnable() {
+//				public void run() {
+//					new Scanner(System.in).nextLine();
+//					flag = true;
+//				}
+//			}).start();
+//
+//			myexcel.logcat(title);
+//		}
+//		System.out.println("===>将机顶盒界面调整到需要的位置，按键盘Enter键立即保存截图（输入0不截图）");
+//		String isScreen = new Scanner(System.in).nextLine();
+//		if (!isScreen.equals("0"))
+//			myexcel.screencap(title);
+
+	}
+}

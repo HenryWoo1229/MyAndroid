@@ -1,0 +1,1132 @@
+package com.suma.gw_test.testcase;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.conn.DefaultClientConnection;
+import org.apache.http.util.EntityUtils;
+import org.cybergarage.upnp.Action;
+import org.cybergarage.upnp.Argument;
+import org.cybergarage.upnp.ArgumentList;
+import org.cybergarage.upnp.ControlPoint;
+import org.cybergarage.upnp.Device;
+import org.cybergarage.upnp.Service;
+import org.cybergarage.upnp.UPnPStatus;
+import org.cybergarage.upnp.device.DeviceChangeListener;
+import org.cybergarage.upnp.device.NotifyListener;
+import org.cybergarage.upnp.device.SearchResponseListener;
+import org.cybergarage.upnp.event.EventListener;
+import org.cybergarage.upnp.ssdp.SSDPPacket;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import android.os.Bundle;
+import android.os.Message;
+import android.util.Log;
+
+import com.suma.gw_test.activity.TestExecuteActivity;
+import com.suma.gw_test.tools.Channel;
+
+/**
+ * 测试用例类，用于保存用例信息
+ * @author Rambo
+ *
+ */
+public class TestObject extends ControlPoint implements NotifyListener, EventListener, DeviceChangeListener, SearchResponseListener {
+	
+	private static final String ADDRESS = "192.168.1.100";
+	private static final String NAME = "网关媒体服务(192.168.1.100)";
+	
+	// 用例执行时间默认为60s
+	public static int executeTime = 60;
+	// 测试结果标识，用例执行过程中标识执行状态
+	protected int testResult = PASS; 
+	// 用例执行过程中用于同步的等待锁
+	public final static Object waitingLock = new Object();
+
+	public TestObject() {
+		// TODO Auto-generated constructor stub
+		super();
+		addDeviceChangeListener(this);
+		addEventListener(this);
+		addSearchResponseListener(this);
+		addNotifyListener(this);
+	}
+	
+	
+	@Override
+	public void deviceSearchResponseReceived(SSDPPacket ssdpPacket) {
+		// TODO Auto-generated method stub
+		printLog("TestObject.deviceSearchResponseReceived:be called");
+		String address = ssdpPacket.getRemoteAddress();   //获取指定UPn P设备的IP地址
+		if(ADDRESS.equals(address)){
+			synchronized (waitingLock) {
+				waitingLock.notify();
+			}
+		}
+		
+	}
+
+	// 解析事件值后的map，对应事件EventDescription属性(json)的key和value
+	public static HashMap<String, String> eventHashMap = null;
+	@Override
+	public void eventNotifyReceived(String uuid, long seq, String varName,
+			String value) {
+		// TODO Auto-generated method stub
+		printLog("TestObject.eventNotifyReceived:uuid="+uuid);
+		printLog("TestObject.eventNotifyReceived:seq="+seq);
+		printLog("TestObject.eventNotifyReceived:varName="+varName);
+		printLog("TestObject.eventNotifyReceived:value="+value);
+		try {
+			String eventDescription = getXmlElementValue(value, "EventDescription", "val");
+			eventHashMap = praseJson(eventDescription);
+			
+			String eventTypeAct = eventHashMap.get("eventType");
+			String eventSubTypeAct = eventHashMap.get("eventSubType");
+			if(eventType.equals(eventTypeAct) && eventSubType.equals(eventSubTypeAct)){
+				synchronized (waitingLock) {
+					waitingLock.notify();
+				}
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+	@Override
+	public void deviceNotifyReceived(SSDPPacket ssdpPacket) {
+		// TODO Auto-generated method stub
+		printLog("TestObject.deviceNotifyReceived:be called");
+	}
+
+	/**
+	 * 等待指定的device被发现
+	 */
+	@Override
+	public void deviceAdded(Device dev) {
+		printLog("TestObject.deviceAdded:be called");
+		// TODO Auto-generated method stub
+		String deviceName = dev.getFriendlyName();
+		printLog("TestObject.deviceAdded:deviceName="+deviceName);
+		if(NAME.equals(deviceName)){
+			synchronized (waitingLock) {
+				waitingLock.notify();
+			}
+		}
+	}
+
+	@Override
+	public void deviceRemoved(Device dev) {
+		// TODO Auto-generated method stub
+		printLog("TestObject.deviceRemoved:be called");
+		
+	}
+
+	private int testExecuteTag; // 测试执行标识
+	private String testcaseName = ""; // 测试名称
+	private String testState = "NoRun"; // 用例执行状态
+	private String testDescription = ""; // 用例描述
+	private String testRemarks = ""; // 测试备注或缺陷描述
+	private String testIdentifier = ""; // 用例标识
+	private String testModule = ""; // 用例所述模块
+	private String testFailPointInfo = "测试失败点："; // 实际测试失败点信息
+	
+	
+	
+	public String getTestFailPointInfo() {
+		return testFailPointInfo;
+	}
+	public void setTestFailPointInfo(String testFailPointInfo) {
+		if(!(testFailPointInfo.equals(""))){
+			this.testFailPointInfo += testFailPointInfo+"\n";
+		}
+	}
+	public String getTestModule() {
+		return testModule;
+	}
+	public void setTestModule(String testModule) {
+		this.testModule = testModule;
+	}
+	public int getTestExecuteTag() {
+		return testExecuteTag;
+	}
+	public void setTestExecuteTag(int testExecuteTag) {
+		this.testExecuteTag = testExecuteTag;
+	}
+	public String getTestcaseName() {
+		return testcaseName;
+	}
+	public void setTestcaseName(String testcaseName) {
+		this.testcaseName = testcaseName;
+	}
+	public String getTestState() {
+		return testState;
+	}
+	public void setTestState(String testState) {
+		this.testState = testState;
+	}
+	public String getTestDescription() {
+		return testDescription;
+	}
+	public void setTestDescription(String testDescription) {
+		this.testDescription = testDescription;
+	}
+	public String getTestRemarks() {
+		return testRemarks;
+	}
+	public void setTestRemarks(String testRemarks) {
+		this.testRemarks = testRemarks;
+	}
+	public String getTestIdentifier() {
+		return testIdentifier;
+	}
+	public void setTestIdentifier(String testIdentifier) {
+		this.testIdentifier = testIdentifier;
+	}
+	
+	/**
+	 * 根据标示符执行测试用例
+	 * @param testIdentifier 待执行用例的标识符，也是对应测试用例程序的方法名
+	 */
+	public void executeTestcase (String testIdentifier) {
+		
+		testResult = PASS; // testResult初始默认值为PASS
+		setTestFailPointInfo(""); // 测试失败点信息初始默认值为空
+		executeFinishFlag = false; // 执行完成标识置为false
+		
+		String packageName = "com.suma.gw_test.testcase";
+		String className = packageName+"."+(testIdentifier.split("0"))[0]+"Test";
+		
+		try {
+			Object obj = null;
+			Class<?> cl = null;
+			Method md = null;
+			System.out.println("===========" + className + "."
+					+ testIdentifier + " Begin===========");
+			
+			cl = Class.forName(className);
+			obj = cl.newInstance();
+			
+			md = cl.getDeclaredMethod(testIdentifier,
+					new Class[] { String.class });
+
+			md.invoke(obj, new Object[] { testIdentifier });
+		} catch (Exception e) {
+			// TODO: handle exception
+			setTestRemarks("用例执行产生异常"+e.toString());
+			e.printStackTrace();
+			setTestResult(FAIL);
+		} finally{
+			System.out
+			.println("================================End================================");
+		}
+	}
+	
+	/**
+	 * 记录用例执行日志
+	 * @param resultMessage 打印的日志
+	 */
+	public void printLog (String resultMessage){
+		if(resultMessage != null) {
+			Log.v("test_log", resultMessage);
+			TestExecuteActivity.testObject.setTestRemarks(
+					TestExecuteActivity.testObject.getTestRemarks()+"test_log:"+resultMessage+"\n");
+		}
+	}
+	
+	
+	public static final int PASS = 1;
+	public static final int FAIL = 2;
+	public static final int NORUN = 3;
+	public static final int NOTCOMPLETE = 4;
+	// 用于控制当用例执行完毕时，执行进度条提早消失
+	public static Object executeFinishFlagLock = new Object();
+	public static boolean executeFinishFlag = false;
+	/**
+	 * 设置测试结论，更新界面显示
+	 * @param testResult 测试结论（如FAIL）
+	 */
+	public void setTestResult(int testResult){
+		
+		switch (testResult) {
+		case PASS:
+			TestExecuteActivity.testObject.setTestState("PASS");
+			break;
+		case FAIL:
+			TestExecuteActivity.testObject.setTestState("FAIL");
+			if(!(testFailPointInfo.equals(""))){
+				TestExecuteActivity.testObject.setTestRemarks(testFailPointInfo+
+						TestExecuteActivity.testObject.getTestRemarks());
+			}
+			break;
+		case NORUN:
+			TestExecuteActivity.testObject.setTestState("NoRun");
+			break;
+		case NOTCOMPLETE:
+			TestExecuteActivity.testObject.setTestState("NotComplete");
+			break;
+
+		default:
+			break;
+		}
+		Message message = new Message();
+		message.what = TestExecuteActivity.UPDATE_TEST_RES;
+		TestExecuteActivity.myHandler.sendMessage(message);
+		// 通知结束用例执行对话框,对不弹出进度提示框的用例不起作用
+		executeFinishFlag = true;
+		synchronized (executeFinishFlagLock) {
+			executeFinishFlagLock.notify();
+		}
+	}
+	/**
+	 * 显示用例执行进度对话框
+	 * @param maxDuration 用例最长执行时间（秒），超过该时间仍未执行完，视为测试失败
+	 */
+	public void showExecuteProgress(int maxDuration) {
+		printLog("TestObject.showExecuteProgress:be called");
+		Message msg = new Message();
+		msg.what = TestExecuteActivity.SHOW_PROGRESS;
+		msg.arg1 = maxDuration;
+		TestExecuteActivity.myHandler.sendMessage(msg);
+	}
+	
+	// 判断对话框的判断结果
+	public static boolean judgeResult = false;
+	
+	public void setJudgeResult(boolean judgeResult) {
+		this.judgeResult = judgeResult;
+	}
+	
+	public final static Object JUDGE_WAITING_LOCK = new Object();
+	/**
+	 * 弹出判断对话框以便认为判断
+	 * @param judgeMsg 判断信息
+	 * @return true 判断通过， false 判断不通过
+	 */
+	public boolean showJudgeDialog(String judgeMsg) {
+		printLog("TestObject.showJudgeDialog:be called");
+		Message msg = new Message();
+		msg.what = TestExecuteActivity.SHOW_JUDGE_DIALOG;
+		Bundle bundle = new Bundle();
+		bundle.putString("judgeMsg", judgeMsg);
+		msg.setData(bundle);
+		TestExecuteActivity.myHandler.sendMessage(msg);
+		synchronized (JUDGE_WAITING_LOCK) {
+			try {
+				JUDGE_WAITING_LOCK.wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return judgeResult;
+	}
+	/*
+	 * DMS转发事件的属性
+	 */
+	public static String eventType = ""; // 事件类型,必填
+	public static String eventSubType = ""; // 事件子类型，必填
+	public static String client_ip = ""; // 连接到网关的触发该事件的客户端IP
+	public static String program_playing_url = ""; // 节目播放URL
+	public static int eventResponseTime = 10000; // 事件响应时间限制(ms)
+	
+	/*
+	 * 标识测试时是否对获取的相关属性值进行验证
+	 */
+	public static boolean checkEventType = false; //不进行验证
+	public static boolean checkEventSubType = false;
+	public static boolean checkClientIp = false;
+	public static boolean checkProgramPlayingUrl = false;
+	
+	public final static Object EVENT_CONFIGURE_WAITING_LOCK = new Object();
+	/**
+	 * 执行DLNA事件验证用例时进行参数配置的对话框
+	 */
+	public void showEventCfgDialog(){
+		printLog("TestObject.showEventCfgDialog:be called");
+		/*
+		 * 弹出对话框前，将事件属性及验证标识恢复默认值
+		 */
+		eventType = ""; // 事件类型
+		eventSubType = ""; // 事件子类型
+		client_ip = ""; // 连接到网关的触发该事件的客户端IP
+		program_playing_url = ""; // 节目播放URL
+		eventResponseTime = 10000; // 事件响应时间限制
+		/*
+		 * 标识测试时是否对获取的相关属性值进行验证
+		 */
+		checkEventType = false; 
+		checkEventSubType = false;
+		checkClientIp = false;
+		checkProgramPlayingUrl = false;
+		
+		
+		Message msg = new Message();
+		msg.what = TestExecuteActivity.SHOW_EVENT_CONFIGURE_DIALOG;
+		TestExecuteActivity.myHandler.sendMessage(msg);
+		synchronized (EVENT_CONFIGURE_WAITING_LOCK) {
+			try {
+				EVENT_CONFIGURE_WAITING_LOCK.wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		if(eventType==null || eventSubType.equals("") || eventSubType==null || eventSubType.equals("")){
+			showEventCfgDialog();
+			
+		}
+	}
+	
+	public final static Object INDICATE_DIALOG_WAITING_LOCK = new Object();
+	/**
+	 * 弹出提示对话框以便指导操作
+	 * @param judgeMsg 提示信息
+	 * @throws InterruptedException 
+	 */
+	public void showIndicateDialog(String indicateMsg) throws InterruptedException {
+		printLog("TestObject.showIndicateDialog:be called");
+		Message msg = new Message();
+		msg.what = TestExecuteActivity.SHOW_INDICATE_DIALOG;
+		Bundle bundle = new Bundle();
+		bundle.putString("indicateMsg", indicateMsg);
+		msg.setData(bundle);
+		TestExecuteActivity.myHandler.sendMessage(msg);
+		synchronized (INDICATE_DIALOG_WAITING_LOCK) {
+			INDICATE_DIALOG_WAITING_LOCK.wait();
+		}
+	}
+	/**
+	 * 查询指定XML文件的指定元素或属性值(仅适用于与节点名称、属性名称唯一的情况)
+	 * @param xmlFileString 执行XML对应字符串
+	 * @param elementName 节点名称
+	 * @param attribute 属性名称，当为null时指返回elementName对应值，否则返回attribute对应值
+	 * @return 获取到的有效值, 未获取到返回null 
+	 * @throws XmlPullParserException 
+	 * @throws IOException 
+	 */
+	public String getXmlElementValue(String xmlFileString, String elementName, String attribute) throws XmlPullParserException, IOException{
+		printLog("TestObject.getXmlElementValue:be called");
+		String valueString = null;
+		
+		XmlPullParser xmlPullParser = XmlPullParserFactory.newInstance().newPullParser();  
+		xmlPullParser.setInput(new ByteArrayInputStream(xmlFileString.getBytes()), "UTF-8");
+		
+		int eventType = xmlPullParser.getEventType();  
+        while (eventType != XmlPullParser.END_DOCUMENT) {  
+            switch (eventType) {  
+	            case XmlPullParser.START_DOCUMENT:  
+	                break;  
+	            case XmlPullParser.START_TAG:  
+	                if (xmlPullParser.getName().equals(elementName)) {  
+	                   if(attribute != null){
+	                	  valueString = xmlPullParser.getAttributeValue(null, attribute);
+	                   }else{
+	                	  valueString = xmlPullParser.nextText();
+	                   }
+	                }
+	                	   
+	                break;  
+	            }  
+            eventType = xmlPullParser.next(); 
+        }  
+		return valueString;
+	}
+	
+	/**
+	 * 解析Json字符串为Map
+	 * @param jsonString 待解析的json字符串
+	 * @return 解析后的map,对应json的key和value
+	 */
+	public HashMap<String, String> praseJson(String jsonString){
+		printLog("TestObject.praseJson:be called");
+		HashMap<String, String> parseJsonRes = new HashMap<String, String>();
+		try {
+			JSONObject jsonObject = new JSONObject(jsonString);
+			Iterator iterator = jsonObject.keys();
+	        String key = null;
+	        String value = null;
+	        
+	        while (iterator.hasNext()) {
+	            key = (String) iterator.next();
+	            value = jsonObject.getString(key);
+	            parseJsonRes.put(key, value);
+	        }
+	        
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+		return parseJsonRes;
+	}
+	
+	
+	/**
+	 * 根据指定参数获取EPG事件信息
+	 * @param m2URL m2接口地址
+	 * @param frequency 直播频道所在的频点，单位为kHz
+	 * @param orginalNetwork 原始网络标识
+	 * @param transportId 传输流标识
+	 * @param serviceID 业务标识
+	 * @param beginDate 起始时间，采用UTC时间格式， 如2013-10-16T19:00:00Z
+	 * @param endDate 结束时间，采用UTC时间格式， 如2013-10-16T23:30:00Z
+	 * @param count EPG节目个数，如果beginDate到endDate之间的EPG节目个数不足count个，返回实际的个数
+	 * @return 获取成功返回事件信息XML，失败返回null
+	 * @throws IOException 
+	 * @throws ClientProtocolException 
+	 */
+	public String getEPGSheduleInfo(String m2URL, String frequency, String orginalNetworkId, String transportId, String serviceID
+			, String beginDate, String endDate, String count) throws ClientProtocolException, IOException {
+		printLog("TestObject.getEPGSheduleInfo:be called");
+		
+		String epgInfo = null;
+		
+		String requestString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> "
+		+"<GetProgramSchedule beginDate=\""+beginDate+"\" endDate=\""+endDate+"\" count="+"\""+count+"\"> "
+		+"<serviceLocator frequency=\""+frequency+"\" orginalNetworkID=\""+orginalNetworkId+"\" transportID=\""+transportId+"\" serviceID=\""+serviceID+"\" /> "
+		+"</GetProgramSchedule>";
+		printLog("TestObject.getEPGSheduleInfo:requestString="+requestString);
+		
+		String responseString = getHttpPostResponse(m2URL, requestString);
+		if(responseString != null){
+			epgInfo = responseString;
+		}
+		
+		return epgInfo;
+	}
+	
+	/**
+	 * 根据指定参数获取EPG当前后续事件信息
+	 * @param m2URL m2接口地址
+	 * @param frequency 直播频道所在的频点，单位为kHz
+	 * @param orginalNetwork 原始网络标识
+	 * @param transportId 传输流标识
+	 * @param serviceID 业务标识
+	 * @return 获取成功返回事件信息XML，失败返回null
+	 * @throws IOException 
+	 * @throws ClientProtocolException 
+	 */
+	public String getEPGPFInfo(String m2URL, String frequency, String orginalNetworkId, String transportId, String serviceID
+			) throws ClientProtocolException, IOException {
+		printLog("TestObject.getEPGPFInfo:be called");
+		String epgInfo = null;
+		
+		String requestString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> "
+		+"<GetProgramSchedule> "
+		+"<serviceLocator frequency=\""+frequency+"\" orginalNetworkID=\""+orginalNetworkId+"\" transportID=\""+transportId+"\" serviceID=\""+serviceID+"\" /> "
+		+"</GetProgramSchedule>";
+		printLog("TestObject.getEPGPFInfo:requestString="+requestString);
+		
+		String responseString = getHttpPostResponse(m2URL, requestString);
+		if(responseString != null){
+			epgInfo = responseString;
+		}
+		
+		return epgInfo;
+	}
+	
+	/**
+	 * 查询指定业务的加扰状态
+	 * @param m2URL m2接口地址
+	 * @param frequency 直播频道所在的频点，单位为kHz
+	 * @param orginalNetwork 原始网络标识
+	 * @param transportId 传输流标识
+	 * @param serviceID 业务标识
+	 * @return “1”加扰，“0”未加扰，null为获取加扰状态失败	
+	 * @throws IOException 
+	 * @throws ClientProtocolException 
+	 * @throws XmlPullParserException 
+	 */
+	public String getEncryptState(String m2URL, String frequency, String orginalNetworkId, String transportId, String serviceID
+			) throws ClientProtocolException, IOException, XmlPullParserException {
+		printLog("TestObject.getEncryptState:be called");
+		String encryptState = null;
+		
+		String requestString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> "
+		+"<serviceLocator frequency=\""+frequency+"\" orginalNetworkID=\""+orginalNetworkId+"\" transportID=\""+transportId+"\" serviceID=\""+serviceID+"\" /> ";
+		printLog("TestObject.getEncryptState:requestString="+requestString);
+		
+		String responseString = getHttpPostResponse(m2URL, requestString);
+		if(responseString != null){
+			encryptState = getXmlElementValue(responseString, "ServiceEncryptState", "state");
+		}
+		
+		return encryptState;
+	}
+	
+	// 获取网关本地时间的请求字符串
+	public final static String GET_STBDATE_REQUESTSTRING = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <GetSystemTime />";
+	/**
+	 * 获取请求网关本地时间的响应字符串
+	 * @param m2URL m2接口地址
+	 * @return 获取成功返回响应XML，失败返回null
+	 * @throws IOException 
+	 * @throws ClientProtocolException 
+	 */
+	public String getStbDateResponse(String m2URL, String requestString) throws ClientProtocolException, IOException {
+		printLog("TestObject.getStbDateResponse:be called");
+		String getStbDateResponse = null;
+		
+		String responseString = getHttpPostResponse(m2URL, requestString);
+		if(responseString != null){
+			getStbDateResponse = responseString;
+		}
+		
+		return getStbDateResponse;
+	}
+	
+	/**
+	 * 获取某service下某个container的search结果
+	 * @param service 要进行search的服务，需通过其获取search action
+	 * @param containerId 待搜索的目录ID（比如直播目录ID为"LIVE",点播目录ID为"VOD"）
+	 * @return 搜索结果，为一个XML字符串,搜索失败返回null
+	 */
+	public String getContainerSearchResult(Service service, String containerId) {
+		printLog("TestObject.getContainerSearchResult:be called");
+		String containerSearchResult = null;
+		Action searchAction = service.getAction("Search");
+		printLog("TestObject.getContainerSearchResult:service.getAction('Search')="+searchAction);
+		if(searchAction != null){
+			ArgumentList searchInArgumentList = searchAction.getArgumentList();
+			searchInArgumentList.getArgument("ContainerID").setValue(containerId);
+			searchInArgumentList.getArgument("SearchCriteria").setValue("*");
+			searchInArgumentList.getArgument("Filter").setValue("*");
+			searchInArgumentList.getArgument("StartingIndex").setValue("0");
+			searchInArgumentList.getArgument("RequestedCount").setValue("0");
+			searchInArgumentList.getArgument("SortCriteria").setValue("");
+			boolean postActionRes = searchAction.postControlAction();
+			printLog("TestObject.getContainerSearchResult:searchAction.postControlAction()="+postActionRes);
+			if(!(postActionRes)){
+				UPnPStatus errPnPStatus = searchAction.getStatus();
+				printLog("TestObject.getContainerSearchResult:searchAction.postControlAction的ErrCode="+errPnPStatus.getCode());
+			}else {
+				ArgumentList searchOutArgumentList = searchAction.getOutputArgumentList();
+				Argument searchResultArgument = searchOutArgumentList.getArgument("Result");
+				printLog("TestObject.getContainerSearchResult:searchOutArgumentList.getArgument('Result')="+searchResultArgument);
+				containerSearchResult = searchResultArgument.getValue();
+			}
+		}
+		return containerSearchResult;
+	}
+	
+	/*
+	 * A7URL和M1URL在HashMap中的key,在方法getVODInterfaceUrl中应用
+	 */
+	public final static String A7_URL_KEY = "NGOD-A7";
+	public final static String M1_URL_KEY ="GW-M1";
+	/**
+	 * 从VOD的Container中VOD的A7接口入口地址和M1接口入口地址
+	 * @param containerXML
+	 * @return 返回VOD的A7接口入口地址和M1接口入口地址，对应HashMap的可以为A7_URL_KEY、M1_URL_KEY,失败返回null
+	 */
+	public HashMap<String, String> getVODInterfaceUrl (){
+		printLog("TestObject.getVODInterfaceUrl:be called");
+		HashMap<String, String> urlMap = null;
+		
+		try {
+			Device device = getSumaDevice();
+			printLog("TestObject.getVODInterfaceUrl:getSumaDevice()="+device);
+			
+			Service cdsService = device.getServiceBySCPDURL("/service/ContentDirectory1.xml");
+			printLog("TestObject.getVODInterfaceUrl:device.getServiceBySCPDURL('/service/ContentDirectory1.xml')="+cdsService);
+				
+			String vodContainerXml = getContainerSearchResult(cdsService, "VOD");
+			printLog("TestObject.getVODInterfaceUrl:getContainerSearchResult(cdsService, 'VOD')="+vodContainerXml);
+			
+			
+			XmlPullParser xmlPullParser = XmlPullParserFactory.newInstance().newPullParser();  
+			xmlPullParser.setInput(new ByteArrayInputStream(vodContainerXml.getBytes()), "UTF-8");
+			
+			int eventType = xmlPullParser.getEventType();  
+			String attributeValueString = "";
+	        while (eventType != XmlPullParser.END_DOCUMENT) {  
+	            switch (eventType) {  
+		            case XmlPullParser.START_DOCUMENT: 
+		            	urlMap = new HashMap<String, String>();
+		                break;  
+		            case XmlPullParser.START_TAG:  
+		            	
+		                if (xmlPullParser.getName().equals("item")) {  
+	                	   attributeValueString = xmlPullParser.getAttributeValue(null, "id");
+	                	   printLog("TestObject.getVODInterfaceUrl:attributeValueString="+attributeValueString);
+		                }
+		                if(xmlPullParser.getName().equals("res") && attributeValueString.equals(A7_URL_KEY)){
+		                	String a7URL = xmlPullParser.nextText();
+		                	printLog("TestObject.getVODInterfaceUrl:a7URL="+a7URL);
+		                	urlMap.put(A7_URL_KEY, a7URL);
+		                }
+		                if(xmlPullParser.getName().equals("res") && attributeValueString.equals(M1_URL_KEY)){
+		                	String m1URL = xmlPullParser.nextText();
+		                	printLog("TestObject.getVODInterfaceUrl:m1URL="+m1URL);
+		                	urlMap.put(M1_URL_KEY,m1URL);
+		                }
+		                	   
+		                break;  
+		            }  
+	            eventType = xmlPullParser.next(); 
+	        }  
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		} finally {
+			printLog("releaseGetSumaDevice()="+releaseGetSumaDevice());
+		}
+		return urlMap;
+		
+	}
+	
+	// 通过M1接口获取网关配置信息的请求字符串
+	public final static String GET_GATEWAY_CONFIG_INFO = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> <GetConfig />";
+	
+	/**
+     * 通过M1接口发送各种请求报文
+	 * @param a7Url A7接口入口地址
+	 * @param requestString 请求字符串
+     * @return 响应报文，请求失败返回null
+     * @throws ClientProtocolException
+     * @throws IOException
+     */
+	public String sendM1Request(String m1Url, String requestString) throws ClientProtocolException, IOException{
+		printLog("TestObject.sendM1Request:be called");
+		String response = null;
+    	response = getHttpPostResponse(m1Url, requestString);
+    	printLog("TestObject.sendM1Request:getHttpPostResponse(String m1Url, String requestString) = "+response);
+    	return response;
+		
+	}
+	
+	
+	/**
+	 * 向指定路径（URL）提交HTTP请求，获取响应字符串
+	 * @param url http请求路径
+	 * @param requestString 请求字符串
+	 * @return 响应字符串，若请求失败返回null
+	 * @throws IOException 
+	 * @throws ClientProtocolException 
+	 */
+	public String getHttpPostResponse(String url, String requestString) throws ClientProtocolException, IOException{
+		printLog("TestObject.getHttpPostResponse:be called");
+		String response = null;
+		
+		HttpClient httpClient = new DefaultHttpClient();
+		HttpPost httpPost = new HttpPost(url);
+		printLog("TestObject.getHttpPostResponse:httpPost="+httpPost);
+		
+		StringEntity stringEntity = new StringEntity(requestString, "UTF-8");
+		printLog("TestObject.getHttpPostResponse:StringEntity(requestString, 'UTF-8')="+stringEntity);
+		httpPost.setEntity(stringEntity);
+		
+		HttpResponse httpResponse = httpClient.execute(httpPost);
+		printLog("TestObject.getHttpPostResponse:httpResponse="+httpResponse);
+		// 检验状态码，如果成功接收数据
+		int code = httpResponse.getStatusLine().getStatusCode();
+		printLog("TestObject.getHttpPostResponse:httpResponse.getStatusLine().getStatusCode()="+code);
+		if (code == 200) {
+			response = EntityUtils.toString(httpResponse.getEntity(), "UTF-8");
+			printLog("TestObject.getHttpPostResponse:httpResponseString="+response);
+		}
+		return response;
+	}
+	
+	/**
+	 * 获取数码视讯网关的DLNA设备对象，调用该方法后必须调用releaseGetSumaDevice()释放资源
+	 * @return 获取到的Device对象， 未获取到返回null
+	 */
+	public Device getSumaDevice() {
+		printLog("TestObject.getSumaDevice:be called");
+		Device device = null;
+		try {
+			boolean startRes = start();
+			printLog("TestObject.getSumaDevice:调用ControlPoint.start()="+startRes);
+			if(startRes){
+				search();
+				printLog("TestObject.getSumaDevice:调用search()");
+				
+				synchronized (waitingLock) {
+					waitingLock.wait(executeTime * 1000);
+				}
+				device = getDevice(NAME);
+				printLog("TestObject.getSumaDevice:getDevice("+NAME+")="+device);
+				
+			}
+			
+		} catch (Exception e) {
+			printLog(e.getMessage());
+			e.printStackTrace();
+			
+		} 
+		return device;
+	}
+	
+	/**
+	 * 释放方法getSumaDevice()执行过程中用到的资源
+	 * @return true停止成功， false停止失败
+	 */
+	public boolean releaseGetSumaDevice(){
+		printLog("TestObject.releaseGetSumaDevice:be called");
+		boolean stopRes = stop();
+		printLog("调用stop()，返回值为"+stopRes);
+		return stopRes;
+	}
+	
+	/**
+	 * 获取在CDS中的EPG获取接口地址，即M2接口的HTTP URL
+	 * （调用该方法后需调用releaseGetSumaDevice()释放资源）
+	 * @return 获取到的地址，未获取到返回null
+	 * @throws XmlPullParserException
+	 * @throws IOException
+	 */
+	public String getEPGUrl() throws XmlPullParserException, IOException {
+		printLog("TestObject.getEPGUrl:be called");
+		String epgUrl =null;
+		
+		Device device = getSumaDevice();
+		
+		if(device != null){
+			Service cdsService = device.getServiceBySCPDURL("/service/ContentDirectory1.xml");
+			printLog("TestObject.getEPGUrl:device.getServiceBySCPDURL('/service/ContentDirectory1.xml')="+cdsService);
+			
+			if(cdsService != null){
+				Action browseAction = cdsService.getAction("Browse");
+				printLog("TestObject.getEPGUrl:cdsService.getAction('Browse')="+browseAction);
+				if(browseAction != null){
+					ArgumentList browseInArgumentList = browseAction.getArgumentList();
+					browseInArgumentList.getArgument("ObjectID").setValue(0);
+					browseInArgumentList.getArgument("BrowseFlag").setValue("BrowseDirectChildren");
+					browseInArgumentList.getArgument("StartingIndex").setValue("0");
+					browseInArgumentList.getArgument("RequestedCount").setValue("0");
+					browseInArgumentList.getArgument("Filter").setValue("*");
+					browseInArgumentList.getArgument("SortCriteria").setValue("");
+					boolean postActionRes = browseAction.postControlAction();
+					printLog("TestObject.getEPGUrl:browseAction.postControlAction()="+postActionRes);
+					if(!(postActionRes)){
+						UPnPStatus errPnPStatus = browseAction.getStatus();
+						printLog("TestObject.getEPGUrl:searchAction.postControlAction的ErrCode="+errPnPStatus.getCode());
+					}else {
+						ArgumentList browseOutArgumentList = browseAction.getOutputArgumentList();
+						Argument browseResultArgument = browseOutArgumentList.getArgument("Result");
+						printLog("TestObject.getEPGUrl:browseOutArgumentList.getArgument('Result')="+browseResultArgument);
+						String containerBrowseResult = browseResultArgument.getValue();
+						printLog("TestObject.getEPGUrl:browseResultArgument.getValue()="+containerBrowseResult);
+						if(!("".equals(containerBrowseResult))){
+							epgUrl = getXmlElementValue(containerBrowseResult, "res", null);
+							printLog("TestObject.getEPGUrl:epgUrl="+epgUrl);
+						}
+					}
+				}
+			}
+		}
+		return epgUrl;
+	}
+	
+	/*
+	 * 获取EPG事件信息表或PF表的指定参数
+	 */
+	public static String frequency = ""; // 频率
+	public static String orignalNetworkID = ""; // 原始网络ID
+	public static String transportID = ""; // 传送流ID
+	public static String serviceID = ""; // 业务ID
+	public static String beginDate = ""; // 起始时间，采用UTC时间格式
+	public static String endDate = ""; // 结束时间，采用UTC时间格式
+	public static String count = ""; // 要获取的EPG节目个数
+	
+	public final static Object EPG_SCHEDULE_GET_WAITING_LOCK = new Object();
+	/**
+	 * 执行获取EPG事件表时验证用例时进行参数配置的对话框
+	 */
+	public void showEpgScheduleGetDialog(){
+		printLog("TestObject.showEpgScheduleGetDialog:be called");
+		frequency = ""; // 频率
+		orignalNetworkID = ""; // 原始网络ID
+		transportID = ""; // 传送流ID
+		serviceID = ""; // 业务ID
+		beginDate = ""; // 起始时间，采用UTC时间格式
+		endDate = ""; // 结束时间，采用UTC时间格式
+		count = ""; // 要获取的EPG节目个数
+		
+		
+		Message msg = new Message();
+		msg.what = TestExecuteActivity.SHOW_EPG_SCHEDULE_GET_DIALOG;
+		TestExecuteActivity.myHandler.sendMessage(msg);
+		synchronized (EPG_SCHEDULE_GET_WAITING_LOCK) {
+			try {
+				EPG_SCHEDULE_GET_WAITING_LOCK.wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public final static Object EPG_PF_GET_WAITING_LOCK = new Object();
+	/**
+	 * 执行获取EPG当前后续表时验证用例时进行参数配置的对话框
+	 * 设置获取指定业务加扰状态时也用该对话框
+	 */
+	public void showEpgPFGetDialog(){
+		printLog("TestObject.showEpgPFGetDialog:be called");
+		frequency = ""; // 频率
+		orignalNetworkID = ""; // 原始网络ID
+		transportID = ""; // 传送流ID
+		serviceID = ""; // 业务ID
+		
+		Message msg = new Message();
+		msg.what = TestExecuteActivity.SHOW_EPG_PF_GET_DIALOG;
+		TestExecuteActivity.myHandler.sendMessage(msg);
+		synchronized (EPG_PF_GET_WAITING_LOCK) {
+			try {
+				EPG_PF_GET_WAITING_LOCK.wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	
+	/**
+	 * 获得M1接口路径
+	 * @return m1接口路径字符串，获取失败返回null
+	 */
+	public String getM1Url() throws XmlPullParserException, IOException{
+		printLog("TestObject.getM1Url:be called");
+		String m1Url = null;
+		
+		HashMap<String, String> vodUrlHashMap = getVODInterfaceUrl();
+		printLog("TestObject.getM1Url:getVODInterfaceUrl(vodContainerXml)="+vodUrlHashMap);
+		
+		m1Url = vodUrlHashMap.get(M1_URL_KEY);
+		printLog("TestObject.getM1Url:m1Url="+m1Url);
+		
+		return m1Url;
+	}
+	
+	/**
+	 * 获得A7接口路径
+	 * @return m1接口路径字符串，获取失败返回null
+	 */
+	public String getA7Url(){
+		printLog("TestObject.getA7Url:be called");
+		String a7Url = null;
+		
+		HashMap<String, String> vodUrlHashMap = getVODInterfaceUrl();
+		printLog("TestObject.getA7Url:getVODInterfaceUrl(vodContainerXml)="+vodUrlHashMap);
+		
+		a7Url = vodUrlHashMap.get(M1_URL_KEY);
+		printLog("TestObject.getA7Url:a7Url="+a7Url);
+		
+		return a7Url;
+	}
+	/**
+	 * 播放指定的VOD媒体资源,包含播放器准备和M1接口请求"开始播放"
+	 * @param mediaUrl VOD节目URL
+	 * @param m1Url M1接口入口地址
+	 * @param vodPlay M1接口"开始播放"的请求报文
+	 * @param synFlag 标识是否在该方法内调用synchronized (waitingLock)，同步等待，直到人为关闭
+	 * 播放窗口，true 进行同步， false 不同步
+	 * @throws ClientProtocolException
+	 * @throws IOException
+	 */
+	public void vodMediaPlay(String mediaUrl, String m1Url, String vodPlay, boolean synFlag) throws ClientProtocolException, IOException{
+		printLog("TestObject.vodMediaPlay:be called");
+		TestExecuteActivity.mediaPlayer.init();
+		TestExecuteActivity.mediaPlayer.setHandler(TestExecuteActivity.myHandler);
+		printLog("TestObject.vodMediaPlay:M1接口入口地址="+m1Url);
+		printLog("TestObject.vodMediaPlay:M1接口请求'开始播放'，requestString="+vodPlay);
+		String vodPlayRes = sendM1Request(m1Url, vodPlay);
+		printLog("TestObject.vodMediaPlay:'开始播放'响应vodPlayRes="+vodPlayRes);
+		printLog("TestObject.vodMediaPlay:调用mediaPlayer.setSource(mediaUrl)，mediaUrl="+mediaUrl);
+		TestExecuteActivity.mediaPlayer.setSource(mediaUrl);
+		
+		if(synFlag){
+			synchronized (waitingLock) {
+				try {
+					waitingLock.wait();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		
+	}
+	/**
+	 * 播放指定的直播节目
+	 * @param mediaUrl 直播节目播放路径
+	 * @param synFlag 标识是否在该方法内调用synchronized (waitingLock)，同步等待，直到人为关闭
+	 * 播放窗口，true 进行同步， false 不同步
+	 */
+	public void liveMediaPlay (String mediaUrl, boolean synFlag) {
+		printLog("TestObject.liveMediaPlay:be called");
+		TestExecuteActivity.mediaPlayer.init();
+		TestExecuteActivity.mediaPlayer.setHandler(TestExecuteActivity.myHandler);
+		printLog("TestObject.liveMediaPlay:调用mediaPlayer.setSource(mediaUrl)，mediaUrl="+mediaUrl);
+		TestExecuteActivity.mediaPlayer.setSource(mediaUrl);
+		
+		if(synFlag){
+			synchronized (waitingLock) {
+				try {
+					waitingLock.wait();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}else {
+			synchronized (waitingLock) {
+				try {
+					waitingLock.wait(5000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
+	/*
+	 * 获取VOD播放设置的参数
+	 */
+	public static String range = ""; // 播放范围，npt时间。格式为”起始时间-结束时间”，以“-”结束表示播放到节目末尾
+	public static String scale = ""; // 播放倍速
+	
+	public final static Object VOD_PLAY_PARAMS_SET_WAITING_LOCK = new Object();
+	/**
+	 * 涉及VOD播放时进行参数配置的对话框
+	 */
+	public void showVodPlayParamsSetDialog(){
+		printLog("TestObject.showVodPlayParamsSetDialog:be called");
+		range = ""; 
+		scale = ""; 
+		Message msg = new Message();
+		msg.what = TestExecuteActivity.SHOW_VOD_PLAY_PARAMS_SET_DIALOG;
+		TestExecuteActivity.myHandler.sendMessage(msg);
+		synchronized (VOD_PLAY_PARAMS_SET_WAITING_LOCK) {
+			try {
+				VOD_PLAY_PARAMS_SET_WAITING_LOCK.wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/*
+	 * 获取节目单列表参数
+	 */
+	public static String startDateTime = ""; // 节目单列表的开始时间
+	public static String endDateTime = ""; // 节目单列表的结束时间
+	
+	public final static Object GET_PROGRAMS_PARAMS_SET_WAITING_LOCK = new Object();
+	/**
+	 * 涉及VOD播放时进行参数配置的对话框
+	 */
+	public void showGetProgramsParamsSetDialog(){
+		printLog("TestObject.showGetProgramsParamsSetDialog:be called");
+		startDateTime = ""; 
+		endDateTime = ""; 
+		
+		Message msg = new Message();
+		msg.what = TestExecuteActivity.SHOW_GET_PROGRAMS_PARAMS_SET_DIALOG;
+		TestExecuteActivity.myHandler.sendMessage(msg);
+		synchronized (GET_PROGRAMS_PARAMS_SET_WAITING_LOCK) {
+			try {
+				GET_PROGRAMS_PARAMS_SET_WAITING_LOCK.wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/*
+	 * 获取关联节目信息参数
+	 */
+	public static String programName = ""; // 节目名称，根据名称进行模糊匹配，首字母模糊匹配
+	public final static Object GET_ASSOCIATEDPROGRAMS_PARAMS_SET_WAITING_LOCK = new Object();
+	/**
+	 * 获取关联节目信息参数设置对话框
+	 */
+	public void showGetAssociatedProgramsParamsSetDialog(){
+		printLog("TestObject.showGetAssociatedProgramsParamsSetDialog:be called");
+		startDateTime = ""; 
+		endDateTime = ""; 
+		programName = "";
+		
+		Message msg = new Message();
+		msg.what = TestExecuteActivity.SHOW_GET_ASSOCIATEDPROGRAMS_PARAMS_SET_DIALOG;
+		TestExecuteActivity.myHandler.sendMessage(msg);
+		synchronized (GET_ASSOCIATEDPROGRAMS_PARAMS_SET_WAITING_LOCK) {
+			try {
+				GET_ASSOCIATEDPROGRAMS_PARAMS_SET_WAITING_LOCK.wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	//
+	/**
+	 * 根据由CDSsearch到的XML获取直播节目播放URL
+	 * @param channels 网关中的频道（可通过getLiveChannelsInfo获取）
+	 * @return 直播频道"节目名称"(key),"节目播放URL"(value)
+	 */
+	public HashMap<String, String> getLiveChannelsPlayUrl (ArrayList<Channel> channels) {
+		printLog("TestObject.getLiveChannelsPlayUrl:be called");
+		HashMap<String, String> channelsMap = new HashMap<String, String>();
+		for(Channel channel:channels){
+			String channelName = channel.getDc_title();
+			String playUrl = channel.getRes();
+			channelsMap.put(channelName, playUrl);
+		}
+		return channelsMap;
+	}
+	
+	// 列表选择对话框同步锁
+	public final static Object LIST_DIALOG_LOCK = new Object();
+	// 被选中的item名称
+	public static String itemName = null;
+	public final static String LIST_DIALOG_DATA_KEY = "array";
+	/**
+	 * 弹出列表对话框，可选择具体Item
+	 * @param items 可供选择的项目
+	 * @return 选择的条目名称，如点击的是"取消"按钮，则返回null
+	 */
+	public String showListDialog(String[] items) {
+		printLog("TestObject.showListDialog:be called");
+		Message msg = new Message();
+		msg.what = TestExecuteActivity.SHOW_LIST_DIALOG;
+		Bundle bundle = new Bundle();
+		bundle.putStringArray(LIST_DIALOG_DATA_KEY, items);
+		msg.setData(bundle);
+		TestExecuteActivity.myHandler.sendMessage(msg);
+		synchronized (LIST_DIALOG_LOCK) {
+			try {
+				LIST_DIALOG_LOCK.wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return itemName;
+	}
+}

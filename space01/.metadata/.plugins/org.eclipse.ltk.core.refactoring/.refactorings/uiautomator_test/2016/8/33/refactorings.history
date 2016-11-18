@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;test.android.dvb.ChannelSearch&apos; to &apos;ChannelSearch_Smoke&apos;&#x0D;&#x0A;- Original project: &apos;uiautomator_test&apos;&#x0D;&#x0A;- Original element: &apos;test.android.dvb.ChannelSearch&apos;&#x0D;&#x0A;- Renamed element: &apos;test.android.dvb.ChannelSearch_Smoke&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ChannelSearch&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;test.android.dvb{ChannelSearch.java[ChannelSearch" matchStrategy="1" name="ChannelSearch_Smoke" qualified="false" references="true" similarDeclarations="false" stamp="1470989142243" textual="false" version="1.0"/>
+</session>

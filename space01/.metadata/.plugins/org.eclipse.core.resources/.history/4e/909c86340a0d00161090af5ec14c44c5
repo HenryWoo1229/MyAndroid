@@ -1,0 +1,227 @@
+package com.suma.test;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Scanner;
+
+public class BUG {
+
+	List<String> steps = new ArrayList<String>(); // 分步骤(最后合成为复现步骤用)
+	List<String> basic = new ArrayList<String>(); // 待写入Excel的要素
+	List<String> content = new ArrayList<String>(); // 主要内容
+	List<String> bugDisc = new ArrayList<String>(); // BUG描述的内容
+
+	static String title = ""; // 缺陷标题
+	String name = ""; // 缺陷发现者
+	String condition = ""; // 前置条件
+	String step = ""; // 复现步骤
+	String result = ""; // 实际结果
+	String expect = ""; // 预期结果
+	String probability = ""; // 复现概率
+	String discription = ""; // 缺陷描述
+	String bugDate = "";
+
+	static String baseDir = "/data/Bug_Center/"; // 基文件夹路径
+
+	/**
+	 * 设置缺陷描述的内容
+	 */
+	public void setDiscription() {
+		this.discription = probability + condition + step + result + expect;
+	}
+
+	/**
+	 * 设置缺陷基本元素的内容
+	 */
+	public void setBasic() {
+		this.basic.add(title);
+		this.basic.add(discription);
+		this.basic.add(name);
+		this.basic.add(bugDate);
+	}
+
+	/**
+	 * 负责搜集BUG各要素的基础信息
+	 * 
+	 * @param list
+	 */
+	public void collectInfo() {
+		String[] bug = new String[] { "复现概率", "前置条件", "复现步骤", "实际结果", "预期结果" };
+		String disc = "";
+		String str = "";
+
+		Scanner scanner = new Scanner(System.in);
+		for (int m = 0; m < basic.size(); m++) {
+
+			// ================写缺陷描述 start
+			if (basic.get(m).equals("缺陷描述")) {
+				for (int i = 0; i < bug.length; i++) {
+
+					if (bug[i].equals("复现步骤")) {
+						int k = 0;
+						while (true) {
+							System.out.println("===>请输入'复现步骤" + (k + 1)
+									+ "'的内容：");
+							steps.add(" " + (k + 1) + "、"
+									+ scanner.next().replace("�", "") + "\n");
+							System.out.println("===>是否添加新的步骤?(输入y添加，其他不添加)");
+							if (!scanner.next().equals("y")) {
+								for (int j = 0; j < steps.size(); j++)
+									step = step + steps.get(j);
+								step = "\n复现步骤:\n" + step;
+								break;
+							}
+							k++;
+						}
+						bugDisc.add(step);
+						continue;
+					}
+
+					if (bug[i].equals("复现概率")) {
+						System.out.println("===>请输入'复现概率(0-100, 直接输入1表示必现)'：");
+						while (true) {
+							String prob = scanner.next();
+							if (Integer.valueOf(prob) > 100
+									|| Integer.valueOf(prob) < 0) {
+								System.out.println("输入的概率超过了100或者小于0");
+								continue;
+							}
+							if (Integer.valueOf(prob) == 1)
+								prob = "必现";
+
+							bugDisc.add("复现概率:" + prob);
+							break;
+						}
+						continue;
+					}
+
+					System.out.println("===>请输入'" + bug[i] + "'：");
+					if (bug[i].equals("前置条件"))
+						bugDisc.add("\n前置条件:\n" + " "
+								+ scanner.next().replace("�", ""));
+					if (bug[i].equals("实际结果"))
+						bugDisc.add("实际结果:\n" + " "
+								+ scanner.next().replace("�", ""));
+					if (bug[i].equals("预期结果"))
+						bugDisc.add("\n预期结果:\n" + " "
+								+ scanner.next().replace("�", ""));
+
+				}
+				for (int i = 0; i < bugDisc.size(); i++) {
+					disc = disc + bugDisc.get(i);
+				}
+				content.add(disc);
+				continue;
+			}
+			// ================写缺陷描述 end
+			if (basic.get(m).equals("ID")) {
+				content.add("ID"); // 这里还取不到excel的行号，所以先占坑，后面补上
+				continue;
+			}
+			if (basic.get(m).equals("发现日期")) {
+				content.add(dateForBug());
+				continue;
+			}
+			if (basic.get(m).equals("缺陷生命周期")) {
+				content.add("01.新建");
+				continue;
+			}
+
+			System.out.println("===>请输入'" + basic.get(m) + "'：");
+			str = scanner.next().replace("�", "");
+			if (basic.get(m).equals("缺陷标题"))
+				title = str;
+			content.add(str);
+		}
+		showBug();
+	}
+
+	public void showBug() {
+
+		System.out.println();
+		System.out
+				.println("**********************BUG描述开始***********************");
+
+		for (int i = 0; i < basic.size(); i++) {
+			if(basic.get(i).equals("ID"))
+				continue;
+			System.out.println(basic.get(i) + ":");
+			System.out.println(content.get(i));
+			System.out.println("");
+		}
+		System.out
+				.println("**********************BUG描述结尾***********************");
+		System.out.println();
+
+	}
+
+	/**
+	 * 获取BUG发现日期
+	 * 
+	 * @return 年/月/日
+	 */
+	public String dateForBug() {
+		Calendar calendar = Calendar.getInstance();
+		int year = calendar.get(Calendar.YEAR); // 获取年;
+		int month = calendar.get(Calendar.MONTH); // 获取月;
+		int date = calendar.get(Calendar.DATE); // 获取天;
+		boolean flag = false;
+
+		// 处理系统日期是默认值的情况
+
+		while (true) {
+
+			if (year < 2016) {
+				System.out
+						.println("系统日期有误，请手动输入年月日，长度必须是8位，如：20160401 表示2016年4月1日");
+
+				try {
+					while (true) {
+						flag = true;
+						String str = new Scanner(System.in).next().replace("�",
+								"");
+						if (str.length() != 8) {
+							System.out.println("===>日期长度有误，请按要求重新输入...");
+							continue;
+						}
+
+						String getYear = str.substring(0, 4);
+						String getMonth = str.substring(4, 6);
+						String getDay = str.substring(6, 8);
+
+						// String[] strs = str.split(",");
+						// if (strs.length != 3) {
+						// System.out
+						// .println("输入的年月日格式不对，请确认逗号是英文字符，且输入格式为2016,3,24，请重新输入:");
+						// continue;
+						// }
+						// if (Integer.valueOf(strs[1]) < 1
+						// || Integer.valueOf(strs[1]) > 12) {
+						// System.out.println("输入的月份不在1-12范围内，请重新输入年月日:");
+						// continue;
+						// }
+						// if (Integer.valueOf(strs[2]) < 1
+						// || Integer.valueOf(strs[2]) > 31) {
+						// System.out.println("输入的月份不在1-31范围内，请重新输入年月日:");
+						// continue;
+						// }
+						year = Integer.valueOf(getYear);
+						month = Integer.valueOf(getMonth);
+						date = Integer.valueOf(getDay);
+						break;
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+			} else {
+				if (flag)
+					return year + "/" + month + "/" + date;
+				else
+					return year + "/" + (month + 1) + "/" + date;
+			}
+		}
+
+	}
+}

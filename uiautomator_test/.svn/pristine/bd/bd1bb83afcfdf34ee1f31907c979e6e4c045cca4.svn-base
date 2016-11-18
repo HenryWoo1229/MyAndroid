@@ -1,0 +1,15 @@
+package test.android.dvb;
+
+public class TestCaseDisc {
+
+	static final String test01_autoSearch = ""
+			+ " 测试目的：频道列表为空时，测试自动搜索主频点是否成功\n" 
+			+ " 步骤1: 判断频道列表是否为空，不为空则测试fail\n"
+			+ " 步骤2: 设置主频点，然后执行自动搜索，若搜索失败，则测试fail\n" 
+			+ " 步骤3: 搜索完成，切台到最小频道，中间随机频道，最大频道，切台失败则测试fail，否则pass\n\n";
+	
+	static String test02_getEPG = ""
+			+ " 测试目的：验证EPG搜索是否成功\n" 
+			+ " 步骤1: 执行主频点的自动搜索，搜索失败则测试fail\n"
+			+ " 步骤2: 依次打开几个不同频点的频道的EPG列表，如果有频道无EPG则测试fail，否则测试pass\n";
+}
