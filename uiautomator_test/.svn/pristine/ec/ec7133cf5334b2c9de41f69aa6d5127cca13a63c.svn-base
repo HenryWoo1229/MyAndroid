@@ -1,0 +1,292 @@
+package test.android.dvb.jingzhou;
+
+import test.android.tool.MyTestTools;
+import android.view.KeyEvent;
+
+import com.android.uiautomator.core.UiDevice;
+import com.android.uiautomator.core.UiObject;
+import com.android.uiautomator.core.UiObjectNotFoundException;
+import com.android.uiautomator.core.UiScrollable;
+import com.android.uiautomator.core.UiSelector;
+
+public class MyTestCaseHelper extends MyTestTools {
+
+	/**
+	 * 根据输入的数字按键字符串，依次按下按键，如key="251"，则按下按键2,5,1
+	 * 
+	 * @param key
+	 *            输入的数字按键
+	 */
+	public void pressNumKey(String key) {
+		UiDevice device = getUiDevice();
+		int[] list = new int[key.length()];
+		String tmp;
+
+		// 把key按单字符转换为int型数组
+		for (int i = 0; i < key.length(); i++) {
+			tmp = key.substring(i, i + 1);
+			list[i] = Integer.parseInt(tmp);
+		}
+
+		for (int i = 0; i < list.length; i++) {
+			switch (list[i]) {
+			case 0:
+				device.pressKeyCode(KeyEvent.KEYCODE_0);
+				break;
+
+			case 1:
+				device.pressKeyCode(KeyEvent.KEYCODE_1);
+				break;
+
+			case 2:
+				device.pressKeyCode(KeyEvent.KEYCODE_2);
+				break;
+
+			case 3:
+				device.pressKeyCode(KeyEvent.KEYCODE_3);
+				break;
+
+			case 4:
+				device.pressKeyCode(KeyEvent.KEYCODE_4);
+				break;
+
+			case 5:
+				device.pressKeyCode(KeyEvent.KEYCODE_5);
+				break;
+
+			case 6:
+				device.pressKeyCode(KeyEvent.KEYCODE_6);
+				break;
+
+			case 7:
+				device.pressKeyCode(KeyEvent.KEYCODE_7);
+				break;
+
+			case 8:
+				device.pressKeyCode(KeyEvent.KEYCODE_8);
+				break;
+
+			case 9:
+				device.pressKeyCode(KeyEvent.KEYCODE_9);
+				break;
+
+			}
+		}
+
+	}
+
+	/**
+	 * 按下菜单键，然后进入主频点设置菜单完成频点设置
+	 * 
+	 * @param device
+	 * @throws UiObjectNotFoundException
+	 *             找不到UI控件异常
+	 */
+	public void setMainFreq(String frequency) throws UiObjectNotFoundException {
+		printLog("setMainFreq enter");
+		getUiDevice().pressMenu();
+		new UiObject(new UiSelector().text("频道搜索")).click();
+		new UiObject(new UiSelector().text("主频点设置")).click();
+		getUiDevice().pressEnter();
+		sleep(1000);
+		pressNumKey(frequency); // 依次输入按键
+		getUiDevice().click(1100, 600); // 按键盘的确定
+		sleep(1000);
+
+	}
+
+	/**
+	 * 按下菜单键，设置完主频点并点击自动搜索，不对搜索结果做判断，判断搜索结果需立即调用isSearchOK()
+	 * 
+	 * @param frequency
+	 *            要设置的主频点
+	 * @throws UiObjectNotFoundException
+	 *             找不到UI控件异常
+	 */
+	public void autoSearch(String frequency) throws UiObjectNotFoundException {
+		printLog("autoSearch enter");
+		setMainFreq(frequency);
+		getUiDevice().pressBack();
+
+		// 执行自动搜索
+		new UiObject(new UiSelector().text("自动搜索")).click();
+
+	}
+
+	/**
+	 * 按下菜单键，进入手动搜索菜单设置完频点，并执行搜索，不对搜索结果做判断，判断搜索结果需立即调用isSearchOK()
+	 * 
+	 * @param frequency
+	 *            要搜索的频点
+	 * @throws UiObjectNotFoundException
+	 */
+	public void manualSearch(String frequency) throws UiObjectNotFoundException {
+		printLog("manualSearch enter");
+		getUiDevice().pressMenu();
+		new UiObject(new UiSelector().text("频道搜索")).click();
+		new UiObject(new UiSelector().text("手动搜索")).click();
+		sleep(500);
+		getUiDevice().pressEnter();
+		pressNumKey(frequency); // 依次输入按键
+		getUiDevice().click(1100, 600); // 按键盘的确定
+		sleep(1000);
+		getUiDevice().pressDPadDown();
+		getUiDevice().pressDPadDown();
+		getUiDevice().pressDPadDown();
+		getUiDevice().pressEnter();
+	}
+
+	/**
+	 * 判断是否搜索成功，方法先判断是否有搜索失败，如有则返回false；然后判断搜索完成，如没有则返回false，最后判断能否切台到001，
+	 * 切失败则返回false，否则返回true
+	 * 
+	 * 调用方法后不需要额外添加等待时间
+	 * 
+	 * @return true 表明搜索成功；
+	 * 
+	 *         false 表明搜索不成功
+	 * @throws UiObjectNotFoundException
+	 *             找不到UI控件异常
+	 */
+	public boolean isSearchOK() throws UiObjectNotFoundException {
+		// 判断是否搜索失败
+		UiObject searchFail = new UiObject(
+				new UiSelector().textContains("搜索失败"));
+		UiObject searchCompl = new UiObject(
+				new UiSelector().textContains("搜索完成"));
+
+		boolean yesFlag = false; // 搜索完成标志
+
+		int progress = 1;
+		//
+		while (true) {
+			printLog("search channel progress " + (progress++));
+			sleep(500);
+			if (!yesFlag && searchFail.exists()) { // 搜索失败，直接返回false
+				printLog("search failed !!!");
+				return false;
+			} else if (yesFlag || searchCompl.exists()) { // 搜索完成，继续判断频道实际数据是否存在
+				if (!yesFlag)
+					yesFlag = true;
+				printLog("search complete !!!");
+				pressNumKey("001");
+				printLog("change channel to 001");
+				if (new UiObject(new UiSelector().text("001")).exists()) { // 切台成功,返回true
+					printLog("channel 001 exists");
+					return true;
+				} else if (progress > 60) { // 重复切台的尝试，始终失败。返回false
+					printLog("channel 001 not exists");
+					return false;
+				}
+			}
+		}
+
+	}
+
+	/**
+	 * 判断是否存在频道数据
+	 * 
+	 * @return true 表明有频道数据；
+	 * 
+	 *         false 表明无频道数据
+	 * @throws UiObjectNotFoundException
+	 *             找不到UI控件异常
+	 */
+	public boolean isChannel() throws UiObjectNotFoundException {
+		UiObject chanEmpty = new UiObject(
+				new UiSelector().textContains("频道列表为空"));
+		// 频道列表不为空，表明已有节目存储
+		if (!chanEmpty.exists()) {
+			printLog("channel list exists");
+			return true;
+		}
+		printLog("channel list null");
+		return false;
+
+	}
+
+	/**
+	 * 按下菜单键，进入清除频道，输入密码后确定，不对清除结果做判断，判断结果需立即调用isClearDataOK()
+	 * 
+	 * @param password
+	 *            密码
+	 * @throws UiObjectNotFoundException
+	 *             找不到UI控件异常
+	 */
+	public void clearChannelData(String password)
+			throws UiObjectNotFoundException {
+		printLog("clearChannelData enter");
+		getUiDevice().pressMenu();
+		new UiObject(new UiSelector().text("频道管理")).click();
+		sleep(500);
+		new UiObject(new UiSelector().text("清除频道"))
+				.clickAndWaitForNewWindow(1000);
+		getUiDevice().pressEnter();
+		pressNumKey(password);
+		getUiDevice().pressBack();
+		new UiObject(new UiSelector().text("确定")).click();
+	}
+
+	/**
+	 * 判断清除数据是否成功，需要与清除数据的方法clearChannelData搭配使用
+	 * 
+	 * @return true 清除数据成功，捕获到“正在清除数据”和“清除数据成功”的提示，并且频道数据为空;
+	 * 
+	 *         false 清除数据失败，上述提示有一个没捕获到，或者捕获到了以后，判断频道数据不为空
+	 * @throws UiObjectNotFoundException
+	 */
+	public boolean isClearDataOK() throws UiObjectNotFoundException {
+		UiObject ui1 = new UiObject(new UiSelector().text("正在清除数据"));
+		UiObject ui2 = new UiObject(new UiSelector().text("清除数据成功"));
+		boolean ui1flag = false;
+		boolean ui2flag = false;
+
+		int i = 0;
+		while (true) {
+			printLog("clear data progress " + (i++));
+			sleep(200);
+			if (ui1.exists())
+				ui1flag = true;
+			if (ui2.exists())
+				ui2flag = true;
+
+			// ===============================分割线=============================
+
+			if (ui1flag && ui2flag) { // 捕获到2个提示信息
+				PressBacks(5); // 连续按几次back键
+				if (isChannel()) // 频道数据不为空
+					return false;
+				else {
+					return true;
+				}
+			} else if (i > 30) { // 重复查找，如果仍然没找到再抛出失败提示
+				if (!ui1flag && ui2flag) {
+					printLog("no 'clearing data' text");
+					return false;
+				} else if (!ui2flag && ui1flag) {
+					printLog("no 'clear data success' text");
+					return false;
+				} else if (!ui2flag && !ui1flag) {
+					printLog("no 'clear data success' and 'clearing data' text");
+					return false;
+				}
+			}
+
+		}
+	}
+
+	/**
+	 * 重复按下Back键
+	 * 
+	 * @param times
+	 *            重复按键次数
+	 */
+	public void PressBacks(int times) {
+		int i = 0;
+		while (i < times) {
+			getUiDevice().pressBack();
+			printLog("Press Key Back.");
+			i++;
+		}
+	}
+}

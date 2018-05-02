@@ -1,0 +1,207 @@
+package jing.love.i;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+
+public class MyBaby {
+	private static final String CUR_PATH = System.getProperty("user.dir");
+	private static ArrayList<String> dirs = new ArrayList<String>();
+	private static ArrayList<String> fs = new ArrayList<String>();
+	private static ArrayList<String> dirNames = new ArrayList<String>();
+	private static ArrayList<String> fileNames = new ArrayList<String>();
+//	private static String newDir = CUR_PATH + File.separator + "重复的文件和文件夹";
+	private static String newDir = CUR_PATH;
+
+	public MyBaby() {
+	}
+
+	public static void main(String[] args) {
+		System.out.println("=============Love My Baby Jing By Hao============");
+		System.out.println("=============Love My Baby Jing By Hao============");
+		System.out.println("=============Love My Baby Jing By Hao============");
+		traverseFolder2(CUR_PATH);
+		try {
+			doSomething(dirs, dirNames, 0);
+			doSomething(fs, fileNames, -1);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				System.in.read();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public static void doSomething(ArrayList<String> all,
+			ArrayList<String> names, int isDir) throws IOException {
+		int total = all.size();
+		String str;
+		if (isDir == 0) {
+			str = "文件夹";
+		} else {
+			str = "文件";
+		}
+
+		// System.out.println("================所有的"+str);
+		// for(String s: all)
+		// System.out.println(s);
+
+		if (total == 0) {
+			System.out.println("目录及子目录下没有" + str);
+			return;
+		}
+
+		for (int i = 0; i < all.size(); i++) {
+			String name1 = all.get(i);
+			for (int j = i + 1; j < all.size(); j++) {
+				String name2 = all.get(j);
+				if (findSame(name1, name2))
+					names.add(name2);
+			}
+
+			int in = names.size();
+			if (in > 0) {
+				String lastName = names.get(in - 1);
+				if (findSame(lastName, name1)) {
+					names.add(name1);
+				}
+
+				int last = names.size() - 1;
+				String n = names.get(last);
+				for (int k = 0; k < all.size(); k++) {
+					if (findSame(n, all.get(k))) {
+						all.remove(k);
+						k--; // =============================
+						i = -1; // ======================
+					}
+				}
+			}
+		}
+
+		int after = all.size();
+		int ret = names.size();
+		if (ret != 0) {
+			System.out.println("\n================重复的" + str);
+			for (String s : names) {
+				System.out.println(s);
+			}
+
+			
+//			File d = new File(newDir);
+//			if (d.exists()) 
+//				d.delete();
+//			d.mkdir();
+			
+
+			boolean flag = false;
+			for (int m = 0; m < names.size() - 1;) {
+				if(flag)
+					break;
+				
+				String ele = names.get(m);
+				OutputStreamWriter writer = writeFile(dealName(ele));
+				writer.write(ele + "\r\n");
+
+				for (int n = m + 1; n < names.size(); n++) {
+					System.out.println("m="+m);
+					System.out.println("n="+n);
+					if (findSame(ele, names.get(n))) {
+						writer.write(names.get(n) + "\r\n");
+						writer.flush();
+
+					} else{
+						m = n;
+						writer.close();
+						break;
+					}
+
+					if (n == names.size() - 1){
+						flag = true;
+						writer.close();
+					}
+				}
+			}
+		} else {
+			System.out.println("\n目录及子目录下没有重复的" + str);
+		}
+
+		if (after + ret == total)
+			System.err
+					.println("完成!!!!!!!老婆快说爱我................................");
+		else {
+			System.err.println("error!!!");
+		}
+
+	}
+
+	public static String dealName(String name) {
+		int index = name.lastIndexOf("\\");
+		String subname1 = name.substring(index + 1, name.length());
+		if (subname1.indexOf(".") == -1) {
+			subname1 = "文件夹 " + subname1 + ".txt";
+		}
+		return subname1;
+	}
+
+	public static OutputStreamWriter writeFile(String fileName)
+			throws IOException {
+		File file = new File(newDir + File.separator + fileName);
+		if (file.exists())
+			file.delete();
+		file.createNewFile();
+		OutputStreamWriter writer = getWriter(file);
+
+		return writer;
+	}
+
+	public static OutputStreamWriter getWriter(File file)
+			throws UnsupportedEncodingException, FileNotFoundException {
+		return new OutputStreamWriter(new FileOutputStream(file), "GBK");
+	}
+
+	public static boolean findSame(String name1, String name2) {
+		int index1 = name1.lastIndexOf("\\");
+		int index2 = name2.lastIndexOf("\\");
+		String subname1 = name1.substring(index1 + 1, name1.length());
+		String subname2 = name2.substring(index2 + 1, name2.length());
+
+		if (subname1.equals(subname2))
+			return true;
+
+		return false;
+	}
+
+	public static void traverseFolder2(String path) {
+
+		File file = new File(path);
+		if (file.exists()) {
+			File[] files = file.listFiles();
+			if (files.length == 0) {
+				// System.out.println("文件夹是空的!");
+				return;
+			} else {
+				for (File file2 : files) {
+					if (file2.isDirectory()) {
+						dirs.add(file2.getAbsolutePath()); // 获取所有文件夹
+						// System.out.println("文件夹: " +
+						// file2.getAbsolutePath());
+						traverseFolder2(file2.getAbsolutePath());
+					} else {
+						fs.add(file2.getAbsolutePath()); // 获取所有文件
+						// System.out.println("文件: " + file2.getAbsolutePath());
+					}
+				}
+			}
+		} else {
+			// System.out.println("文件不存在!");
+		}
+	}
+}

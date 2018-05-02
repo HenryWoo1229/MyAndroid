@@ -1,0 +1,1 @@
+include ':app', ':layouttest', ':myapplication2', ':henryquiz', ':crime', ':hellomoon'

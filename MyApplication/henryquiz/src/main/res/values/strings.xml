@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">HenryQuiz</string>
+    <string name="question_text1">中国人口世界最多？</string>
+    <string name="question_text2">韩国人口世界最多？</string>
+    <string name="question_text3">日本人口世界最多？</string>
+    <string name="show_answer_text">你确定要看答案吗？</string>
+    <string name="true_button">True</string>
+    <string name="false_button">False</string>
+    <string name="next_button">Next</string>
+    <string name="pre_button">Pre</string>
+    <string name="cheat_button">Cheat</string>
+    <string name="show_answer_button">ShowAnswer</string>
+    <string name="correct_toast">正确!</string>
+    <string name="incor_toast">错误!</string>
+    <string name="judgement_toast">你偷看了答案!</string>
+
+</resources>

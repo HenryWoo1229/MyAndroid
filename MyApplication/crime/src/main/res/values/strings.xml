@@ -1,0 +1,20 @@
+<resources>
+    <string name="crime_title_hint">输入crime</string>
+    <string name="app_name">Crime</string>
+    <string name="crime_details_label_text">DETAILS</string>
+    <string name="crime_title_text">TITLE</string>
+    <string name="crime_solved_checkbox">solved ?</string>
+    <string name="crimes_title">Crimes</string>
+    <string name="date_picker_title">Date of Crime</string>
+    <string name="choose_date">Date</string>
+    <string name="choose_time">Time</string>
+    <string name="choose_msg">请选择需要修改的内容</string>
+    <string name="new_crime">新建Crime</string>
+    <string name="delete_crime">删除Crime</string>
+    <string name="show_subtitle">查看子标题</string>
+    <string name="hide_subtitle">隐藏子标题</string>
+    <string name="subtitle">这是一个子标题</string>
+    <string name="empty_btn">点击新建Crime</string>
+    <string name="empty_text">抱歉，您还没有Crime.</string>
+    <string name="save_crimes">正在保存Crimes...</string>
+</resources>

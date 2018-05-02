@@ -1,0 +1,1161 @@
+root@android:/data # logcat -c ;logcat -v time                                 
+--------- beginning of /dev/log/main
+03-25 14:00:14.678 I/System.out( 2475): [DEBUG QueryRequest] execute doQuery
+03-25 14:00:14.679 D/SIDatabase( 2475): ^^^^Num of Network:0
+03-25 14:00:16.779 D/RemoteIME( 2444): RemoteIME--> onKeyDown keyCode = 19
+03-25 14:00:16.780 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_DPAD_UP, scanCode=103, metaState=0, flags=0x8, repeatCount=0, eventTime=288253, downTime=288253, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:16.781 D/PlayActivity( 2708): the pressed keyCode is:19:and the pair state is:-1:time:288258:isEventDeal:falsefocus view:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:16.781 D/PlayActivity( 2708): onKeyDown dealADLink result: false
+03-25 14:00:16.782 D/PlayActivity( 2708): requestAdv adv advType :6:channel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]
+03-25 14:00:16.782 D/EsgBaseDealer( 2475): getAdvs adType:6:locator:[EsgLocator@404fff]oNetID[16]tsID[320]serviceID[324]freq[650000]
+03-25 14:00:16.783 D/EsgRunner( 2475): getAdvs reqType:6:locator:[EsgLocator@404fff]oNetID[16]tsID[320]serviceID[324]freq[650000]
+03-25 14:00:16.783 D/PlayActivity( 2708): getAdvs end,advType:6:advs:null
+03-25 14:00:16.783 D/PlayActivity( 2708): dealMessageTile channel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]
+03-25 14:00:16.783 D/PlayActivity( 2708): dealMessageTile serviceName:F275CH4-赵建斌测试频道4
+03-25 14:00:16.786 D/PlayActivity( 2708): timeShiftTag:android.widget.TextView{4136d810 V.ED.... ......ID 960,225-960,259 #7f0a012e app:id/playcontrol_message_tile_timeshift_tag}
+03-25 14:00:16.786 E/DataBaseManager( 2708): isChannelIvideoShift no exist channel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]
+03-25 14:00:16.789 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{40d8eb28 V.E..... ......ID 0,340-1280,720 #7f0a011a app:id/playcontrol_message_tile}, oldState is :4, destiState is :0, isNeedAct is :true, type is :6
+03-25 14:00:16.795 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{41945918 V.E..... ......ID 1024,50-1189,132 #7f0a010d app:id/playcontrol_channel_num}, oldState is :4, destiState is :0, isNeedAct is :true, type is :0
+03-25 14:00:16.880 D/RemoteIME( 2444): RemoteIME--> onKeyUp keyCode = 19
+03-25 14:00:16.881 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_UP, keyCode=KEYCODE_DPAD_UP, scanCode=103, metaState=0, flags=0x8, repeatCount=0, eventTime=288354, downTime=288253, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F....ID 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:16.881 D/PlayActivity( 2708): the released keyCode is:19:time:288358
+03-25 14:00:16.882 D/PlayActivity( 2708): onKeyUp,selectChannel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]
+03-25 14:00:16.882 D/PlayActivity( 2708): processReleasedUpOrDown,selectChannel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]
+03-25 14:00:16.983 D/PlayActivity( 2708): switchChannel, enter time:288460
+03-25 14:00:16.983 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.TextView{419ce3d8 I.ED.... ......ID 54,90-763,139 #7f0a0113 app:id/playcontrol_preview_note}, oldState is :4, destiState is :4, isNeedAct is :true, type is :0
+03-25 14:00:16.983 D/PlayActivity( 2708): the notes is::visible is:1:the dialog visible is:4
+03-25 14:00:16.984 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{419c1520 I.E..... ......ID 880,160-1180,280 #7f0a0110 app:id/playcontrol_notes_dialog}, oldState is :4, destiState is :4, isNeedAct is :true, type is :0
+03-25 14:00:16.984 D/PlayActivity( 2708): start to deal the fingermark:
+03-25 14:00:16.984 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.TextView{419cfe38 I.ED.... ......ID 50,150-50,190 #7f0a0117 app:id/playcontrol_finger_text}, oldState is :4, destiState is :4, isNeedAct is :false, type is :0
+03-25 14:00:16.984 D/PlayActivity( 2708): requestFlywordDisplay
+03-25 14:00:16.984 D/PlayActivity( 2708): requestAdv adv advType :11:channel:null
+03-25 14:00:16.985 D/EsgBaseDealer( 2475): getAdvs adType:11:locator:[EsgLocator@404fff]oNetID[16]tsID[320]serviceID[324]freq[650000]
+03-25 14:00:16.985 D/EsgRunner( 2475): getAdvs reqType:11:locator:[EsgLocator@404fff]oNetID[16]tsID[320]serviceID[324]freq[650000]
+03-25 14:00:16.985 D/PlayActivity( 2708): getAdvs end,advType:11:advs:null
+03-25 14:00:16.986 D/PlayActivity( 2708): getSoundVolume,:volume:60
+03-25 14:00:16.987 D/PlayNgbDealer( 2475): findPlayer index:0:findType:2:channelIndex:0
+03-25 14:00:16.987 D/PlayNgbDealer( 2475): findPlayer index:0:findType:0:channelIndex:0
+03-25 14:00:16.987 I/System.out( 2475): [DEBUG SIESRequest] execute doQuery
+03-25 14:00:16.988 V/SUMA    ( 2475): [dvb_client_dbs] find srv flag[1] 
+03-25 14:00:16.988 V/SUMA    ( 1549): [dvb_server_dbs]TRANS_CODE_DBS_FIND_SRV_INFO flag[1] 
+03-25 14:00:16.989 D/PlayExcuter( 2708): notifyPlay type:0:curType:-2:cancelType:-1:cancelVideoType:-1:isResetData:false:task:[PlayDirectTask@427e8148]playTaskType[0]playType[0]isViewMode[false]isEcmSet[true]playerIndex[0]tunerIndex[0]channel[[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]]:this.Task:null:indexs:null
+03-25 14:00:16.990 D/PlayerManager( 2708): addPlayTask playTask:[PlayDirectTask@427e8148]playTaskType[0]playType[0]isViewMode[false]isEcmSet[true]playerIndex[0]tunerIndex[0]channel[[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]]:state:0
+03-25 14:00:16.990 I/SIDatabase( 2475): nRetrieveSIElementaryStreams.objectArray epesi->type=1  
+03-25 14:00:16.990 D/PlayExcuter( 2708): mergeTask sourceTask:null:destiTask:[PlayDirectTask@427e8148]playTaskType[0]playType[0]isViewMode[false]isEcmSet[true]playerIndex[0]tunerIndex[0]channel[[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]]
+03-25 14:00:16.990 D/PlayExcuter( 2708): excuteTask task:[PlayDirectTask@427e8148]playTaskType[0]playType[0]isViewMode[false]isEcmSet[true]playerIndex[0]tunerIndex[0]channel[[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]]
+03-25 14:00:16.990 D/PlayExcuter( 2708): excuteTask curExcuter:com.suma.midware.prop.play.PlayDirectExcuter@427ee688
+03-25 14:00:16.990 I/SIDatabase( 2475): nRetrieveSIElementaryStreams.objectArray epesi->type=1  
+03-25 14:00:16.991 D/PlayDirectExcuter( 2708): play task:[PlayDirectTask@427e8148]playTaskType[0]playType[0]isViewMode[false]isEcmSet[true]playerIndex[0]tunerIndex[0]channel[[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]]:curType:-1
+03-25 14:00:16.991 D/PlayNgbDealer( 2475): findPlayer index:0:findType:0:channelIndex:0
+03-25 14:00:16.991 D/PlayNgbDealer( 2475): postEvent event:org.ngb.broadcast.dvb.si.SISuccessRetrieveEvent[source=class org.ngb.broadcast.dvb.si.SIRetrieveEvent]
+03-25 14:00:16.991 D/SIDatabase( 2475): setFrequence ,frequence 650000, result 0
+03-25 14:00:16.992 D/PlayExcuter( 2708): dealPlayStop task:[PlayDirectTask@427e8148]playTaskType[0]playType[0]isViewMode[false]isEcmSet[true]playerIndex[0]tunerIndex[0]channel[[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]]:curType:-1
+03-25 14:00:16.992 D/EpgBackExcuter( 2708): addPFTask task:com.suma.midware.prop.epg.a.c@427f1be8
+03-25 14:00:16.992 D/PlayNgbDealer( 2475): playStop index:0:stopType:0:stopMode:0:isEcmSet:false:isCaRelease:false:isStreamReset:true
+03-25 14:00:16.992 I/System.out( 2475): [ERROR EPGreq] Nothing to cancel!
+03-25 14:00:16.993 V/SUMA    ( 2475): [dvb_client_dbs] find srv flag[1] 
+03-25 14:00:16.993 I/System.out( 2475): [DEBUG EPGQuery] send request msg...:org.ngb.toolkit.epg.EPGManager$4@40e1c408
+03-25 14:00:16.993 V/SUMA    ( 1549): [dvb_server_dbs]TRANS_CODE_DBS_FIND_SRV_INFO flag[1] 
+03-25 14:00:16.993 D/EpgPFDirectReceiver( 2475): postEvent event:org.sumavision.epg.FailureEvent[source=org.sumavision.epg.EGPRequestImpl@40dfa240]
+03-25 14:00:16.993 D/EpgPFDirectReceiver( 2475): postEvent code:1
+03-25 14:00:16.993 D/ViewUtil( 2708): dealBgCarouselAd,advType:false:needDisplay:false:adv:null
+03-25 14:00:16.994 D/ViewUtil( 2708): backExcute currentMediaIndex0:length:0:playMode:-1
+03-25 14:00:16.994 I/System.out( 2475): [DEBUG NGB_FRONT_PANEL] Invoke the method clear to clear the content on the front panel
+03-25 14:00:16.994 D/EpgPFDirectReceiver( 2475): start channel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]:overTime:0:defaultOverTime:3000
+03-25 14:00:16.994 V/SUMA    ( 1549): [adapter][info] rocme_adapter_frontpanel_show_time:on_off=0
+03-25 14:00:16.994 V/PT>     ( 1549): >> HI3716M_WARN:rocme_porting_frontpanel_show_led- 
+03-25 14:00:16.994 V/PT>     ( 1549): not support 
+03-25 14:00:16.994 I/System.out( 2475): [DEBUG EPGManager] [EPGManager]-PF-retrieve service with 1st method !
+03-25 14:00:16.994 D/EPGmanager( 2475): getProgramServiceNFollowing f.frequency:650000   ,f.type: 68 ,setFrequence 0
+03-25 14:00:16.994 D/FrontPanelNative( 2475): the String length 0, the max 4
+03-25 14:00:16.994 V/SUMA    ( 1549): [dvb_server_dbs] EIT_GET_TABLE,err[1],[0x10][0x140][0x144]
+03-25 14:00:16.994 V/SUMA    ( 1549): [eit] dvb_si_eit_dbs_get_table() time=2016-03-25 13:55:26
+03-25 14:00:16.994 V/SUMA    ( 1549): [eit] dvb_si_eit_dbs_get_table() leave, chanid=0 freq=650000, onid=0x10, tsid=0x140, svid=0x144, type=0x0
+03-25 14:00:16.994 V/SUMA    ( 1549): [adapter][info] rocme_adapter_frontpanel_show_time:on_off=0
+03-25 14:00:16.994 V/PT>     ( 1549): >> HI3716M_WARN:rocme_porting_frontpanel_show_led- 
+03-25 14:00:16.994 V/PT>     ( 1549): not support 
+03-25 14:00:16.994 D/EPGmanager( 2475): [EPGManagerNative-JNI]          ProgramServiceNFollowing Finish checking, and totalLen = 2, selectLen=2
+03-25 14:00:16.995 V/SUMA    ( 2475): [dvb_client_dbs] find srv flag[1] 
+03-25 14:00:16.995 V/SUMA    ( 1549): [dvb_server_dbs]TRANS_CODE_DBS_FIND_SRV_INFO flag[1] 
+03-25 14:00:16.995 D/EPGmanager( 2475): NAMELEN=21, TEXTLEN=0
+03-25 14:00:16.996 I/System.out( 2475): [DEBUG NGB_FRONT_PANEL] To display text on the front panel, and the text is:P004::the align is 0--align_center
+03-25 14:00:16.997 V/SUMA    ( 1549): [adapter][info] rocme_adapter_frontpanel_show_time:on_off=0
+03-25 14:00:16.997 V/PT>     ( 1549): >> HI3716M_WARN:rocme_porting_frontpanel_show_led- 
+03-25 14:00:16.997 V/PT>     ( 1549): not support 
+03-25 14:00:16.997 D/EPGmanager( 2475): NAMELEN=20, TEXTLEN=0
+03-25 14:00:16.997 D/PlayActivity( 2708): switchChannel,55555, end   time:288474
+03-25 14:00:16.997 D/EPGmanager( 2475): [EPGManagerNative-JNI]Begin to construct ProgramService, srvid is 324
+03-25 14:00:16.998 D/PlayNgbDealer( 2475): postEvent type:2:pid:515:streamType:2:appType:53:streamTag:3:curTag:3
+03-25 14:00:16.998 D/PlayActivity( 2708): dealMessageTile channel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]
+03-25 14:00:16.998 D/PlayActivity( 2708): dealMessageTile serviceName:F275CH4-赵建斌测试频道4
+03-25 14:00:16.998 D/SIDatabase( 2475): setFrequence ,frequence 650000, result 0
+03-25 14:00:16.998 V/SUMA    ( 2475): [dvb_client_dbs] find srv flag[1] 
+03-25 14:00:16.998 V/SUMA    ( 2475): [dvb_client_dbs] find srv flag[1] 
+03-25 14:00:16.998 V/SUMA    ( 1549): [dvb_server_dbs]TRANS_CODE_DBS_FIND_SRV_INFO flag[1] 
+03-25 14:00:16.998 V/SUMA    ( 1549): [dvb_server_dbs]TRANS_CODE_DBS_FIND_SRV_INFO flag[1] 
+03-25 14:00:16.999 I/System.out( 2475): [DEBUG EPGQueryThread] Add epg request:org.ngb.toolkit.epg.EPGManager$4@40e76cf8
+03-25 14:00:17.000 D/PlayActivity( 2708): timeShiftTag:android.widget.TextView{4136d810 V.ED.... ......ID 960,225-960,259 #7f0a012e app:id/playcontrol_message_tile_timeshift_tag}
+03-25 14:00:17.000 E/DataBaseManager( 2708): isChannelIvideoShift no exist channel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]
+03-25 14:00:17.001 I/System.out( 2475): [DEBUG EPGQuery] send request msg...:org.ngb.toolkit.epg.EPGManager$4@40e76cf8
+03-25 14:00:17.001 D/EpgPFDirectReceiver( 2475): postEvent event:org.sumavision.epg.SuccessEvent[source=org.sumavision.epg.EGPRequestImpl@40ddc0e8]
+03-25 14:00:17.001 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{40d8eb28 V.E..... ......ID 0,340-1280,720 #7f0a011a app:id/playcontrol_message_tile}, oldState is :0, destiState is :0, isNeedAct is :false, type is :6
+03-25 14:00:17.001 D/PlayNgbDealer( 2475): postEvent type:1:pid:680:streamType:4:appType:9:streamTag:168:curTag:168
+03-25 14:00:17.003 D/EpgPFReceiver( 2475): sendPFInfo channel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]:info:com.suma.midware.prop.epg.mode.PFInfo@40e00f78:size:1
+03-25 14:00:17.005 D/EpgBackExcuter( 2708): sendPFInfo find channel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]:taskSize:1dealingSize:1
+03-25 14:00:17.006 D/EpgBackExcuter( 2708): handlePFTask end1
+03-25 14:00:17.006 D/PlayNgbDealer( 2475): findPlayer index:0:findType:0:channelIndex:0
+03-25 14:00:17.006 D/Media   ( 2475): ^^^^player setStopMode.
+03-25 14:00:17.007 V/SUMA    ( 1549): [NGBM] ngb_media_player_set_video_stop_mode enter !!! hplayer=0xff0000
+03-25 14:00:17.007 V/SUMA    ( 1549): [NGBM] ngb_media_player_set_video_stop_mode leave hplayer=0xff0000 ret=0 mode=0
+03-25 14:00:17.007 I/System.out( 2475): [ERROR MediaSelectControlImpl] empty param stopping!
+03-25 14:00:17.007 D/Media   ( 2475): ^^^^player stop.
+03-25 14:00:17.008 V/SUMA    ( 1549): [NGBM] ngb_media_player_stop enter !!! hplayer=0xff0000
+03-25 14:00:17.008 V/SUMA    ( 1549): [NGBM] context_resman_stop Roc_Timer_Stop !!!
+03-25 14:00:17.008 V/SUMA    ( 1549): [NGBM] context_resman_stop context_resman_stop mode=0 !!!
+03-25 14:00:17.015 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_audio_stop- 
+03-25 14:00:17.015 V/PT>     ( 1549): _dvb_audio_stop ok 
+03-25 14:00:17.042 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_video_stop- 
+03-25 14:00:17.042 V/PT>     ( 1549): _dvb_video_stop ok keep_last_pic=1
+03-25 14:00:17.042 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_av_modify_pid- 
+03-25 14:00:17.042 V/PT>     ( 1549): SET aud_pid = 0x1fff 
+03-25 14:00:17.042 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_av_modify_pid- 
+03-25 14:00:17.042 V/PT>     ( 1549): SET vid_pid = 0x1fff 
+03-25 14:00:17.042 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_av_modify_pid- 
+03-25 14:00:17.042 V/PT>     ( 1549): SET pcr_pid = 0x1fff 
+03-25 14:00:17.042 V/SUMA    ( 1549): [NGBM] media_event_cbk ngbplayer[0xff0000] event=NGB_MEDIA_EVENT_STOP_SUCCESS
+03-25 14:00:17.042 V/SUMA    ( 1549): [NGBM] ngb_media_player_stop leave hplayer=0x00ff0000 ret=0
+03-25 14:00:17.042 D/Media   ( 2475): ))))))))))))))((((ngb-media-player-event:19600010, 0
+03-25 14:00:17.042 D/Media   ( 2475): [[[[[[[[[]]]]]]]]]]ngb-media-player-event:12b128a
+03-25 14:00:17.042 D/PlayNgbDealer( 2475): onPlayerEvent event:org.ngb.media.PlayerEvent[source=class org.ngb.media.PlayerEvent]
+03-25 14:00:17.042 D/PlayBaseDealer( 2475): sendPlayEvent index:0:type:3:reason:-1:rate:0.0:size:0
+03-25 14:00:17.043 D/PlayActivity( 2708): audioAdHandler.msg{ what=0 when=-49ms }
+03-25 14:00:17.043 D/PlayActivity( 2708): playHandler.msg{ what=2 when=-37ms obj=[Ljava.lang.Object;@427f67c8 }
+03-25 14:00:17.043 D/TunerNgbDealer( 2475): scanFreqImpl tunerIndex:0:channel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]:isAsy:true
+03-25 14:00:17.043 D/TunerNgbDealer( 2475): reserveTuner tunerIndex:0:isTunerReserves[tunerIndex]:true
+03-25 14:00:17.043 D/PlayActivity( 2708): dealPfUpdate msg{ what=2 when=-37ms obj=[Ljava.lang.Object;@427f67c8 }:requestChanel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]:curChannel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]:(PFInfo) data[1]com.suma.midware.prop.epg.mode.PFInfo@427f48e8
+03-25 14:00:17.044 D/PlayActivity( 2708): dealPfUpdate currentPfChannel[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]
+03-25 14:00:17.044 D/PlayActivity( 2708): dealMessageTile channel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]
+03-25 14:00:17.044 D/PlayActivity( 2708): dealMessageTile serviceName:F275CH4-赵建斌测试频道4
+03-25 14:00:17.044 D/tuning  ( 2475): ^^^^ts.type=0x44
+03-25 14:00:17.044 D/tuning  ( 2475): ^^^^call tuner with type=0x44, freq=650000, symbolRate=6875, modulation=3,pos = 0
+03-25 14:00:17.045 D/tuning  ( 2475): ^^^^Calling tune with freq=650000, symbol=6875, modulation=3
+03-25 14:00:17.045 V/SUMA    ( 1549): [resman-s][onTransact 211]code[0x12000100] client pid = 2475
+03-25 14:00:17.045 V/SUMA    ( 1549): >> Roc_Tuner_CableScanning beginning : time = 288522 ms 
+03-25 14:00:17.045 I/System.out( 2475): [DEBUG networkInterface] You see: NI listener's size=1
+03-25 14:00:17.045 V/SUMA    ( 1549): [resman-s][onTransact 1542]leave transact client pid = 2475
+03-25 14:00:17.045 V/SUMA    ( 2475): [resman-c][Roc_Tuner_CableScanning 805]leave !!!
+03-25 14:00:17.045 D/tuning  ( 2475): cable. result=0
+03-25 14:00:17.045 D/TunerNgbDealer( 2475): receiveNIEvent event:org.davic.net.tuning.NetworkInterfaceTuningEvent[source=org.davic.net.tuning.NetworkInterface@40df6fd8]
+03-25 14:00:17.046 D/PlayActivity( 2708): timeShiftTag:android.widget.TextView{4136d810 V.ED.... ......ID 960,225-960,259 #7f0a012e app:id/playcontrol_message_tile_timeshift_tag}
+03-25 14:00:17.047 E/DataBaseManager( 2708): isChannelIvideoShift no exist channel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]
+03-25 14:00:17.047 D/PlayNgbDealer( 2475): playStart index:0:playType:0:isLock:false:audioIndex:0:audioPID:-1:videoIndex:0:videoPID:-1:isEcmSet:true:channel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]
+03-25 14:00:17.047 D/PlayNgbDealer( 2475): findPlayer index:0:findType:1:channelIndex:0
+03-25 14:00:17.047 D/PlayNgbDealer( 2475): waitPlayAsyTask channel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]
+03-25 14:00:17.047 D/PlayNgbDealer( 2475): waitPlayAsyTask isGetting:false:isEqual:true
+03-25 14:00:17.048 D/PlayNgbDealer( 2475): playStart audioInfos size:1:audioPid:680:audioType:4:audioTag:168
+03-25 14:00:17.048 D/PlayNgbDealer( 2475): playStart videoInfos size:1:videoPid:515:videoType:2:videoTag:3
+03-25 14:00:17.048 D/PlayNgbDealer( 2475): playStart locator:dvb://10.140.144?apid=2a8&atype=4&vpid=203&vtype=2&pcrpid=1ffe&freq=650000:sigleLocator:null
+03-25 14:00:17.048 D/Media   ( 2475): ^^^^player setPlayerUrl.
+03-25 14:00:17.049 V/SUMA    ( 1549): [NGBM] ngb_media_player_set_url enter !!! hplayer=0xff0000 url=dvb://10.140.144?apid=2a8&atype=4&vpid=203&vtype=2&pcrpid=1ffe&freq=650000
+03-25 14:00:17.049 V/SUMA    ( 1549): [NGBM] context_resman_handle resman player create ok, addr[0x40d242d8]!
+03-25 14:00:17.049 V/SUMA    ( 1549): [NGBM] context_resman_ioctl PLAYER_CONTEXT_CMD_URL_SET enter , channel[0]!!!
+03-25 14:00:17.049 V/SUMA    ( 1549): [NGBM] context_resman_parase_url url[dvb://10.140.144?apid=2a8&atype=4&vpid=203&vtype=2&pcrpid=1ffe&freq=650000],channel[0]
+03-25 14:00:17.049 V/SUMA    ( 1549): [dvb_stream_to_roc_res_tag]dvb_type[0x4] tag[0x0]
+03-25 14:00:17.049 V/SUMA    ( 1549): [NGBM] url_parase_brd_args pid[0x2a8],advb[0x4]audio type[0x8],valid[0]
+03-25 14:00:17.049 V/SUMA    ( 1549): [NGBM] context_resman_parase_service onid=0x10 tsid=0x140 svid=0x144 hsrv=0xc002 freq=650000 !
+03-25 14:00:17.049 V/SUMA    ( 1549): [NGBM] url_args_print prepare  chan=0 freq=650000 onid=0x10 tsid=0x140 svid=0x144 bvalid=1 apid=0x2a8 atype=0x4 vpid=0x203 vtype=0x2
+03-25 14:00:17.049 V/SUMA    ( 1549): [NGBM] media_event_cbk ngbplayer[0xff0000] event=NGB_MEDIA_EVENT_URL_VALID
+03-25 14:00:17.049 D/Media   ( 2475): ))))))))))))))((((ngb-media-player-event:19600000, 0
+03-25 14:00:17.049 D/Media   ( 2475): [[[[[[[[[]]]]]]]]]]ngb-media-player-event:12b1280
+03-25 14:00:17.049 V/SUMA    ( 1549): [NGBM] ngb_media_player_set_url leave hplayer=0xff0000 ret=0
+03-25 14:00:17.049 V/SUMA    ( 1549):        url=dvb://10.140.144?apid=2a8&atype=4&vpid=203&vtype=2&pcrpid=1ffe&freq=650000
+03-25 14:00:17.049 D/Media   ( 2475): ^^^^player start.
+03-25 14:00:17.049 D/PlayNgbDealer( 2475): onPlayerEvent event:org.ngb.media.DataSourceEvent[source=class org.ngb.media.DataSourceEvent]
+03-25 14:00:17.049 V/SUMA    ( 1549): [NGBM] ngb_media_player_play enter !!! hplayer=0xff0000
+03-25 14:00:17.049 V/SUMA    ( 1549): [NGBM] context_resman_play hplayer[0xd77688]-[0]
+03-25 14:00:17.049 D/PlayBaseDealer( 2475): sendPlayEvent index:0:type:7:reason:-1:rate:0.0:size:0
+03-25 14:00:17.049 V/SUMA    ( 1549): >> Roc_ResMan_Filter_Release handler = 0x1202c200 
+03-25 14:00:17.049 V/SUMA    ( 1549): [mnt_pmt_stop] channel[0]ok!!!
+03-25 14:00:17.049 V/SUMA    ( 1549): [mnt_ait_stop] channel[0]ok!!!
+03-25 14:00:17.049 V/SUMA    ( 1549): [dvb_si_mnt_srv_release] leave ichannel=0
+03-25 14:00:17.049 V/SUMA    ( 1549): [NGBM] context_resman_play hplayer[0xd77688]-channel[0]
+03-25 14:00:17.049 V/SUMA    ( 1549): [NGBM] context_resman_play channel[0] audio [0x2a8 8 0x0] video [0x203 2 0x0] 0x1ffe
+03-25 14:00:17.049 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_av_modify_pid- 
+03-25 14:00:17.049 V/PT>     ( 1549): SET aud_pid = 0x2a8 
+03-25 14:00:17.049 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_av_modify_pid- 
+03-25 14:00:17.049 V/PT>     ( 1549): SET vid_pid = 0x203 
+03-25 14:00:17.049 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_av_modify_pid- 
+03-25 14:00:17.049 V/PT>     ( 1549): SET pcr_pid = 0x1ffe 
+03-25 14:00:17.049 V/PT>     ( 1549): >> HI3716M_INFO:_roc_aud_type_2_hisi- 
+03-25 14:00:17.049 V/PT>     ( 1549): roc_aud_type=(8) AUDIO_CODEC(0x20000002) 
+03-25 14:00:17.050 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_audio_play- 
+03-25 14:00:17.050 V/PT>     ( 1549): _dvb_audio_play ok 
+03-25 14:00:17.051 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{40d8eb28 V.E..... ......ID 0,340-1280,720 #7f0a011a app:id/playcontrol_message_tile}, oldState is :0, destiState is :0, isNeedAct is :false, type is :6
+03-25 14:00:17.055 V/SUMA    ( 1549): Roc_ResMan_Tuner_Modify(index=0)[new: 650000, old: 650000 ver=123]. 
+03-25 14:00:17.055 V/SUMA    ( 1549): [resman-s][dvb_server_resman_event_cbk 1583]enter dvb_server_resman_event_cbk
+03-25 14:00:17.055 V/SUMA    ( 1549): [resman-s][dvb_server_resman_event_cbk 1624]leave dvb_server_resman_event_cbk
+03-25 14:00:17.055 V/SUMA    ( 1549): >> ROC TNR(0)-EVENT = 0x210001 ROC_RES_TUNER_TUNER_EVT_LOCK_SUCCESS
+03-25 14:00:17.055 V/SUMA    ( 1549): >> Roc_Tuner_CableScanning end : time = 288532 ms ,total time = 10 ms 
+03-25 14:00:17.055 D/tuning  ( 2475): ^^^tunerEventCallback is called,  event=210001 
+03-25 14:00:17.063 V/SUMA    ( 1549): [resman-s][onTransact 211]code[0x1200010a] client pid = 2475
+03-25 14:00:17.065 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_video_play- 
+03-25 14:00:17.065 V/PT>     ( 1549): _dvb_video_play ok 
+03-25 14:00:17.065 V/SUMA    ( 1549): [NGBM] context_resman_play mnt srv request channel[0] ca_channel[0]
+03-25 14:00:17.065 V/SUMA    ( 1549): [dvb_si_mnt_srv_request] service id=0x144 find[F275CH4-!!!
+03-25 14:00:17.065 V/SUMA    ( 1549): [mnt_pmt_stop] channel[0]ok!!!
+03-25 14:00:17.065 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_filter_alloc- 
+03-25 14:00:17.065 V/PT>     ( 1549): attr.chan_index = 0x0
+03-25 14:00:17.065 V/SUMA    ( 1549): >> Roc_ResMan_Filter_Request handler = 0x1202ceb0 
+03-25 14:00:17.065 V/SUMA    ( 1549): [mnt_pmt_start] channel[0]ok pmt pid =0x104 260!!!
+03-25 14:00:17.065 V/SUMA    ( 1549): [dvb_si_mnt_srv_request] leave ret=0 channed=0 hsrv=0xc002 vid=0x203 vtype=0x2 aid=0x2a8 atype=0x4 mnt=0
+03-25 14:00:17.065 V/SUMA    ( 1549): [NGBM] media_event_cbk ngbplayer[0xff0000] event=NGB_MEDIA_EVENT_PLAY_SUCCESS
+03-25 14:00:17.065 D/Media   ( 2475): ))))))))))))))((((ngb-media-player-event:19600002, 0
+03-25 14:00:17.065 D/Media   ( 2475): [[[[[[[[[]]]]]]]]]]ngb-media-player-event:12b1282
+03-25 14:00:17.066 V/SUMA    ( 1549): [NGBM] ngb_media_player_play leave hplayer=0x00ff0000 ret=0
+03-25 14:00:17.066 D/PlayNgbDealer( 2475): onPlayerEvent event:org.ngb.media.PlayerEvent[source=class org.ngb.media.PlayerEvent]
+03-25 14:00:17.066 D/PlayBaseDealer( 2475): sendPlayEvent index:0:type:2:reason:-1:rate:0.0:size:0
+03-25 14:00:17.069 D/SoundNgbDealer( 2475): setVolume volume:60
+03-25 14:00:17.070 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_audio_set_volume- 
+03-25 14:00:17.070 V/PT>     ( 1549): SET volume = 60 
+03-25 14:00:17.070 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_VOLUME OK 
+03-25 14:00:17.070 D/SoundNgbDealer( 2475): setVolume result:true
+03-25 14:00:17.070 D/SoundAndroidDealer( 2475): setVolume volume:60:ratio:1
+03-25 14:00:17.070 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:17.070 D/SoundAndroidDealer( 2475): setVolume isMute:false:ratio:1
+03-25 14:00:17.072 D/ServiceBoot( 2475): volumeReceiver intent:Intent { act=android.media.MASTER_VOLUME_CHANGED_ACTION flg=0x10 (has extras) }:context:com.suma.midware.back.BackService@40dc5048
+03-25 14:00:17.072 D/ServiceBoot( 2475): volumeReceiver nowValue:60:oldValue:66
+03-25 14:00:17.072 D/SoundNgbDealer( 2475): setTrack track:2
+03-25 14:00:17.072 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:17.072 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_TRACK OK 
+03-25 14:00:17.072 D/SoundNgbDealer( 2475): setTrack result:true
+03-25 14:00:17.072 D/SoundAndroidDealer( 2475): setTrack track:2:ratio:1
+03-25 14:00:17.073 D/SoundHandler( 2475): handleMasterChange ratio:1:curVolume:60
+03-25 14:00:17.073 D/SoundNgbDealer( 2475): setVolume volume:60
+03-25 14:00:17.073 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_VOLUME OK 
+03-25 14:00:17.073 D/SoundNgbDealer( 2475): setVolume result:true
+03-25 14:00:17.093 D/PlayActivity( 2708): playHandler.msg{ what=4 when=-20ms obj=[Ljava.lang.Object;@42803800 }
+03-25 14:00:17.093 D/PlayNgbDealer( 2475): operatePlayerWindow index:0:isAble:true
+03-25 14:00:17.093 D/PlayNgbDealer( 2475): findPlayer index:0:findType:2:channelIndex:0
+03-25 14:00:17.093 D/Media   ( 2475): ^^^^player openVideo.
+03-25 14:00:17.093 V/SUMA    ( 1549): [NGBM] ngb_media_player_set_video_display enter !!! hplayer=0xff0000
+03-25 14:00:17.105 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_video_set_display- 
+03-25 14:00:17.105 V/PT>     ( 1549): SET av_handle = 0x410000 enable = 1 
+03-25 14:00:17.105 V/SUMA    ( 1549): [NGBM] ngb_media_player_set_video_display leave hplayer=0xff0000 ret=0
+03-25 14:00:17.105 D/PlayActivity( 2708): dealPlayNote:[Ljava.lang.Object;@42803800
+03-25 14:00:17.105 D/PlayActivity( 2708): getNoteType signalState:0
+03-25 14:00:17.106 D/PlayActivity( 2708): getNoteType caState:-1:isIpp:false
+03-25 14:00:17.106 D/PlayActivity( 2708): the notes is::visible is:1:the dialog visible is:4
+03-25 14:00:17.106 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{419c1520 I.E..... ......ID 880,160-1180,280 #7f0a0110 app:id/playcontrol_notes_dialog}, oldState is :4, destiState is :4, isNeedAct is :true, type is :0
+03-25 14:00:17.106 D/PlayActivity( 2708): dealLockDialog:type-1:value:-1
+03-25 14:00:17.108 D/PlayActivity( 2708): lockDialogButtons[0]beforeTextChanged,arg0:arg1:0:arg2:0:arg3:0
+03-25 14:00:17.109 D/PlayActivity( 2708): lockDialogButtons[0]onTextChanged,arg0:arg1:0:arg2:0:arg3:0
+03-25 14:00:17.109 D/PlayActivity( 2708): lockDialogButtons[0]afterTextChanged,arg0
+03-25 14:00:17.109 D/PlayActivity( 2708): lockDialogButtons[1]beforeTextChanged,arg0:arg1:0:arg2:0:arg3:0
+03-25 14:00:17.110 D/PlayActivity( 2708): lockDialogButtons[1]onTextChanged,arg0:arg1:0:arg2:0:arg3:0
+03-25 14:00:17.110 D/PlayActivity( 2708): lockDialogButtons[1]afterTextChanged,arg0
+03-25 14:00:17.110 D/PlayActivity( 2708): lockDialogButtons[2]beforeTextChanged,arg0:arg1:0:arg2:0:arg3:0
+03-25 14:00:17.112 D/PlayActivity( 2708): lockDialogButtons[2]onTextChanged,arg0:arg1:0:arg2:0:arg3:0
+03-25 14:00:17.112 D/PlayActivity( 2708): lockDialogButtons[2]afterTextChanged,arg0
+03-25 14:00:17.113 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{4197e388 I.E..... ......ID 318,200-963,522 #7f0a00b7 app:id/dialog_password_input}, oldState is :4, destiState is :4, isNeedAct is :false, type is :0
+03-25 14:00:17.297 V/SUMA    ( 1549): [resman-s][onTransact 1542]leave transact client pid = 2475
+03-25 14:00:17.297 V/SUMA    ( 2475): [resman-c][Roc_Tuner_GetInfo 1125]leave !!!
+03-25 14:00:17.297 D/tuning  ( 2475): ^^^^in tuner callBack. Query result=0,freq=650000
+03-25 14:00:17.297 I/System.out( 2475): [DEBUG networkInterface] You see: NI listener's size=1
+03-25 14:00:17.297 D/TunerNgbDealer( 2475): receiveNIEvent event:org.davic.net.tuning.NetworkInterfaceTuningOverEvent[source=class org.davic.net.tuning.NetworkInterfaceTuningOverEvent]
+03-25 14:00:17.298 D/TunerNgbDealer( 2475): receiveNIEvent tunerIndex:0:tunerDs:[CableDeliverySystem@254004b5]freq[650000]fecOuter[0]modulation[3]symbolRate[6875]fecInner[0]:isTunerLock:true
+03-25 14:00:17.340 V/SUMA    ( 1549): [mnt_parse_pmt_section] channel=0 frq=650000 srv=0x144 pmt force receive!!!
+03-25 14:00:17.340 V/SUMA    ( 1549): [mnt_parse_pmt_section] service info change,channel[0] [650000 0x10 0x140 0x144] attrib=0xd308!!!
+03-25 14:00:17.342 D/SIDatabase( 2475): nGetNetworkId freq  650000, type 68,onid 16,tsID 320 
+03-25 14:00:17.343 D/SIDatabase( 2475): ^^^^nGetNetworkId failed:33554446
+03-25 14:00:17.343 D/SIDatabase( 2475): ^^^^SI service EVENT===frequency:650000[dvb://10.140.144]
+03-25 14:00:17.343 D/SIDatabase( 2475): nGetNetworkId freq  650000, type 68,onid 16,tsID 320 
+03-25 14:00:17.343 D/SIDatabase( 2475): ^^^^nGetNetworkId failed:33554446
+03-25 14:00:17.344 D/TableMonitorNgbDealer( 2475): dealServiceInfo event:MonitoringEvent [monitorType=54016, reason=8]:reason:61441:channelIndex:0:service:SIService [provider=中间件, Name=F275CH4-赵建斌测试频道4, CA_MODE=0, EIT_PF=true, EIT_SCHEDULE=true, number=0, pcrPid=8190, svType=1, url=dvb://10.140.144Frequency:org.avmsc.dtvm.si.search.Frequence@83e99f9b]
+03-25 14:00:17.344 D/SIDatabase( 2475): setFrequence the result 0, frequence 650000
+03-25 14:00:17.344 V/SUMA    ( 2475): [dvb_client_dbs] find srv flag[1] 
+03-25 14:00:17.344 V/SUMA    ( 1549): [dvb_server_dbs]TRANS_CODE_DBS_FIND_SRV_INFO flag[1] 
+03-25 14:00:17.344 D/PlayNgbDealer( 2475): setEcm channel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[0]serialNum4[0]pcrPID[8190]refServiceID[-1]:ecmMode:1:vPID:0:vSysID:0:aPID:0:aSysID:0
+03-25 14:00:17.344 D/PlayNgbDealer( 2475): findPlayer index:0:findType:0:channelIndex:0
+03-25 14:00:17.344 D/PlayNgbDealer( 2475): findPlayer index:0:findType:0:channelIndex:0
+03-25 14:00:17.344 D/PlayNgbDealer( 2475): setEcm videoInfo:[StreamInfo@40d7b150]pid[515]streamType[53]compTag[3]language[null]isEncrypted[false]ecmPID[8191]ecmSysID[0]
+03-25 14:00:17.344 D/PlayNgbDealer( 2475): findPlayer index:0:findType:0:channelIndex:0
+03-25 14:00:17.345 D/PlayNgbDealer( 2475): setEcm audioInfo:[StreamInfo@40e4fb08]pid[680]streamType[9]compTag[168]language[eng]isEncrypted[false]ecmPID[8191]ecmSysID[0]
+03-25 14:00:17.345 I/System.out( 2475): [DEBUG playerImpl] onid:16 serID:324 tsID:320 Frequece:650000
+03-25 14:00:17.345 D/Media   ( 2475): setEcm,setFrequence result:0
+03-25 14:00:17.345 D/Media   ( 2475): setEcm service freq:650000, oNetID:16, serviceID:324, tsID:320
+03-25 14:00:17.345 D/Media   ( 2475): setEcm mediaplayer handle:16711680,ecmLen:2
+03-25 14:00:17.345 D/Media   ( 2475): setEcm systemID:0, ecmPID:0, streamPID:515, streamType:2
+03-25 14:00:17.345 D/Media   ( 2475): setEcm systemID:0, ecmPID:0, streamPID:680, streamType:4
+03-25 14:00:17.345 V/SUMA    ( 1549): [NGBM] ngb_media_player_set_ecm enter !!! hplayer=0xff0000
+03-25 14:00:17.345 V/SUMA    ( 1549): >> [CA]rocme_porting_ca_set_ecm_info_suma: channel_id = 0 ecm_pid = 0x0 puzzle_ecm = 0x0 tnr_id = 0 
+03-25 14:00:17.345 V/SUMA    ( 1549): [CAM] CA_Manager_ChannelSetEcmInfo() leave ! ret=0 id=0 ecm=0x0
+03-25 14:00:17.345 V/SUMA    ( 1549): [NGBM] context_resman_set_ecm @@@@@@@@@@@@@@@@@@@@@@[0x10 0x140 0x144(324)] ca_sys_id=0x0 ecm_pid=0x0,ca_channel[0]
+03-25 14:00:17.345 V/SUMA    ( 1549): [NGBM] ngb_media_player_set_ecm leave hplayer=0xff0000 ret=0
+03-25 14:00:17.998 D/DirectLoaderXianning( 2475): parseNitSection data:986
+03-25 14:00:17.998 D/DirectLoaderXianning( 2475): parseNitSection net tag:161:len:34
+03-25 14:00:17.998 D/DirectLoaderXianning( 2475): parseNitSection net tag:64:len:11
+03-25 14:00:17.998 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:15
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:17.999 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:15
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:18
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:9
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:9
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:18.000 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:18.001 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:18.001 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:18.001 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:18.001 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:15
+03-25 14:00:18.001 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:18.001 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:18.001 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:18.001 D/DirectLoader( 2475): dealLoaderMonitor updateInfo:null
+03-25 14:00:18.042 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{413b8078 V.E..... ......ID 905,0-1280,550 #7f0a010b app:id/playcontrol_message_adv}, oldState is :4, destiState is :0, isNeedAct is :true, type is :0
+03-25 14:00:18.215 D/EventCache( 2708): refreshLoop refreshChannelList size:0
+03-25 14:00:18.264 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{413b8078 V.E..... ........ 905,0-1280,550 #7f0a010b app:id/playcontrol_message_adv}, oldState is :0, destiState is :0, isNeedAct is :false, type is :0
+03-25 14:00:18.292 D/DlnaHandler( 2475): dealStart cp:org.cybergarage.d.e@40e35818
+03-25 14:00:18.308 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{413b8078 V.E..... ........ 905,0-1280,550 #7f0a010b app:id/playcontrol_message_adv}, oldState is :0, destiState is :0, isNeedAct is :false, type is :0
+03-25 14:00:18.320 D/dalvikvm( 2475): GC_CONCURRENT freed 459K, 16% free 3035K/3584K, paused 3ms+2ms, total 20ms
+03-25 14:00:18.321 D/dalvikvm( 2475): WAIT_FOR_CONCURRENT_GC blocked 8ms
+03-25 14:00:18.324 D/DlnaHandler( 2475): getAllAddrs net:[wlan0][3]:name:wlan0
+03-25 14:00:18.324 D/DlnaHandler( 2475): getAllAddrs net:[p2p0][4]:name:p2p0
+03-25 14:00:18.324 D/DlnaHandler( 2475): getAllAddrs net:[eth0][2]:name:eth0
+03-25 14:00:18.324 D/DlnaHandler( 2475): getAllAddrs net:[lo][1][/::1%1%1][/127.0.0.1]:name:lo
+03-25 14:00:18.324 D/DlnaHandler( 2475): getAllAddrs addr:/::1%1%1
+03-25 14:00:18.324 D/DlnaHandler( 2475): getAllAddrs addr:/127.0.0.1
+03-25 14:00:18.382 D/Main3DActivity( 2489): requestWelcomList count:3:columnID:
+03-25 14:00:18.382 D/IvideoUtil( 2475): requestWelcomeList columnID::count:3
+03-25 14:00:18.383 D/IvideoUtil( 2475): requestPrograms column:null:category:null:startIndex:0:endIndex:3:keyWord:null:sortType:0:year:-1:location:0:programName:null
+03-25 14:00:18.383 D/IvideoUtil( 2475): requestIvideoData reqParam:{"serverAddress":"http:\/\/192.166.66.33:8080\/PortalServer-App\/services\/PortalServer4Client?wsdl","location":"100085","sessionId":"","token":"","serialNumber":"0029040011070000002","method":"getWelcomeList","parameters":{"columnId":"","counts":"3"},"type":"8","user":"","version":"030101","protalVersion":""}
+03-25 14:00:18.384 D/IvideoUtil( 2475): requestIvideoData reqParam:{"serverAddress":"http:\/\/192.166.66.33:8080\/PortalServer-App\/services\/PortalServer4Client?wsdl","location":"100085","sessionId":"","token":"","serialNumber":"0029040011070000002","method":"getProgramInfoList","parameters":{"location":"0","start":"0","queryValue":"","categoryId":"","sortType":"0","year":"","columnId":"","end":"3","programName":""},"type":"8","user":"","version":"030101","protalVersion":""}
+03-25 14:00:18.385 I/EthernetManager( 2214): getWifiDisguiseState0
+03-25 14:00:18.385 E/LoadHttpHandler( 2475): startLoad net-unavailable
+--------- beginning of /dev/log/system
+03-25 14:00:18.385 D/ConnectivityService( 2214): mActiveDefaultNetwork = -1
+03-25 14:00:18.386 D/IvideoUtil( 2475): requestIvideoData isSuccess:false
+03-25 14:00:18.386 E/IvideoUtil( 2475): requestPrograms jObj null
+03-25 14:00:18.386 I/EthernetManager( 2214): getWifiDisguiseState0
+03-25 14:00:18.386 E/LoadHttpHandler( 2475): startLoad net-unavailable
+03-25 14:00:18.386 D/IvideoUtil( 2475): requestIvideoData isSuccess:false
+03-25 14:00:18.386 E/IvideoUtil( 2475): requestWelcomeList jObj null
+03-25 14:00:18.386 D/ConnectivityService( 2214): mActiveDefaultNetwork = -1
+03-25 14:00:18.499 I/System.out( 2475): [DEBUG QueryRequest] execute doQuery
+03-25 14:00:18.500 D/SIDatabase( 2475): ^^^^Num of Network:0
+03-25 14:00:20.002 D/PlayActivity( 2708): dealMessageTile channel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]
+03-25 14:00:20.002 D/PlayActivity( 2708): dealMessageTile serviceName:F275CH4-赵建斌测试频道4
+03-25 14:00:20.005 D/PlayActivity( 2708): timeShiftTag:android.widget.TextView{4136d810 V.ED.... ........ 960,225-960,259 #7f0a012e app:id/playcontrol_message_tile_timeshift_tag}
+03-25 14:00:20.005 E/DataBaseManager( 2708): isChannelIvideoShift no exist channel:[DirectChannel@404fff]channelID[0]oNetID[16]tsID[320]serviceID[324]freq[650000]name[F275CH4-赵建斌测试频道4]serviceType[2]attr[0]serialNum[4]serialNum4[4]pcrPID[8190]refServiceID[-1]
+03-25 14:00:20.008 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{40d8eb28 I.E..... ......ID 0,340-1280,720 #7f0a011a app:id/playcontrol_message_tile}, oldState is :0, destiState is :4, isNeedAct is :true, type is :6
+03-25 14:00:20.009 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{413b8078 I.E..... ........ 905,0-1280,550 #7f0a010b app:id/playcontrol_message_adv}, oldState is :0, destiState is :4, isNeedAct is :true, type is :0
+03-25 14:00:20.013 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{41945918 I.E..... ........ 1024,50-1189,132 #7f0a010d app:id/playcontrol_channel_num}, oldState is :0, destiState is :4, isNeedAct is :true, type is :0
+03-25 14:00:20.015 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:20.015 D/PlayActivity( 2708): PropManager.getSoundManager().isMute():false
+03-25 14:00:20.015 D/PlayActivity( 2708): requestCornerMarkDisplay
+03-25 14:00:20.015 D/PlayActivity( 2708): requestAdv adv advType :10:channel:null
+03-25 14:00:20.016 D/EsgBaseDealer( 2475): getAdvs adType:10:locator:[EsgLocator@404fff]oNetID[16]tsID[320]serviceID[324]freq[650000]
+03-25 14:00:20.016 D/EsgRunner( 2475): getAdvs reqType:10:locator:[EsgLocator@404fff]oNetID[16]tsID[320]serviceID[324]freq[650000]
+03-25 14:00:20.017 D/PlayActivity( 2708): getAdvs end,advType:10:advs:null
+03-25 14:00:20.017 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:22.291 I/System.out( 2475): [DEBUG QueryRequest] execute doQuery
+03-25 14:00:22.292 D/SIDatabase( 2475): ^^^^Num of Network:0
+03-25 14:00:23.001 D/DirectLoaderXianning( 2475): parseNitSection data:986
+03-25 14:00:23.001 D/DirectLoaderXianning( 2475): parseNitSection net tag:161:len:34
+03-25 14:00:23.001 D/DirectLoaderXianning( 2475): parseNitSection net tag:64:len:11
+03-25 14:00:23.001 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.002 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:15
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:15
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:18
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:9
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.003 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:9
+03-25 14:00:23.004 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.004 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:23.004 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.004 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:23.004 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.004 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:15
+03-25 14:00:23.004 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.004 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:23.004 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:23.004 D/DirectLoader( 2475): dealLoaderMonitor updateInfo:null
+03-25 14:00:23.216 D/EventCache( 2708): refreshLoop refreshChannelList size:0
+03-25 14:00:23.293 D/DlnaHandler( 2475): dealStart cp:org.cybergarage.d.e@40e35818
+03-25 14:00:23.306 D/DlnaHandler( 2475): getAllAddrs net:[wlan0][3]:name:wlan0
+03-25 14:00:23.306 D/DlnaHandler( 2475): getAllAddrs net:[p2p0][4]:name:p2p0
+03-25 14:00:23.306 D/DlnaHandler( 2475): getAllAddrs net:[eth0][2]:name:eth0
+03-25 14:00:23.307 D/DlnaHandler( 2475): getAllAddrs net:[lo][1][/::1%1%1][/127.0.0.1]:name:lo
+03-25 14:00:23.307 D/DlnaHandler( 2475): getAllAddrs addr:/::1%1%1
+03-25 14:00:23.307 D/DlnaHandler( 2475): getAllAddrs addr:/127.0.0.1
+03-25 14:00:24.055 D/EthernetDataTracker( 2214): iface is not ethernet,do nothing!
+03-25 14:00:25.295 D/RemoteIME( 2444): RemoteIME--> onKeyDown keyCode = 20
+03-25 14:00:25.296 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_DPAD_DOWN, scanCode=108, metaState=0, flags=0x8, repeatCount=0, eventTime=296769, downTime=296769, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:25.297 D/PlayActivity( 2708): the pressed keyCode is:20:and the pair state is:-1:time:296773:isEventDeal:falsefocus view:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:25.297 D/PlayActivity( 2708): onKeyDown dealADLink result: false
+03-25 14:00:25.297 D/PlayActivity( 2708): requestAdv adv advType :6:channel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:25.298 D/EsgBaseDealer( 2475): getAdvs adType:6:locator:[EsgLocator@404fe0]oNetID[16]tsID[320]serviceID[323]freq[650000]
+03-25 14:00:25.298 D/EsgRunner( 2475): getAdvs reqType:6:locator:[EsgLocator@404fe0]oNetID[16]tsID[320]serviceID[323]freq[650000]
+03-25 14:00:25.299 D/PlayActivity( 2708): getAdvs end,advType:6:advs:null
+03-25 14:00:25.299 D/PlayActivity( 2708): dealMessageTile channel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:25.299 D/PlayActivity( 2708): dealMessageTile serviceName:F275CH3-赵建斌测试频道3
+03-25 14:00:25.301 D/PlayActivity( 2708): timeShiftTag:android.widget.TextView{4136d810 V.ED.... ......ID 960,225-960,259 #7f0a012e app:id/playcontrol_message_tile_timeshift_tag}
+03-25 14:00:25.302 E/DataBaseManager( 2708): isChannelIvideoShift no exist channel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:25.305 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{40d8eb28 V.E..... ......ID 0,340-1280,720 #7f0a011a app:id/playcontrol_message_tile}, oldState is :4, destiState is :0, isNeedAct is :true, type is :6
+03-25 14:00:25.310 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{41945918 V.E..... ......ID 1024,50-1189,132 #7f0a010d app:id/playcontrol_channel_num}, oldState is :4, destiState is :0, isNeedAct is :true, type is :0
+03-25 14:00:25.503 D/RemoteIME( 2444): RemoteIME--> onKeyUp keyCode = 20
+03-25 14:00:25.504 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_UP, keyCode=KEYCODE_DPAD_DOWN, scanCode=108, metaState=0, flags=0x8, repeatCount=0, eventTime=296979, downTime=296769, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F....ID 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:25.504 D/PlayActivity( 2708): the released keyCode is:20:time:296981
+03-25 14:00:25.505 D/PlayActivity( 2708): onKeyUp,selectChannel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:25.505 D/PlayActivity( 2708): processReleasedUpOrDown,selectChannel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:25.604 D/PlayActivity( 2708): switchChannel, enter time:297081
+03-25 14:00:25.605 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.TextView{419ce3d8 I.ED.... ......ID 54,90-763,139 #7f0a0113 app:id/playcontrol_preview_note}, oldState is :4, destiState is :4, isNeedAct is :true, type is :0
+03-25 14:00:25.605 D/PlayActivity( 2708): the notes is::visible is:1:the dialog visible is:4
+03-25 14:00:25.606 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{419c1520 I.E..... ......ID 880,160-1180,280 #7f0a0110 app:id/playcontrol_notes_dialog}, oldState is :4, destiState is :4, isNeedAct is :true, type is :0
+03-25 14:00:25.607 D/PlayActivity( 2708): start to deal the fingermark:
+03-25 14:00:25.607 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.TextView{419cfe38 I.ED.... ......ID 50,150-50,190 #7f0a0117 app:id/playcontrol_finger_text}, oldState is :4, destiState is :4, isNeedAct is :false, type is :0
+03-25 14:00:25.608 D/PlayActivity( 2708): requestFlywordDisplay
+03-25 14:00:25.608 D/PlayActivity( 2708): requestAdv adv advType :11:channel:null
+03-25 14:00:25.609 D/EsgBaseDealer( 2475): getAdvs adType:11:locator:[EsgLocator@404fe0]oNetID[16]tsID[320]serviceID[323]freq[650000]
+03-25 14:00:25.609 D/EsgRunner( 2475): getAdvs reqType:11:locator:[EsgLocator@404fe0]oNetID[16]tsID[320]serviceID[323]freq[650000]
+03-25 14:00:25.610 D/PlayActivity( 2708): getAdvs end,advType:11:advs:null
+03-25 14:00:25.610 D/PlayActivity( 2708): getSoundVolume,:volume:66
+03-25 14:00:25.612 D/PlayNgbDealer( 2475): findPlayer index:0:findType:2:channelIndex:0
+03-25 14:00:25.612 D/PlayNgbDealer( 2475): findPlayer index:0:findType:0:channelIndex:0
+03-25 14:00:25.612 I/System.out( 2475): [DEBUG SIESRequest] execute doQuery
+03-25 14:00:25.613 D/PlayExcuter( 2708): notifyPlay type:0:curType:-2:cancelType:-1:cancelVideoType:-1:isResetData:false:task:[PlayDirectTask@4282aef8]playTaskType[0]playType[0]isViewMode[false]isEcmSet[true]playerIndex[0]tunerIndex[0]channel[[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]]:this.Task:null:indexs:null
+03-25 14:00:25.613 D/PlayerManager( 2708): addPlayTask playTask:[PlayDirectTask@4282aef8]playTaskType[0]playType[0]isViewMode[false]isEcmSet[true]playerIndex[0]tunerIndex[0]channel[[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]]:state:0
+03-25 14:00:25.614 D/PlayExcuter( 2708): mergeTask sourceTask:null:destiTask:[PlayDirectTask@4282aef8]playTaskType[0]playType[0]isViewMode[false]isEcmSet[true]playerIndex[0]tunerIndex[0]channel[[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]]
+03-25 14:00:25.614 V/SUMA    ( 2475): [dvb_client_dbs] find srv flag[1] 
+03-25 14:00:25.614 V/SUMA    ( 1549): [dvb_server_dbs]TRANS_CODE_DBS_FIND_SRV_INFO flag[1] 
+03-25 14:00:25.614 D/PlayExcuter( 2708): excuteTask task:[PlayDirectTask@4282aef8]playTaskType[0]playType[0]isViewMode[false]isEcmSet[true]playerIndex[0]tunerIndex[0]channel[[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]]
+03-25 14:00:25.614 D/PlayExcuter( 2708): excuteTask curExcuter:com.suma.midware.prop.play.PlayDirectExcuter@42831438
+03-25 14:00:25.615 D/PlayDirectExcuter( 2708): play task:[PlayDirectTask@4282aef8]playTaskType[0]playType[0]isViewMode[false]isEcmSet[true]playerIndex[0]tunerIndex[0]channel[[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]]:curType:-1
+03-25 14:00:25.615 D/PlayNgbDealer( 2475): findPlayer index:0:findType:0:channelIndex:0
+03-25 14:00:25.616 D/PlayExcuter( 2708): dealPlayStop task:[PlayDirectTask@4282aef8]playTaskType[0]playType[0]isViewMode[false]isEcmSet[true]playerIndex[0]tunerIndex[0]channel[[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]]:curType:-1
+03-25 14:00:25.616 D/PlayNgbDealer( 2475): playStop index:0:stopType:0:stopMode:0:isEcmSet:false:isCaRelease:false:isStreamReset:true
+03-25 14:00:25.616 D/PlayNgbDealer( 2475): findPlayer index:0:findType:0:channelIndex:0
+03-25 14:00:25.616 D/Media   ( 2475): ^^^^player setStopMode.
+03-25 14:00:25.617 V/SUMA    ( 1549): [NGBM] ngb_media_player_set_video_stop_mode enter !!! hplayer=0xff0000
+03-25 14:00:25.617 V/SUMA    ( 1549): [NGBM] ngb_media_player_set_video_stop_mode leave hplayer=0xff0000 ret=0 mode=0
+03-25 14:00:25.618 D/EpgBackExcuter( 2708): addPFTask task:com.suma.midware.prop.epg.a.c@42834998
+03-25 14:00:25.618 I/System.out( 2475): [ERROR MediaSelectControlImpl] empty param stopping!
+03-25 14:00:25.618 D/Media   ( 2475): ^^^^player stop.
+03-25 14:00:25.618 V/SUMA    ( 1549): [NGBM] ngb_media_player_stop enter !!! hplayer=0xff0000
+03-25 14:00:25.618 V/SUMA    ( 1549): [NGBM] context_resman_stop Roc_Timer_Stop !!!
+03-25 14:00:25.618 V/SUMA    ( 1549): [NGBM] context_resman_stop context_resman_stop mode=0 !!!
+03-25 14:00:25.620 I/System.out( 2475): [ERROR EPGreq] Nothing to cancel!
+03-25 14:00:25.620 I/System.out( 2475): [DEBUG EPGQuery] send request msg...:org.ngb.toolkit.epg.EPGManager$4@40e76cf8
+03-25 14:00:25.620 D/EpgPFDirectReceiver( 2475): postEvent event:org.sumavision.epg.FailureEvent[source=org.sumavision.epg.EGPRequestImpl@40ddc0e8]
+03-25 14:00:25.620 D/EpgPFDirectReceiver( 2475): postEvent code:1
+03-25 14:00:25.621 I/SIDatabase( 2475): nRetrieveSIElementaryStreams.objectArray epesi->type=1  
+03-25 14:00:25.621 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_audio_stop- 
+03-25 14:00:25.621 V/PT>     ( 1549): _dvb_audio_stop ok 
+03-25 14:00:25.622 D/EpgPFDirectReceiver( 2475): start channel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]:overTime:0:defaultOverTime:3000
+03-25 14:00:25.623 I/System.out( 2475): [DEBUG EPGManager] [EPGManager]-PF-retrieve service with 1st method !
+03-25 14:00:25.623 D/EPGmanager( 2475): getProgramServiceNFollowing f.frequency:650000   ,f.type: 68 ,setFrequence 0
+03-25 14:00:25.623 V/SUMA    ( 1549): [dvb_server_dbs] EIT_GET_TABLE,err[1],[0x10][0x140][0x143]
+03-25 14:00:25.623 V/SUMA    ( 1549): [eit] dvb_si_eit_dbs_get_table() time=2016-03-25 13:55:35
+03-25 14:00:25.623 V/SUMA    ( 1549): [eit] dvb_si_eit_dbs_get_table() leave, chanid=0 freq=650000, onid=0x10, tsid=0x140, svid=0x143, type=0x0
+03-25 14:00:25.623 D/EPGmanager( 2475): [EPGManagerNative-JNI]          ProgramServiceNFollowing Finish checking, and totalLen = 2, selectLen=2
+03-25 14:00:25.624 V/SUMA    ( 2475): [dvb_client_dbs] find srv flag[1] 
+03-25 14:00:25.624 V/SUMA    ( 1549): [dvb_server_dbs]TRANS_CODE_DBS_FIND_SRV_INFO flag[1] 
+03-25 14:00:25.624 D/EPGmanager( 2475): NAMELEN=16, TEXTLEN=0
+03-25 14:00:25.626 I/SIDatabase( 2475): nRetrieveSIElementaryStreams.objectArray epesi->type=1  
+03-25 14:00:25.628 D/EPGmanager( 2475): NAMELEN=17, TEXTLEN=0
+03-25 14:00:25.630 D/PlayNgbDealer( 2475): postEvent event:org.ngb.broadcast.dvb.si.SISuccessRetrieveEvent[source=class org.ngb.broadcast.dvb.si.SIRetrieveEvent]
+03-25 14:00:25.630 D/SIDatabase( 2475): setFrequence ,frequence 650000, result 0
+03-25 14:00:25.631 V/SUMA    ( 2475): [dvb_client_dbs] find srv flag[1] 
+03-25 14:00:25.631 V/SUMA    ( 1549): [dvb_server_dbs]TRANS_CODE_DBS_FIND_SRV_INFO flag[1] 
+03-25 14:00:25.632 D/PlayNgbDealer( 2475): postEvent type:2:pid:514:streamType:2:appType:53:streamTag:2:curTag:2
+03-25 14:00:25.633 D/EPGmanager( 2475): [EPGManagerNative-JNI]Begin to construct ProgramService, srvid is 323
+03-25 14:00:25.633 V/SUMA    ( 2475): [dvb_client_dbs] find srv flag[1] 
+03-25 14:00:25.633 V/SUMA    ( 1549): [dvb_server_dbs]TRANS_CODE_DBS_FIND_SRV_INFO flag[1] 
+03-25 14:00:25.633 D/SIDatabase( 2475): setFrequence ,frequence 650000, result 0
+03-25 14:00:25.634 V/SUMA    ( 2475): [dvb_client_dbs] find srv flag[1] 
+03-25 14:00:25.635 V/SUMA    ( 1549): [dvb_server_dbs]TRANS_CODE_DBS_FIND_SRV_INFO flag[1] 
+03-25 14:00:25.637 I/System.out( 2475): [DEBUG EPGQueryThread] Add epg request:org.ngb.toolkit.epg.EPGManager$4@40e16dd8
+03-25 14:00:25.638 D/PlayNgbDealer( 2475): postEvent type:1:pid:670:streamType:4:appType:9:streamTag:158:curTag:158
+03-25 14:00:25.640 I/System.out( 2475): [DEBUG EPGQuery] send request msg...:org.ngb.toolkit.epg.EPGManager$4@40e16dd8
+03-25 14:00:25.641 D/EpgPFDirectReceiver( 2475): postEvent event:org.sumavision.epg.SuccessEvent[source=org.sumavision.epg.EGPRequestImpl@40e45fd8]
+03-25 14:00:25.646 D/EpgPFReceiver( 2475): sendPFInfo channel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]:info:com.suma.midware.prop.epg.mode.PFInfo@40e81418:size:1
+03-25 14:00:25.646 D/ViewUtil( 2708): dealBgCarouselAd,advType:false:needDisplay:false:adv:null
+03-25 14:00:25.646 D/ViewUtil( 2708): backExcute currentMediaIndex0:length:0:playMode:-1
+03-25 14:00:25.647 I/System.out( 2475): [DEBUG NGB_FRONT_PANEL] Invoke the method clear to clear the content on the front panel
+03-25 14:00:25.647 V/SUMA    ( 1549): [adapter][info] rocme_adapter_frontpanel_show_time:on_off=0
+03-25 14:00:25.647 V/PT>     ( 1549): >> HI3716M_WARN:rocme_porting_frontpanel_show_led- 
+03-25 14:00:25.647 V/PT>     ( 1549): not support 
+03-25 14:00:25.647 D/FrontPanelNative( 2475): the String length 0, the max 4
+03-25 14:00:25.647 V/SUMA    ( 1549): [adapter][info] rocme_adapter_frontpanel_show_time:on_off=0
+03-25 14:00:25.647 V/PT>     ( 1549): >> HI3716M_WARN:rocme_porting_frontpanel_show_led- 
+03-25 14:00:25.647 V/PT>     ( 1549): not support 
+03-25 14:00:25.648 I/System.out( 2475): [DEBUG NGB_FRONT_PANEL] To display text on the front panel, and the text is:P003::the align is 0--align_center
+03-25 14:00:25.649 V/SUMA    ( 1549): [adapter][info] rocme_adapter_frontpanel_show_time:on_off=0
+03-25 14:00:25.649 V/PT>     ( 1549): >> HI3716M_WARN:rocme_porting_frontpanel_show_led- 
+03-25 14:00:25.649 V/PT>     ( 1549): not support 
+03-25 14:00:25.649 D/PlayActivity( 2708): switchChannel,55555, end   time:297126
+03-25 14:00:25.650 D/PlayActivity( 2708): dealMessageTile channel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:25.650 D/PlayActivity( 2708): dealMessageTile serviceName:F275CH3-赵建斌测试频道3
+03-25 14:00:25.650 D/EpgBackExcuter( 2708): sendPFInfo find channel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]:taskSize:1dealingSize:1
+03-25 14:00:25.651 D/EpgBackExcuter( 2708): handlePFTask end1
+03-25 14:00:25.652 D/PlayActivity( 2708): timeShiftTag:android.widget.TextView{4136d810 V.ED.... ......ID 960,225-960,259 #7f0a012e app:id/playcontrol_message_tile_timeshift_tag}
+03-25 14:00:25.652 E/DataBaseManager( 2708): isChannelIvideoShift no exist channel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:25.653 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{40d8eb28 V.E..... ......ID 0,340-1280,720 #7f0a011a app:id/playcontrol_message_tile}, oldState is :0, destiState is :0, isNeedAct is :false, type is :6
+03-25 14:00:25.662 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_video_stop- 
+03-25 14:00:25.662 V/PT>     ( 1549): _dvb_video_stop ok keep_last_pic=1
+03-25 14:00:25.662 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_av_modify_pid- 
+03-25 14:00:25.662 V/PT>     ( 1549): SET aud_pid = 0x1fff 
+03-25 14:00:25.662 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_av_modify_pid- 
+03-25 14:00:25.662 V/PT>     ( 1549): SET vid_pid = 0x1fff 
+03-25 14:00:25.662 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_av_modify_pid- 
+03-25 14:00:25.662 V/PT>     ( 1549): SET pcr_pid = 0x1fff 
+03-25 14:00:25.662 V/SUMA    ( 1549): [NGBM] ngb_media_player_stop leave hplayer=0x00ff0000 ret=0
+03-25 14:00:25.662 V/SUMA    ( 1549): [NGBM] media_event_cbk ngbplayer[0xff0000] event=NGB_MEDIA_EVENT_STOP_SUCCESS
+03-25 14:00:25.662 D/Media   ( 2475): ))))))))))))))((((ngb-media-player-event:19600010, 0
+03-25 14:00:25.662 D/Media   ( 2475): [[[[[[[[[]]]]]]]]]]ngb-media-player-event:12b128a
+03-25 14:00:25.662 D/PlayNgbDealer( 2475): onPlayerEvent event:org.ngb.media.PlayerEvent[source=class org.ngb.media.PlayerEvent]
+03-25 14:00:25.662 D/PlayBaseDealer( 2475): sendPlayEvent index:0:type:3:reason:-1:rate:0.0:size:0
+03-25 14:00:25.663 D/TunerNgbDealer( 2475): scanFreqImpl tunerIndex:0:channel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]:isAsy:true
+03-25 14:00:25.663 D/TunerNgbDealer( 2475): reserveTuner tunerIndex:0:isTunerReserves[tunerIndex]:true
+03-25 14:00:25.664 D/tuning  ( 2475): ^^^^ts.type=0x44
+03-25 14:00:25.664 D/tuning  ( 2475): ^^^^call tuner with type=0x44, freq=650000, symbolRate=6875, modulation=3,pos = 0
+03-25 14:00:25.664 D/tuning  ( 2475): ^^^^Calling tune with freq=650000, symbol=6875, modulation=3
+03-25 14:00:25.664 V/SUMA    ( 1549): [resman-s][onTransact 211]code[0x12000100] client pid = 2475
+03-25 14:00:25.664 V/SUMA    ( 1549): >> Roc_Tuner_CableScanning beginning : time = 297141 ms 
+03-25 14:00:25.664 V/SUMA    ( 1549): [resman-s][onTransact 1542]leave transact client pid = 2475
+03-25 14:00:25.664 V/SUMA    ( 2475): [resman-c][Roc_Tuner_CableScanning 805]leave !!!
+03-25 14:00:25.664 D/tuning  ( 2475): cable. result=0
+03-25 14:00:25.665 I/System.out( 2475): [DEBUG networkInterface] You see: NI listener's size=1
+03-25 14:00:25.665 D/TunerNgbDealer( 2475): receiveNIEvent event:org.davic.net.tuning.NetworkInterfaceTuningEvent[source=org.davic.net.tuning.NetworkInterface@40df6fd8]
+03-25 14:00:25.665 D/PlayNgbDealer( 2475): playStart index:0:playType:0:isLock:false:audioIndex:0:audioPID:-1:videoIndex:0:videoPID:-1:isEcmSet:true:channel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:25.665 D/PlayNgbDealer( 2475): findPlayer index:0:findType:1:channelIndex:0
+03-25 14:00:25.665 D/PlayNgbDealer( 2475): waitPlayAsyTask channel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:25.665 D/PlayNgbDealer( 2475): waitPlayAsyTask isGetting:false:isEqual:true
+03-25 14:00:25.666 D/PlayNgbDealer( 2475): playStart audioInfos size:1:audioPid:670:audioType:4:audioTag:158
+03-25 14:00:25.666 D/PlayNgbDealer( 2475): playStart videoInfos size:1:videoPid:514:videoType:2:videoTag:2
+03-25 14:00:25.666 D/PlayNgbDealer( 2475): playStart locator:dvb://10.140.143?apid=29e&atype=4&vpid=202&vtype=2&pcrpid=1ffe&freq=650000:sigleLocator:null
+03-25 14:00:25.666 D/Media   ( 2475): ^^^^player setPlayerUrl.
+03-25 14:00:25.666 V/SUMA    ( 1549): [NGBM] ngb_media_player_set_url enter !!! hplayer=0xff0000 url=dvb://10.140.143?apid=29e&atype=4&vpid=202&vtype=2&pcrpid=1ffe&freq=650000
+03-25 14:00:25.666 V/SUMA    ( 1549): [NGBM] context_resman_handle resman player create ok, addr[0x40d242d8]!
+03-25 14:00:25.666 V/SUMA    ( 1549): [NGBM] context_resman_ioctl PLAYER_CONTEXT_CMD_URL_SET enter , channel[0]!!!
+03-25 14:00:25.666 V/SUMA    ( 1549): [NGBM] context_resman_parase_url url[dvb://10.140.143?apid=29e&atype=4&vpid=202&vtype=2&pcrpid=1ffe&freq=650000],channel[0]
+03-25 14:00:25.666 V/SUMA    ( 1549): [dvb_stream_to_roc_res_tag]dvb_type[0x4] tag[0x0]
+03-25 14:00:25.666 V/SUMA    ( 1549): [NGBM] url_parase_brd_args pid[0x29e],advb[0x4]audio type[0x8],valid[0]
+03-25 14:00:25.666 V/SUMA    ( 1549): [NGBM] context_resman_parase_service onid=0x10 tsid=0x140 svid=0x143 hsrv=0xc001 freq=650000 !
+03-25 14:00:25.666 V/SUMA    ( 1549): [NGBM] url_args_print prepare  chan=0 freq=650000 onid=0x10 tsid=0x140 svid=0x143 bvalid=1 apid=0x29e atype=0x4 vpid=0x202 vtype=0x2
+03-25 14:00:25.666 V/SUMA    ( 1549): [NGBM] ngb_media_player_set_url leave hplayer=0xff0000 ret=0
+03-25 14:00:25.666 V/SUMA    ( 1549):        url=dvb://10.140.143?apid=29e&atype=4&vpid=202&vtype=2&pcrpid=1ffe&freq=650000
+03-25 14:00:25.666 V/SUMA    ( 1549): [NGBM] media_event_cbk ngbplayer[0xff0000] event=NGB_MEDIA_EVENT_URL_VALID
+03-25 14:00:25.666 D/Media   ( 2475): ))))))))))))))((((ngb-media-player-event:19600000, 0
+03-25 14:00:25.666 D/Media   ( 2475): [[[[[[[[[]]]]]]]]]]ngb-media-player-event:12b1280
+03-25 14:00:25.667 D/PlayNgbDealer( 2475): onPlayerEvent event:org.ngb.media.DataSourceEvent[source=class org.ngb.media.DataSourceEvent]
+03-25 14:00:25.667 D/PlayBaseDealer( 2475): sendPlayEvent index:0:type:7:reason:-1:rate:0.0:size:0
+03-25 14:00:25.667 D/Media   ( 2475): ^^^^player start.
+03-25 14:00:25.667 V/SUMA    ( 1549): [NGBM] ngb_media_player_play enter !!! hplayer=0xff0000
+03-25 14:00:25.667 V/SUMA    ( 1549): [NGBM] context_resman_play hplayer[0xd77688]-[0]
+03-25 14:00:25.667 V/SUMA    ( 1549): >> Roc_ResMan_Filter_Release handler = 0x1202ceb0 
+03-25 14:00:25.667 V/SUMA    ( 1549): [mnt_pmt_stop] channel[0]ok!!!
+03-25 14:00:25.667 V/SUMA    ( 1549): [mnt_ait_stop] channel[0]ok!!!
+03-25 14:00:25.667 V/SUMA    ( 1549): [dvb_si_mnt_srv_release] leave ichannel=0
+03-25 14:00:25.667 V/SUMA    ( 1549): [NGBM] context_resman_play hplayer[0xd77688]-channel[0]
+03-25 14:00:25.667 V/SUMA    ( 1549): [NGBM] context_resman_play channel[0] audio [0x29e 8 0x0] video [0x202 2 0x0] 0x1ffe
+03-25 14:00:25.667 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_av_modify_pid- 
+03-25 14:00:25.667 V/PT>     ( 1549): SET aud_pid = 0x29e 
+03-25 14:00:25.667 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_av_modify_pid- 
+03-25 14:00:25.667 V/PT>     ( 1549): SET vid_pid = 0x202 
+03-25 14:00:25.667 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_av_modify_pid- 
+03-25 14:00:25.667 V/PT>     ( 1549): SET pcr_pid = 0x1ffe 
+03-25 14:00:25.667 V/PT>     ( 1549): >> HI3716M_INFO:_roc_aud_type_2_hisi- 
+03-25 14:00:25.667 V/PT>     ( 1549): roc_aud_type=(8) AUDIO_CODEC(0x20000002) 
+03-25 14:00:25.668 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_audio_play- 
+03-25 14:00:25.668 V/PT>     ( 1549): _dvb_audio_play ok 
+03-25 14:00:25.679 V/SUMA    ( 1549): Roc_ResMan_Tuner_Modify(index=0)[new: 650000, old: 650000 ver=123]. 
+03-25 14:00:25.679 V/SUMA    ( 1549): [resman-s][dvb_server_resman_event_cbk 1583]enter dvb_server_resman_event_cbk
+03-25 14:00:25.679 V/SUMA    ( 1549): [resman-s][dvb_server_resman_event_cbk 1624]leave dvb_server_resman_event_cbk
+03-25 14:00:25.679 V/SUMA    ( 1549): >> ROC TNR(0)-EVENT = 0x210001 ROC_RES_TUNER_TUNER_EVT_LOCK_SUCCESS
+03-25 14:00:25.679 V/SUMA    ( 1549): >> Roc_Tuner_CableScanning end : time = 297156 ms ,total time = 15 ms 
+03-25 14:00:25.680 D/tuning  ( 2475): ^^^tunerEventCallback is called,  event=210001 
+03-25 14:00:25.680 V/SUMA    ( 1549): [resman-s][onTransact 211]code[0x1200010a] client pid = 2475
+03-25 14:00:25.681 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_video_play- 
+03-25 14:00:25.681 V/PT>     ( 1549): _dvb_video_play ok 
+03-25 14:00:25.681 V/SUMA    ( 1549): [NGBM] context_resman_play mnt srv request channel[0] ca_channel[0]
+03-25 14:00:25.681 V/SUMA    ( 1549): [dvb_si_mnt_srv_request] service id=0x143 find[F275CH3-!!!
+03-25 14:00:25.681 V/SUMA    ( 1549): [mnt_pmt_stop] channel[0]ok!!!
+03-25 14:00:25.681 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_filter_alloc- 
+03-25 14:00:25.681 V/PT>     ( 1549): attr.chan_index = 0x0
+03-25 14:00:25.682 V/SUMA    ( 1549): >> Roc_ResMan_Filter_Request handler = 0x1202b7f0 
+03-25 14:00:25.682 V/SUMA    ( 1549): [mnt_pmt_start] channel[0]ok pmt pid =0x103 259!!!
+03-25 14:00:25.682 V/SUMA    ( 1549): [dvb_si_mnt_srv_request] leave ret=0 channed=0 hsrv=0xc001 vid=0x202 vtype=0x2 aid=0x29e atype=0x4 mnt=0
+03-25 14:00:25.682 V/SUMA    ( 1549): [NGBM] ngb_media_player_play leave hplayer=0x00ff0000 ret=0
+03-25 14:00:25.682 V/SUMA    ( 1549): [NGBM] media_event_cbk ngbplayer[0xff0000] event=NGB_MEDIA_EVENT_PLAY_SUCCESS
+03-25 14:00:25.682 D/Media   ( 2475): ))))))))))))))((((ngb-media-player-event:19600002, 0
+03-25 14:00:25.683 D/Media   ( 2475): [[[[[[[[[]]]]]]]]]]ngb-media-player-event:12b1282
+03-25 14:00:25.683 D/PlayNgbDealer( 2475): onPlayerEvent event:org.ngb.media.PlayerEvent[source=class org.ngb.media.PlayerEvent]
+03-25 14:00:25.683 D/PlayBaseDealer( 2475): sendPlayEvent index:0:type:2:reason:-1:rate:0.0:size:0
+03-25 14:00:25.686 D/SoundNgbDealer( 2475): setVolume volume:66
+03-25 14:00:25.686 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_audio_set_volume- 
+03-25 14:00:25.686 V/PT>     ( 1549): SET volume = 66 
+03-25 14:00:25.686 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_VOLUME OK 
+03-25 14:00:25.686 D/SoundNgbDealer( 2475): setVolume result:true
+03-25 14:00:25.686 D/SoundAndroidDealer( 2475): setVolume volume:66:ratio:1
+03-25 14:00:25.686 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:25.687 D/SoundAndroidDealer( 2475): setVolume isMute:false:ratio:1
+03-25 14:00:25.689 D/ServiceBoot( 2475): volumeReceiver intent:Intent { act=android.media.MASTER_VOLUME_CHANGED_ACTION flg=0x10 (has extras) }:context:com.suma.midware.back.BackService@40dc5048
+03-25 14:00:25.689 D/ServiceBoot( 2475): volumeReceiver nowValue:66:oldValue:60
+03-25 14:00:25.689 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:25.690 D/SoundNgbDealer( 2475): setTrack track:2
+03-25 14:00:25.690 D/SoundHandler( 2475): handleMasterChange ratio:1:curVolume:66
+03-25 14:00:25.690 D/SoundNgbDealer( 2475): setVolume volume:66
+03-25 14:00:25.691 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_TRACK OK 
+03-25 14:00:25.691 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_VOLUME OK 
+03-25 14:00:25.691 D/SoundNgbDealer( 2475): setVolume result:true
+03-25 14:00:25.691 D/SoundNgbDealer( 2475): setTrack result:true
+03-25 14:00:25.691 D/SoundAndroidDealer( 2475): setTrack track:2:ratio:1
+03-25 14:00:25.701 D/PlayActivity( 2708): audioAdHandler.msg{ what=0 when=-55ms }
+03-25 14:00:25.701 D/PlayActivity( 2708): playHandler.msg{ what=2 when=-51ms obj=[Ljava.lang.Object;@42838058 }
+03-25 14:00:25.702 D/PlayActivity( 2708): dealPfUpdate msg{ what=2 when=-51ms obj=[Ljava.lang.Object;@42838058 }:requestChanel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]:curChannel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]:(PFInfo) data[1]com.suma.midware.prop.epg.mode.PFInfo@42835808
+03-25 14:00:25.702 D/PlayActivity( 2708): dealPfUpdate currentPfChannel[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:25.702 D/PlayActivity( 2708): dealMessageTile channel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:25.702 D/PlayActivity( 2708): dealMessageTile serviceName:F275CH3-赵建斌测试频道3
+03-25 14:00:25.703 D/PlayActivity( 2708): timeShiftTag:android.widget.TextView{4136d810 V.ED.... ......ID 960,225-960,259 #7f0a012e app:id/playcontrol_message_tile_timeshift_tag}
+03-25 14:00:25.704 E/DataBaseManager( 2708): isChannelIvideoShift no exist channel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:25.705 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{40d8eb28 V.E..... ......ID 0,340-1280,720 #7f0a011a app:id/playcontrol_message_tile}, oldState is :0, destiState is :0, isNeedAct is :false, type is :6
+03-25 14:00:25.706 D/PlayActivity( 2708): playHandler.msg{ what=4 when=-15ms obj=[Ljava.lang.Object;@4283e858 }
+03-25 14:00:25.706 D/PlayNgbDealer( 2475): operatePlayerWindow index:0:isAble:true
+03-25 14:00:25.706 D/PlayNgbDealer( 2475): findPlayer index:0:findType:2:channelIndex:0
+03-25 14:00:25.706 D/Media   ( 2475): ^^^^player openVideo.
+03-25 14:00:25.706 V/SUMA    ( 1549): [NGBM] ngb_media_player_set_video_display enter !!! hplayer=0xff0000
+03-25 14:00:25.724 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_video_set_display- 
+03-25 14:00:25.724 V/PT>     ( 1549): SET av_handle = 0x410000 enable = 1 
+03-25 14:00:25.724 V/SUMA    ( 1549): [NGBM] ngb_media_player_set_video_display leave hplayer=0xff0000 ret=0
+03-25 14:00:25.724 D/PlayActivity( 2708): dealPlayNote:[Ljava.lang.Object;@4283e858
+03-25 14:00:25.725 D/PlayActivity( 2708): getNoteType signalState:0
+03-25 14:00:25.725 D/PlayActivity( 2708): getNoteType caState:-1:isIpp:false
+03-25 14:00:25.725 D/PlayActivity( 2708): the notes is::visible is:1:the dialog visible is:4
+03-25 14:00:25.725 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{419c1520 I.E..... ......ID 880,160-1180,280 #7f0a0110 app:id/playcontrol_notes_dialog}, oldState is :4, destiState is :4, isNeedAct is :true, type is :0
+03-25 14:00:25.725 D/PlayActivity( 2708): dealLockDialog:type-1:value:-1
+03-25 14:00:25.726 D/PlayActivity( 2708): lockDialogButtons[0]beforeTextChanged,arg0:arg1:0:arg2:0:arg3:0
+03-25 14:00:25.727 D/PlayActivity( 2708): lockDialogButtons[0]onTextChanged,arg0:arg1:0:arg2:0:arg3:0
+03-25 14:00:25.727 D/PlayActivity( 2708): lockDialogButtons[0]afterTextChanged,arg0
+03-25 14:00:25.727 D/PlayActivity( 2708): lockDialogButtons[1]beforeTextChanged,arg0:arg1:0:arg2:0:arg3:0
+03-25 14:00:25.729 D/PlayActivity( 2708): lockDialogButtons[1]onTextChanged,arg0:arg1:0:arg2:0:arg3:0
+03-25 14:00:25.729 D/PlayActivity( 2708): lockDialogButtons[1]afterTextChanged,arg0
+03-25 14:00:25.729 D/PlayActivity( 2708): lockDialogButtons[2]beforeTextChanged,arg0:arg1:0:arg2:0:arg3:0
+03-25 14:00:25.730 D/PlayActivity( 2708): lockDialogButtons[2]onTextChanged,arg0:arg1:0:arg2:0:arg3:0
+03-25 14:00:25.730 D/PlayActivity( 2708): lockDialogButtons[2]afterTextChanged,arg0
+03-25 14:00:25.731 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{4197e388 I.E..... ......ID 318,200-963,522 #7f0a00b7 app:id/dialog_password_input}, oldState is :4, destiState is :4, isNeedAct is :false, type is :0
+03-25 14:00:25.913 V/SUMA    ( 1549): [resman-s][onTransact 1542]leave transact client pid = 2475
+03-25 14:00:25.914 V/SUMA    ( 2475): [resman-c][Roc_Tuner_GetInfo 1125]leave !!!
+03-25 14:00:25.914 D/tuning  ( 2475): ^^^^in tuner callBack. Query result=0,freq=650000
+03-25 14:00:25.914 I/System.out( 2475): [DEBUG networkInterface] You see: NI listener's size=1
+03-25 14:00:25.914 V/SUMA    ( 1549): [mnt_parse_pmt_section] channel=0 frq=650000 srv=0x143 pmt force receive!!!
+03-25 14:00:25.914 V/SUMA    ( 1549): [mnt_parse_pmt_section] service info change,channel[0] [650000 0x10 0x140 0x143] attrib=0xd308!!!
+03-25 14:00:25.914 D/TunerNgbDealer( 2475): receiveNIEvent event:org.davic.net.tuning.NetworkInterfaceTuningOverEvent[source=class org.davic.net.tuning.NetworkInterfaceTuningOverEvent]
+03-25 14:00:25.914 D/TunerNgbDealer( 2475): receiveNIEvent tunerIndex:0:tunerDs:[CableDeliverySystem@254004b5]freq[650000]fecOuter[0]modulation[3]symbolRate[6875]fecInner[0]:isTunerLock:true
+03-25 14:00:25.918 D/SIDatabase( 2475): nGetNetworkId freq  650000, type 68,onid 16,tsID 320 
+03-25 14:00:25.918 D/SIDatabase( 2475): ^^^^nGetNetworkId failed:33554446
+03-25 14:00:25.918 D/SIDatabase( 2475): ^^^^SI service EVENT===frequency:650000[dvb://10.140.143]
+03-25 14:00:25.919 D/SIDatabase( 2475): nGetNetworkId freq  650000, type 68,onid 16,tsID 320 
+03-25 14:00:25.919 D/SIDatabase( 2475): ^^^^nGetNetworkId failed:33554446
+03-25 14:00:25.920 D/TableMonitorNgbDealer( 2475): dealServiceInfo event:MonitoringEvent [monitorType=54016, reason=8]:reason:61441:channelIndex:0:service:SIService [provider=中间件, Name=F275CH3-赵建斌测试频道3, CA_MODE=0, EIT_PF=true, EIT_SCHEDULE=true, number=0, pcrPid=8190, svType=1, url=dvb://10.140.143Frequency:org.avmsc.dtvm.si.search.Frequence@83e99f9b]
+03-25 14:00:25.920 D/SIDatabase( 2475): setFrequence the result 0, frequence 650000
+03-25 14:00:25.921 V/SUMA    ( 2475): [dvb_client_dbs] find srv flag[1] 
+03-25 14:00:25.921 V/SUMA    ( 1549): [dvb_server_dbs]TRANS_CODE_DBS_FIND_SRV_INFO flag[1] 
+03-25 14:00:25.922 D/PlayNgbDealer( 2475): setEcm channel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[0]serialNum4[0]pcrPID[8190]refServiceID[-1]:ecmMode:1:vPID:0:vSysID:0:aPID:0:aSysID:0
+03-25 14:00:25.922 D/PlayNgbDealer( 2475): findPlayer index:0:findType:0:channelIndex:0
+03-25 14:00:25.922 D/PlayNgbDealer( 2475): findPlayer index:0:findType:0:channelIndex:0
+03-25 14:00:25.922 D/PlayNgbDealer( 2475): setEcm videoInfo:[StreamInfo@40e3fbf8]pid[514]streamType[53]compTag[2]language[null]isEncrypted[false]ecmPID[8191]ecmSysID[0]
+03-25 14:00:25.922 D/PlayNgbDealer( 2475): findPlayer index:0:findType:0:channelIndex:0
+03-25 14:00:25.922 D/PlayNgbDealer( 2475): setEcm audioInfo:[StreamInfo@40e719b0]pid[670]streamType[9]compTag[158]language[eng]isEncrypted[false]ecmPID[8191]ecmSysID[0]
+03-25 14:00:25.922 I/System.out( 2475): [DEBUG playerImpl] onid:16 serID:323 tsID:320 Frequece:650000
+03-25 14:00:25.923 D/Media   ( 2475): setEcm,setFrequence result:0
+03-25 14:00:25.923 D/Media   ( 2475): setEcm service freq:650000, oNetID:16, serviceID:323, tsID:320
+03-25 14:00:25.923 D/Media   ( 2475): setEcm mediaplayer handle:16711680,ecmLen:2
+03-25 14:00:25.923 D/Media   ( 2475): setEcm systemID:0, ecmPID:0, streamPID:514, streamType:2
+03-25 14:00:25.923 D/Media   ( 2475): setEcm systemID:0, ecmPID:0, streamPID:670, streamType:4
+03-25 14:00:25.923 V/SUMA    ( 1549): [NGBM] ngb_media_player_set_ecm enter !!! hplayer=0xff0000
+03-25 14:00:25.923 V/SUMA    ( 1549): >> [CA]rocme_porting_ca_set_ecm_info_suma: channel_id = 0 ecm_pid = 0x0 puzzle_ecm = 0x0 tnr_id = 0 
+03-25 14:00:25.923 V/SUMA    ( 1549): [CAM] CA_Manager_ChannelSetEcmInfo() leave ! ret=0 id=0 ecm=0x0
+03-25 14:00:25.923 V/SUMA    ( 1549): [NGBM] context_resman_set_ecm @@@@@@@@@@@@@@@@@@@@@@[0x10 0x140 0x143(323)] ca_sys_id=0x0 ecm_pid=0x0,ca_channel[0]
+03-25 14:00:25.923 V/SUMA    ( 1549): [NGBM] ngb_media_player_set_ecm leave hplayer=0xff0000 ret=0
+03-25 14:00:26.097 I/System.out( 2475): [DEBUG QueryRequest] execute doQuery
+03-25 14:00:26.098 D/SIDatabase( 2475): ^^^^Num of Network:0
+03-25 14:00:26.556 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{413b8078 V.E..... ......ID 905,0-1280,550 #7f0a010b app:id/playcontrol_message_adv}, oldState is :4, destiState is :0, isNeedAct is :true, type is :0
+03-25 14:00:26.904 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{413b8078 V.E..... ........ 905,0-1280,550 #7f0a010b app:id/playcontrol_message_adv}, oldState is :0, destiState is :0, isNeedAct is :false, type is :0
+03-25 14:00:26.957 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{413b8078 V.E..... ........ 905,0-1280,550 #7f0a010b app:id/playcontrol_message_adv}, oldState is :0, destiState is :0, isNeedAct is :false, type is :0
+03-25 14:00:27.978 D/RemoteIME( 2444): RemoteIME--> onKeyDown keyCode = 22
+03-25 14:00:27.980 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_DPAD_RIGHT, scanCode=106, metaState=0, flags=0x8, repeatCount=0, eventTime=299453, downTime=299453, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:27.980 D/PlayActivity( 2708): the pressed keyCode is:22:and the pair state is:-1:time:299457:isEventDeal:falsefocus view:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:27.980 D/PlayActivity( 2708): onKeyDown dealADLink result: false
+03-25 14:00:27.981 D/PlayActivity( 2708): dealMessageTile channel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:27.981 D/PlayActivity( 2708): dealMessageTile serviceName:F275CH3-赵建斌测试频道3
+03-25 14:00:27.983 D/PlayActivity( 2708): timeShiftTag:android.widget.TextView{4136d810 V.ED.... ........ 960,225-960,259 #7f0a012e app:id/playcontrol_message_tile_timeshift_tag}
+03-25 14:00:27.984 E/DataBaseManager( 2708): isChannelIvideoShift no exist channel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:27.986 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{40d8eb28 I.E..... ......ID 0,340-1280,720 #7f0a011a app:id/playcontrol_message_tile}, oldState is :0, destiState is :4, isNeedAct is :true, type is :6
+03-25 14:00:27.987 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{413b8078 I.E..... ........ 905,0-1280,550 #7f0a010b app:id/playcontrol_message_adv}, oldState is :0, destiState is :4, isNeedAct is :true, type is :0
+03-25 14:00:27.991 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{41945918 I.E..... ........ 1024,50-1189,132 #7f0a010d app:id/playcontrol_channel_num}, oldState is :0, destiState is :4, isNeedAct is :true, type is :0
+03-25 14:00:27.993 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:27.994 D/PlayActivity( 2708): getSoundVolume,:volume:66
+03-25 14:00:27.994 D/SoundNgbDealer( 2475): setVolume volume:72
+03-25 14:00:27.995 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_audio_set_volume- 
+03-25 14:00:27.995 V/PT>     ( 1549): SET volume = 72 
+03-25 14:00:27.995 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_VOLUME OK 
+03-25 14:00:27.995 D/SoundNgbDealer( 2475): setVolume result:true
+03-25 14:00:27.995 D/SoundAndroidDealer( 2475): setVolume volume:72:ratio:1
+03-25 14:00:27.995 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:27.995 D/SoundAndroidDealer( 2475): setVolume isMute:false:ratio:1
+03-25 14:00:28.000 D/ServiceBoot( 2475): volumeReceiver intent:Intent { act=android.media.MASTER_VOLUME_CHANGED_ACTION flg=0x10 (has extras) }:context:com.suma.midware.back.BackService@40dc5048
+03-25 14:00:28.001 D/PlayActivity( 2708): set the current sound:12: and result is:true
+03-25 14:00:28.001 D/ServiceBoot( 2475): volumeReceiver nowValue:72:oldValue:66
+03-25 14:00:28.001 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:28.004 D/SoundHandler( 2475): handleMasterChange ratio:1:curVolume:72
+03-25 14:00:28.004 D/SoundNgbDealer( 2475): setVolume volume:72
+03-25 14:00:28.004 D/DirectLoaderXianning( 2475): parseNitSection data:986
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection net tag:161:len:34
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection net tag:64:len:11
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:28.005 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.006 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:28.006 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.006 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:15
+03-25 14:00:28.006 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.006 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:15
+03-25 14:00:28.006 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.006 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:28.006 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.006 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:18
+03-25 14:00:28.006 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_VOLUME OK 
+03-25 14:00:28.006 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.007 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:28.007 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.007 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:28.007 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.007 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:28.007 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.007 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:28.007 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.007 D/SoundNgbDealer( 2475): setVolume result:true
+03-25 14:00:28.011 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:9
+03-25 14:00:28.011 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.011 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:9
+03-25 14:00:28.011 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.011 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:28.011 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.011 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:28.011 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.011 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:15
+03-25 14:00:28.011 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.011 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:28.011 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:28.012 D/DirectLoader( 2475): dealLoaderMonitor updateInfo:null
+03-25 14:00:28.022 D/dalvikvm( 2475): GC_CONCURRENT freed 427K, 16% free 3031K/3580K, paused 3ms+1ms, total 15ms
+03-25 14:00:28.024 D/PlayActivity( 2708): requestAdv adv advType :7:channel:null
+03-25 14:00:28.025 D/EsgBaseDealer( 2475): getAdvs adType:7:locator:[EsgLocator@404fe0]oNetID[16]tsID[320]serviceID[323]freq[650000]
+03-25 14:00:28.025 D/EsgRunner( 2475): getAdvs reqType:7:locator:[EsgLocator@404fe0]oNetID[16]tsID[320]serviceID[323]freq[650000]
+03-25 14:00:28.025 D/PlayActivity( 2708): getAdvs end,advType:7:advs:null
+03-25 14:00:28.025 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{419715c8 V.E..... ......ID 441,530-1081,668 #7f0a010f app:id/playcontrol_sound_tile}, oldState is :4, destiState is :0, isNeedAct is :true, type is :0
+03-25 14:00:28.188 D/RemoteIME( 2444): RemoteIME--> onKeyUp keyCode = 22
+03-25 14:00:28.189 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_UP, keyCode=KEYCODE_DPAD_RIGHT, scanCode=106, metaState=0, flags=0x8, repeatCount=0, eventTime=299662, downTime=299453, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F....ID 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:28.189 D/PlayActivity( 2708): the released keyCode is:22:time:299666
+03-25 14:00:28.189 D/PlayActivity( 2708): onKeyUp,selectChannel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:28.216 D/EventCache( 2708): refreshLoop refreshChannelList size:0
+03-25 14:00:28.292 D/DlnaHandler( 2475): dealStart cp:org.cybergarage.d.e@40e35818
+03-25 14:00:28.300 D/DlnaHandler( 2475): getAllAddrs net:[wlan0][3]:name:wlan0
+03-25 14:00:28.300 D/DlnaHandler( 2475): getAllAddrs net:[p2p0][4]:name:p2p0
+03-25 14:00:28.300 D/DlnaHandler( 2475): getAllAddrs net:[eth0][2]:name:eth0
+03-25 14:00:28.301 D/DlnaHandler( 2475): getAllAddrs net:[lo][1][/::1%1%1][/127.0.0.1]:name:lo
+03-25 14:00:28.301 D/DlnaHandler( 2475): getAllAddrs addr:/::1%1%1
+03-25 14:00:28.301 D/DlnaHandler( 2475): getAllAddrs addr:/127.0.0.1
+03-25 14:00:30.044 I/System.out( 2475): [DEBUG QueryRequest] execute doQuery
+03-25 14:00:30.045 D/SIDatabase( 2475): ^^^^Num of Network:0
+03-25 14:00:31.030 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{419715c8 I.E..... ......ID 441,530-1081,668 #7f0a010f app:id/playcontrol_sound_tile}, oldState is :0, destiState is :4, isNeedAct is :true, type is :0
+03-25 14:00:31.031 D/PlayActivity( 2708): requestCornerMarkDisplay
+03-25 14:00:31.031 D/PlayActivity( 2708): requestAdv adv advType :10:channel:null
+03-25 14:00:31.032 D/EsgBaseDealer( 2475): getAdvs adType:10:locator:[EsgLocator@404fe0]oNetID[16]tsID[320]serviceID[323]freq[650000]
+03-25 14:00:31.033 D/EsgRunner( 2475): getAdvs reqType:10:locator:[EsgLocator@404fe0]oNetID[16]tsID[320]serviceID[323]freq[650000]
+03-25 14:00:31.033 D/PlayActivity( 2708): getAdvs end,advType:10:advs:null
+03-25 14:00:31.224 D/RemoteIME( 2444): RemoteIME--> onKeyDown keyCode = 22
+03-25 14:00:31.242 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_DPAD_RIGHT, scanCode=106, metaState=0, flags=0x8, repeatCount=0, eventTime=302698, downTime=302698, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F....ID 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:31.243 D/PlayActivity( 2708): the pressed keyCode is:22:and the pair state is:-1:time:302720:isEventDeal:falsefocus view:android.widget.RelativeLayout{40d88eb0 VFE..... .F....ID 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:31.243 D/PlayActivity( 2708): onKeyDown dealADLink result: false
+03-25 14:00:31.244 D/PlayActivity( 2708): getSoundVolume,:volume:72
+03-25 14:00:31.245 D/SoundNgbDealer( 2475): setVolume volume:78
+03-25 14:00:31.245 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_audio_set_volume- 
+03-25 14:00:31.245 V/PT>     ( 1549): SET volume = 78 
+03-25 14:00:31.245 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_VOLUME OK 
+03-25 14:00:31.245 D/SoundNgbDealer( 2475): setVolume result:true
+03-25 14:00:31.246 D/SoundAndroidDealer( 2475): setVolume volume:78:ratio:1
+03-25 14:00:31.246 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:31.246 D/SoundAndroidDealer( 2475): setVolume isMute:false:ratio:1
+03-25 14:00:31.249 D/PlayActivity( 2708): set the current sound:13: and result is:true
+03-25 14:00:31.249 D/ServiceBoot( 2475): volumeReceiver intent:Intent { act=android.media.MASTER_VOLUME_CHANGED_ACTION flg=0x10 (has extras) }:context:com.suma.midware.back.BackService@40dc5048
+03-25 14:00:31.249 D/ServiceBoot( 2475): volumeReceiver nowValue:78:oldValue:72
+03-25 14:00:31.250 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:31.254 D/SoundHandler( 2475): handleMasterChange ratio:1:curVolume:78
+03-25 14:00:31.254 D/SoundNgbDealer( 2475): setVolume volume:78
+03-25 14:00:31.254 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_VOLUME OK 
+03-25 14:00:31.254 D/SoundNgbDealer( 2475): setVolume result:true
+03-25 14:00:31.268 D/PlayActivity( 2708): requestAdv adv advType :7:channel:null
+03-25 14:00:31.269 D/EsgBaseDealer( 2475): getAdvs adType:7:locator:[EsgLocator@404fe0]oNetID[16]tsID[320]serviceID[323]freq[650000]
+03-25 14:00:31.269 D/EsgRunner( 2475): getAdvs reqType:7:locator:[EsgLocator@404fe0]oNetID[16]tsID[320]serviceID[323]freq[650000]
+03-25 14:00:31.269 D/PlayActivity( 2708): getAdvs end,advType:7:advs:null
+03-25 14:00:31.270 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{419715c8 V.E..... ......ID 441,530-1081,668 #7f0a010f app:id/playcontrol_sound_tile}, oldState is :4, destiState is :0, isNeedAct is :true, type is :0
+03-25 14:00:31.444 D/RemoteIME( 2444): RemoteIME--> onKeyUp keyCode = 22
+03-25 14:00:31.461 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_UP, keyCode=KEYCODE_DPAD_RIGHT, scanCode=106, metaState=0, flags=0x8, repeatCount=0, eventTime=302908, downTime=302698, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F....ID 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:31.462 D/PlayActivity( 2708): the released keyCode is:22:time:302939
+03-25 14:00:31.462 D/PlayActivity( 2708): onKeyUp,selectChannel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:32.398 D/RemoteIME( 2444): RemoteIME--> onKeyDown keyCode = 22
+03-25 14:00:32.399 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_DPAD_RIGHT, scanCode=106, metaState=0, flags=0x8, repeatCount=0, eventTime=303872, downTime=303872, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:32.400 D/PlayActivity( 2708): the pressed keyCode is:22:and the pair state is:-1:time:303876:isEventDeal:falsefocus view:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:32.400 D/PlayActivity( 2708): onKeyDown dealADLink result: false
+03-25 14:00:32.400 D/SoundNgbDealer( 2475): setVolume volume:84
+03-25 14:00:32.402 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_audio_set_volume- 
+03-25 14:00:32.402 V/PT>     ( 1549): SET volume = 84 
+03-25 14:00:32.402 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_VOLUME OK 
+03-25 14:00:32.402 D/SoundNgbDealer( 2475): setVolume result:true
+03-25 14:00:32.402 D/SoundAndroidDealer( 2475): setVolume volume:84:ratio:1
+03-25 14:00:32.403 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:32.403 D/SoundAndroidDealer( 2475): setVolume isMute:false:ratio:1
+03-25 14:00:32.408 D/ServiceBoot( 2475): volumeReceiver intent:Intent { act=android.media.MASTER_VOLUME_CHANGED_ACTION flg=0x10 (has extras) }:context:com.suma.midware.back.BackService@40dc5048
+03-25 14:00:32.409 D/ServiceBoot( 2475): volumeReceiver nowValue:84:oldValue:78
+03-25 14:00:32.409 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:32.411 D/SoundHandler( 2475): handleMasterChange ratio:1:curVolume:84
+03-25 14:00:32.411 D/SoundNgbDealer( 2475): setVolume volume:84
+03-25 14:00:32.412 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_VOLUME OK 
+03-25 14:00:32.412 D/SoundNgbDealer( 2475): setVolume result:true
+03-25 14:00:32.412 D/PlayActivity( 2708): set the current sound:14: and result is:true
+03-25 14:00:32.430 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{419715c8 V.E..... ......ID 441,530-1081,668 #7f0a010f app:id/playcontrol_sound_tile}, oldState is :0, destiState is :0, isNeedAct is :true, type is :0
+03-25 14:00:32.607 D/RemoteIME( 2444): RemoteIME--> onKeyUp keyCode = 22
+03-25 14:00:32.609 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_UP, keyCode=KEYCODE_DPAD_RIGHT, scanCode=106, metaState=0, flags=0x8, repeatCount=0, eventTime=304082, downTime=303872, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:32.609 D/PlayActivity( 2708): the released keyCode is:22:time:304086
+03-25 14:00:32.610 D/PlayActivity( 2708): onKeyUp,selectChannel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:33.012 D/DirectLoaderXianning( 2475): parseNitSection data:986
+03-25 14:00:33.013 D/DirectLoaderXianning( 2475): parseNitSection net tag:161:len:34
+03-25 14:00:33.013 D/DirectLoaderXianning( 2475): parseNitSection net tag:64:len:11
+03-25 14:00:33.013 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:33.013 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.013 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:33.013 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.013 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:33.013 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.013 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:33.013 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.013 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:33.013 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.013 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:33.013 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.013 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:33.015 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.015 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:33.015 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.015 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:33.015 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.015 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:15
+03-25 14:00:33.015 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.015 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:15
+03-25 14:00:33.015 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.015 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:18
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:9
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:9
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.016 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:15
+03-25 14:00:33.017 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.017 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:33.017 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:33.017 D/DirectLoader( 2475): dealLoaderMonitor updateInfo:null
+03-25 14:00:33.216 D/EventCache( 2708): refreshLoop refreshChannelList size:0
+03-25 14:00:33.293 D/DlnaHandler( 2475): dealStart cp:org.cybergarage.d.e@40e35818
+03-25 14:00:33.320 D/dalvikvm( 2475): GC_CONCURRENT freed 380K, 15% free 3058K/3564K, paused 3ms+3ms, total 22ms
+03-25 14:00:33.320 D/dalvikvm( 2475): WAIT_FOR_CONCURRENT_GC blocked 15ms
+03-25 14:00:33.327 D/DlnaHandler( 2475): getAllAddrs net:[wlan0][3]:name:wlan0
+03-25 14:00:33.327 D/DlnaHandler( 2475): getAllAddrs net:[p2p0][4]:name:p2p0
+03-25 14:00:33.327 D/DlnaHandler( 2475): getAllAddrs net:[eth0][2]:name:eth0
+03-25 14:00:33.328 D/DlnaHandler( 2475): getAllAddrs net:[lo][1][/::1%1%1][/127.0.0.1]:name:lo
+03-25 14:00:33.328 D/DlnaHandler( 2475): getAllAddrs addr:/::1%1%1
+03-25 14:00:33.328 D/DlnaHandler( 2475): getAllAddrs addr:/127.0.0.1
+03-25 14:00:33.514 D/RemoteIME( 2444): RemoteIME--> onKeyDown keyCode = 22
+03-25 14:00:33.515 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_DPAD_RIGHT, scanCode=106, metaState=0, flags=0x8, repeatCount=0, eventTime=304988, downTime=304988, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:33.515 D/PlayActivity( 2708): the pressed keyCode is:22:and the pair state is:-1:time:304992:isEventDeal:falsefocus view:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:33.515 D/PlayActivity( 2708): onKeyDown dealADLink result: false
+03-25 14:00:33.516 D/SoundNgbDealer( 2475): setVolume volume:90
+03-25 14:00:33.517 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_audio_set_volume- 
+03-25 14:00:33.517 V/PT>     ( 1549): SET volume = 90 
+03-25 14:00:33.517 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_VOLUME OK 
+03-25 14:00:33.517 D/SoundNgbDealer( 2475): setVolume result:true
+03-25 14:00:33.517 D/SoundAndroidDealer( 2475): setVolume volume:90:ratio:1
+03-25 14:00:33.518 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:33.518 D/SoundAndroidDealer( 2475): setVolume isMute:false:ratio:1
+03-25 14:00:33.524 D/ServiceBoot( 2475): volumeReceiver intent:Intent { act=android.media.MASTER_VOLUME_CHANGED_ACTION flg=0x10 (has extras) }:context:com.suma.midware.back.BackService@40dc5048
+03-25 14:00:33.524 D/ServiceBoot( 2475): volumeReceiver nowValue:90:oldValue:84
+03-25 14:00:33.525 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:33.526 D/PlayActivity( 2708): set the current sound:15: and result is:true
+03-25 14:00:33.527 D/IvideoUtil( 2475): requestIvideoData reqParam:{"serverAddress":"http:\/\/192.166.66.33:8080\/PortalServer-App\/services\/PortalServer4Client?wsdl","location":"100085","sessionId":"","token":"","serialNumber":"0029040011070000002","method":"getPortalServerIP","type":"8","user":"","version":"030101","protalVersion":""}
+03-25 14:00:33.529 D/SoundHandler( 2475): handleMasterChange ratio:1:curVolume:90
+03-25 14:00:33.529 D/SoundNgbDealer( 2475): setVolume volume:90
+03-25 14:00:33.530 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_VOLUME OK 
+03-25 14:00:33.530 D/SoundNgbDealer( 2475): setVolume result:true
+03-25 14:00:33.534 D/ConnectivityService( 2214): mActiveDefaultNetwork = -1
+03-25 14:00:33.535 I/EthernetManager( 2214): getWifiDisguiseState0
+03-25 14:00:33.535 E/LoadHttpHandler( 2475): startLoad net-unavailable
+03-25 14:00:33.536 D/IvideoUtil( 2475): requestIvideoData isSuccess:false
+03-25 14:00:33.540 D/IvideoUtil( 2475): requestIvideoData reqParam:{"serverAddress":"http:\/\/192.166.66.33:8080\/PortalServer-App\/services\/PortalServer4Client?wsdl","location":"100085","sessionId":"","token":"","serialNumber":"0029040011070000002","method":"getLocation","type":"8","user":"","version":"030101","protalVersion":""}
+03-25 14:00:33.545 I/EthernetManager( 2214): getWifiDisguiseState0
+03-25 14:00:33.545 D/ConnectivityService( 2214): mActiveDefaultNetwork = -1
+03-25 14:00:33.546 E/LoadHttpHandler( 2475): startLoad net-unavailable
+03-25 14:00:33.547 D/IvideoUtil( 2475): requestIvideoData isSuccess:false
+03-25 14:00:33.547 E/IvideoConfig( 2475): getLocationMap locations null
+03-25 14:00:33.548 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{419715c8 V.E..... ......ID 441,530-1081,668 #7f0a010f app:id/playcontrol_sound_tile}, oldState is :0, destiState is :0, isNeedAct is :true, type is :0
+03-25 14:00:33.549 D/IvideoUtil( 2475): requestIvideoData reqParam:{"serverAddress":"http:\/\/192.166.66.33:8080\/PortalServer-App\/services\/PortalServer4Client?wsdl","location":"100085","sessionId":"","token":"","serialNumber":"0029040011070000002","method":"getServerTime","parameters":{"dateFormat":"yyyyMMddHHmmss"},"type":"8","user":"","version":"030101","protalVersion":""}
+03-25 14:00:33.553 D/ConnectivityService( 2214): mActiveDefaultNetwork = -1
+03-25 14:00:33.554 I/EthernetManager( 2214): getWifiDisguiseState0
+03-25 14:00:33.554 E/LoadHttpHandler( 2475): startLoad net-unavailable
+03-25 14:00:33.554 D/IvideoUtil( 2475): requestIvideoData isSuccess:false
+03-25 14:00:33.555 D/IvideoUtil( 2475): requestIvideoData reqParam:{"serverAddress":"http:\/\/192.166.66.33:8080\/PortalServer-App\/services\/PortalServer4Client?wsdl","location":"100085","sessionId":"","token":"","serialNumber":"0029040011070000002","method":"getConfig","parameters":{"what":"0"},"type":"8","user":"","version":"030101","protalVersion":""}
+03-25 14:00:33.557 D/ConnectivityService( 2214): mActiveDefaultNetwork = -1
+03-25 14:00:33.558 I/EthernetManager( 2214): getWifiDisguiseState0
+03-25 14:00:33.558 E/LoadHttpHandler( 2475): startLoad net-unavailable
+03-25 14:00:33.559 D/IvideoUtil( 2475): requestIvideoData isSuccess:false
+03-25 14:00:33.560 D/IvideoUtil( 2475): requestIvideoData reqParam:{"serverAddress":"http:\/\/192.166.66.33:8080\/PortalServer-App\/services\/PortalServer4Client?wsdl","location":"100085","sessionId":"","token":"","serialNumber":"0029040011070000002","method":"getResolution","type":"8","user":"","version":"030101","protalVersion":""}
+03-25 14:00:33.561 D/ConnectivityService( 2214): mActiveDefaultNetwork = -1
+03-25 14:00:33.562 I/EthernetManager( 2214): getWifiDisguiseState0
+03-25 14:00:33.562 E/LoadHttpHandler( 2475): startLoad net-unavailable
+03-25 14:00:33.562 D/IvideoUtil( 2475): requestIvideoData isSuccess:false
+03-25 14:00:33.562 E/IvideoConfig( 2475): getResolutionList resolutions null
+03-25 14:00:33.723 D/RemoteIME( 2444): RemoteIME--> onKeyUp keyCode = 22
+03-25 14:00:33.725 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_UP, keyCode=KEYCODE_DPAD_RIGHT, scanCode=106, metaState=0, flags=0x8, repeatCount=0, eventTime=305198, downTime=304988, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:33.725 D/PlayActivity( 2708): the released keyCode is:22:time:305202
+03-25 14:00:33.725 D/PlayActivity( 2708): onKeyUp,selectChannel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:33.787 I/System.out( 2475): [DEBUG QueryRequest] execute doQuery
+03-25 14:00:33.788 D/SIDatabase( 2475): ^^^^Num of Network:0
+03-25 14:00:34.655 D/RemoteIME( 2444): RemoteIME--> onKeyDown keyCode = 22
+03-25 14:00:34.656 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_DPAD_RIGHT, scanCode=106, metaState=0, flags=0x8, repeatCount=0, eventTime=306129, downTime=306129, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:34.657 D/PlayActivity( 2708): the pressed keyCode is:22:and the pair state is:-1:time:306133:isEventDeal:falsefocus view:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:34.657 D/PlayActivity( 2708): onKeyDown dealADLink result: false
+03-25 14:00:34.675 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{419715c8 V.E..... ......ID 441,530-1081,668 #7f0a010f app:id/playcontrol_sound_tile}, oldState is :0, destiState is :0, isNeedAct is :true, type is :0
+03-25 14:00:34.864 D/RemoteIME( 2444): RemoteIME--> onKeyUp keyCode = 22
+03-25 14:00:34.865 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_UP, keyCode=KEYCODE_DPAD_RIGHT, scanCode=106, metaState=0, flags=0x8, repeatCount=0, eventTime=306339, downTime=306129, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:34.866 D/PlayActivity( 2708): the released keyCode is:22:time:306343
+03-25 14:00:34.866 D/PlayActivity( 2708): onKeyUp,selectChannel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:35.689 D/RemoteIME( 2444): RemoteIME--> onKeyDown keyCode = 21
+03-25 14:00:35.691 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_DPAD_LEFT, scanCode=105, metaState=0, flags=0x8, repeatCount=0, eventTime=307163, downTime=307163, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:35.692 D/PlayActivity( 2708): the pressed keyCode is:21:and the pair state is:-1:time:307169:isEventDeal:falsefocus view:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:35.692 D/PlayActivity( 2708): onKeyDown dealADLink result: false
+03-25 14:00:35.693 D/SoundNgbDealer( 2475): setVolume volume:84
+03-25 14:00:35.693 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_audio_set_volume- 
+03-25 14:00:35.693 V/PT>     ( 1549): SET volume = 84 
+03-25 14:00:35.693 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_VOLUME OK 
+03-25 14:00:35.693 D/SoundNgbDealer( 2475): setVolume result:true
+03-25 14:00:35.693 D/SoundAndroidDealer( 2475): setVolume volume:84:ratio:1
+03-25 14:00:35.694 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:35.695 D/SoundAndroidDealer( 2475): setVolume isMute:false:ratio:1
+03-25 14:00:35.699 D/ServiceBoot( 2475): volumeReceiver intent:Intent { act=android.media.MASTER_VOLUME_CHANGED_ACTION flg=0x10 (has extras) }:context:com.suma.midware.back.BackService@40dc5048
+03-25 14:00:35.699 D/ServiceBoot( 2475): volumeReceiver nowValue:84:oldValue:90
+03-25 14:00:35.699 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:35.701 D/SoundHandler( 2475): handleMasterChange ratio:1:curVolume:84
+03-25 14:00:35.701 D/SoundNgbDealer( 2475): setVolume volume:84
+03-25 14:00:35.701 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_VOLUME OK 
+03-25 14:00:35.701 D/SoundNgbDealer( 2475): setVolume result:true
+03-25 14:00:35.702 D/PlayActivity( 2708): set the current sound:14: and result is:true
+03-25 14:00:35.723 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{419715c8 V.E..... ......ID 441,530-1081,668 #7f0a010f app:id/playcontrol_sound_tile}, oldState is :0, destiState is :0, isNeedAct is :true, type is :0
+03-25 14:00:35.898 D/RemoteIME( 2444): RemoteIME--> onKeyUp keyCode = 21
+03-25 14:00:35.899 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_UP, keyCode=KEYCODE_DPAD_LEFT, scanCode=105, metaState=0, flags=0x8, repeatCount=0, eventTime=307373, downTime=307163, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:35.900 D/PlayActivity( 2708): the released keyCode is:21:time:307377
+03-25 14:00:35.901 D/PlayActivity( 2708): onKeyUp,selectChannel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:36.125 D/RemoteIME( 2444): RemoteIME--> onKeyDown keyCode = 21
+03-25 14:00:36.127 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_DPAD_LEFT, scanCode=105, metaState=0, flags=0x8, repeatCount=0, eventTime=307600, downTime=307600, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:36.127 D/PlayActivity( 2708): the pressed keyCode is:21:and the pair state is:-1:time:307604:isEventDeal:falsefocus view:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:36.127 D/PlayActivity( 2708): onKeyDown dealADLink result: false
+03-25 14:00:36.128 D/SoundNgbDealer( 2475): setVolume volume:78
+03-25 14:00:36.129 V/PT>     ( 1549): >> HI3716M_INFO:rocme_porting_audio_set_volume- 
+03-25 14:00:36.129 V/PT>     ( 1549): SET volume = 78 
+03-25 14:00:36.129 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_VOLUME OK 
+03-25 14:00:36.129 D/SoundNgbDealer( 2475): setVolume result:true
+03-25 14:00:36.129 D/SoundAndroidDealer( 2475): setVolume volume:78:ratio:1
+03-25 14:00:36.129 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:36.130 D/SoundAndroidDealer( 2475): setVolume isMute:false:ratio:1
+03-25 14:00:36.135 D/PlayActivity( 2708): set the current sound:13: and result is:true
+03-25 14:00:36.136 D/ServiceBoot( 2475): volumeReceiver intent:Intent { act=android.media.MASTER_VOLUME_CHANGED_ACTION flg=0x10 (has extras) }:context:com.suma.midware.back.BackService@40dc5048
+03-25 14:00:36.137 D/ServiceBoot( 2475): volumeReceiver nowValue:78:oldValue:84
+03-25 14:00:36.138 V/SUMA    ( 1549): roc_ss_get_item:get ROC_SYSSET_MUTE OK 
+03-25 14:00:36.139 D/SoundHandler( 2475): handleMasterChange ratio:1:curVolume:78
+03-25 14:00:36.139 D/SoundNgbDealer( 2475): setVolume volume:78
+03-25 14:00:36.140 V/SUMA    ( 1549): roc_ss_set_item:set ROC_SYSSET_VOLUME OK 
+03-25 14:00:36.140 D/SoundNgbDealer( 2475): setVolume result:true
+03-25 14:00:36.157 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{419715c8 V.E..... ......ID 441,530-1081,668 #7f0a010f app:id/playcontrol_sound_tile}, oldState is :0, destiState is :0, isNeedAct is :true, type is :0
+03-25 14:00:36.233 D/dalvikvm( 2708): GC_CONCURRENT freed 1854K, 7% free 28575K/30452K, paused 3ms+6ms, total 40ms
+03-25 14:00:36.335 D/RemoteIME( 2444): RemoteIME--> onKeyUp keyCode = 21
+03-25 14:00:36.338 D/PlayActivity( 2708): dispatchKeyEvent,event:KeyEvent { action=ACTION_UP, keyCode=KEYCODE_DPAD_LEFT, scanCode=105, metaState=0, flags=0x8, repeatCount=0, eventTime=307810, downTime=307600, deviceId=4, source=0x701 }:window focus:android.widget.RelativeLayout{40d88eb0 VFE..... .F...... 0,0-1280,720 #7f0a0109 app:id/playcontrol}
+03-25 14:00:36.338 D/PlayActivity( 2708): the released keyCode is:21:time:307815
+03-25 14:00:36.339 D/PlayActivity( 2708): onKeyUp,selectChannel:[DirectChannel@404fe0]channelID[0]oNetID[16]tsID[320]serviceID[323]freq[650000]name[F275CH3-赵建斌测试频道3]serviceType[2]attr[0]serialNum[3]serialNum4[3]pcrPID[8190]refServiceID[-1]
+03-25 14:00:37.578 I/System.out( 2475): [DEBUG QueryRequest] execute doQuery
+03-25 14:00:37.579 D/SIDatabase( 2475): ^^^^Num of Network:0
+03-25 14:00:38.017 D/DirectLoaderXianning( 2475): parseNitSection data:986
+03-25 14:00:38.017 D/DirectLoaderXianning( 2475): parseNitSection net tag:161:len:34
+03-25 14:00:38.017 D/DirectLoaderXianning( 2475): parseNitSection net tag:64:len:11
+03-25 14:00:38.017 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:38.017 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.017 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:38.017 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.017 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:15
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:15
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.018 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:38.019 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.019 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:18
+03-25 14:00:38.019 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.019 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:38.019 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.019 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:38.019 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.019 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:38.019 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.019 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:38.019 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.019 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:9
+03-25 14:00:38.019 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.019 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:9
+03-25 14:00:38.019 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.020 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:38.020 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.020 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:38.020 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.020 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:15
+03-25 14:00:38.020 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.020 D/DirectLoaderXianning( 2475): parseNitSection ts tag:65:len:21
+03-25 14:00:38.020 D/DirectLoaderXianning( 2475): parseNitSection ts tag:68:len:11
+03-25 14:00:38.020 D/DirectLoader( 2475): dealLoaderMonitor updateInfo:null
+03-25 14:00:38.217 D/EventCache( 2708): refreshLoop refreshChannelList size:0
+03-25 14:00:38.292 D/DlnaHandler( 2475): dealStart cp:org.cybergarage.d.e@40e35818
+03-25 14:00:38.321 D/dalvikvm( 2475): GC_CONCURRENT freed 525K, 16% free 3034K/3584K, paused 4ms+3ms, total 27ms
+03-25 14:00:38.322 D/dalvikvm( 2475): WAIT_FOR_CONCURRENT_GC blocked 14ms
+03-25 14:00:38.324 D/DlnaHandler( 2475): getAllAddrs net:[wlan0][3]:name:wlan0
+03-25 14:00:38.324 D/DlnaHandler( 2475): getAllAddrs net:[p2p0][4]:name:p2p0
+03-25 14:00:38.324 D/DlnaHandler( 2475): getAllAddrs net:[eth0][2]:name:eth0
+03-25 14:00:38.325 D/DlnaHandler( 2475): getAllAddrs net:[lo][1][/::1%1%1][/127.0.0.1]:name:lo
+03-25 14:00:38.325 D/DlnaHandler( 2475): getAllAddrs addr:/::1%1%1
+03-25 14:00:38.325 D/DlnaHandler( 2475): getAllAddrs addr:/127.0.0.1
+03-25 14:00:38.406 D/Main3DActivity( 2489): requestWelcomList count:3:columnID:
+03-25 14:00:38.406 D/IvideoUtil( 2475): requestWelcomeList columnID::count:3
+03-25 14:00:38.406 D/IvideoUtil( 2475): requestPrograms column:null:category:null:startIndex:0:endIndex:3:keyWord:null:sortType:0:year:-1:location:0:programName:null
+03-25 14:00:38.407 D/IvideoUtil( 2475): requestIvideoData reqParam:{"serverAddress":"http:\/\/192.166.66.33:8080\/PortalServer-App\/services\/PortalServer4Client?wsdl","location":"100085","sessionId":"","token":"","serialNumber":"0029040011070000002","method":"getWelcomeList","parameters":{"columnId":"","counts":"3"},"type":"8","user":"","version":"030101","protalVersion":""}
+03-25 14:00:38.407 D/IvideoUtil( 2475): requestIvideoData reqParam:{"serverAddress":"http:\/\/192.166.66.33:8080\/PortalServer-App\/services\/PortalServer4Client?wsdl","location":"100085","sessionId":"","token":"","serialNumber":"0029040011070000002","method":"getProgramInfoList","parameters":{"location":"0","start":"0","queryValue":"","categoryId":"","sortType":"0","year":"","columnId":"","end":"3","programName":""},"type":"8","user":"","version":"030101","protalVersion":""}
+03-25 14:00:38.409 I/EthernetManager( 2214): getWifiDisguiseState0
+03-25 14:00:38.409 D/ConnectivityService( 2214): mActiveDefaultNetwork = -1
+03-25 14:00:38.410 I/EthernetManager( 2214): getWifiDisguiseState0
+03-25 14:00:38.410 E/LoadHttpHandler( 2475): startLoad net-unavailable
+03-25 14:00:38.410 D/IvideoUtil( 2475): requestIvideoData isSuccess:false
+03-25 14:00:38.410 E/IvideoUtil( 2475): requestWelcomeList jObj null
+03-25 14:00:38.410 D/ConnectivityService( 2214): mActiveDefaultNetwork = -1
+03-25 14:00:38.411 E/LoadHttpHandler( 2475): startLoad net-unavailable
+03-25 14:00:38.411 D/IvideoUtil( 2475): requestIvideoData isSuccess:false
+03-25 14:00:38.411 E/IvideoUtil( 2475): requestPrograms jObj null
+03-25 14:00:39.160 D/PlayActivity( 2708): dealViewAnimation and view is :android.widget.RelativeLayout{419715c8 I.E..... ......ID 441,530-1081,668 #7f0a010f app:id/playcontrol_sound_tile}, oldState is :0, destiState is :4, isNeedAct is :true, type is :0
+03-25 14:00:39.161 D/PlayActivity( 2708): requestCornerMarkDisplay
+03-25 14:00:39.162 D/PlayActivity( 2708): requestAdv adv advType :10:channel:null
+03-25 14:00:39.163 D/EsgBaseDealer( 2475): getAdvs adType:10:locator:[EsgLocator@404fe0]oNetID[16]tsID[320]serviceID[323]freq[650000]
+03-25 14:00:39.163 D/EsgRunner( 2475): getAdvs reqType:10:locator:[EsgLocator@404fe0]oNetID[16]tsID[320]serviceID[323]freq[650000]
+03-25 14:00:39.164 D/PlayActivity( 2708): getAdvs end,advType:10:advs:null

@@ -1,0 +1,503 @@
+01-02 06:56:53.060 V/InputMethodManager(  489): retry check: 
+01-02 06:56:54.060 W/InputMethodManagerService(  489): Starting input on non-focused client android.view.inputmethod.InputMethodManager$1@41a80810 (uid=1000 pid=489)
+01-02 06:56:54.560 V/InputMethodManager(  489): retry check: 
+01-02 06:56:55.560 W/InputMethodManagerService(  489): Starting input on non-focused client android.view.inputmethod.InputMethodManager$1@41a80810 (uid=1000 pid=489)
+01-02 06:56:56.060 V/InputMethodManager(  489): retry check: 
+01-02 06:56:56.500 I/WindowManager(  489): mapkey no map key list
+01-02 06:56:56.500 I/WindowManager(  489): interceptKeyBeforeDispatching enter! isAutoStandby = true
+01-02 06:56:56.500 I/WindowManager(  489):  ClearAllTimer() enter!
+01-02 06:56:56.510 D/RemoteIME(  723): keycode: 19, realAction: false
+01-02 06:56:56.770 I/WindowManager(  489): mapkey no map key list
+01-02 06:56:56.770 D/RemoteIME(  723): keycode: 19, realAction: true
+01-02 06:56:56.800 I/MediaPlayerService(  134): [13] reset
+01-02 06:56:56.800 V/AmSuperPlayer(  134): [reset::364]
+01-02 06:56:56.800 I/AmSuperPlayer(  134): media.amplayer.enable is enabled
+01-02 06:56:56.800 I/AmSuperPlayer(  134): media.stagefright.enable-player is disabled
+01-02 06:56:56.800 V/AmSuperPlayer(  134): [CreatePlayer::969]
+01-02 06:56:56.800 V/AmlogicPlayer(  134): stop
+01-02 06:56:56.800 I/amplayer(  134): [player_stop:enter]pid=12
+01-02 06:56:56.800 I/amplayer(  134): [player_stop]player_status=10001
+01-02 06:56:56.800 I/amplayer(  134): [player_thread_wait_exit:70]pid=[12] thead_id=3100073024
+01-02 06:56:57.060 W/InputMethodManagerService(  489): Starting input on non-focused client android.view.inputmethod.InputMethodManager$1@41a80810 (uid=1000 pid=489)
+01-02 06:56:57.320 I/amplayer(  134): ...ffmpeg callback interrupted..locked. 0 mS
+01-02 06:56:57.320 I/amffmpeg(  134): [udp @ 0xb8c75f30] [circular_buffer_task:355]Eixt
+01-02 06:56:57.320 I/amffmpeg(  134): auto_switch_protol_t:nsc::
+01-02 06:56:57.560 V/InputMethodManager(  489): retry check: 
+01-02 06:56:58.320 I/amplayer(  134): ...ffmpeg callback interrupted..locked. 1002 mS
+01-02 06:56:58.320 I/amffmpeg(  134): is_ncs_file=0
+01-02 06:56:58.320 I/amffmpeg(  134): auto_switch_protol_t:mmsh::
+01-02 06:56:58.560 W/InputMethodManagerService(  489): Starting input on non-focused client android.view.inputmethod.InputMethodManager$1@41a80810 (uid=1000 pid=489)
+01-02 06:56:59.060 V/InputMethodManager(  489): retry check: 
+01-02 06:56:59.320 I/amplayer(  134): ...ffmpeg callback interrupted..locked. 2003 mS
+01-02 06:56:59.320 I/amffmpeg(  134): url_lpseek:offset=0 whence=65536,buffer=b1bf3020,rp=b1bf3020,wp=b1bf3020,end=b23f3020,pos=0
+01-02 06:56:59.320 I/amffmpeg(  134): url_lpseek:offset=-1 whence=2,buffer=b1bf3020,rp=b1bf3020,wp=b1bf3020,end=b23f3020,pos=0
+01-02 06:56:59.320 I/amffmpeg(  134): udp://@239.1.1.16:10016:size=-1
+01-02 06:57:00.060 W/InputMethodManagerService(  489): Starting input on non-focused client android.view.inputmethod.InputMethodManager$1@41a80810 (uid=1000 pid=489)
+01-02 06:57:00.320 I/amplayer(  134): ...ffmpeg callback interrupted..locked. 3004 mS
+01-02 06:57:00.320 I/amffmpeg(  134): [av_probe_input_buffer]read 0 bytes for probe format
+01-02 06:57:00.320 I/amffmpeg(  134): ---------------------mp2_read_probe
+01-02 06:57:00.320 I/amffmpeg(  134): ---------------------mp3_read_probe
+01-02 06:57:00.330 V/AmlogicPlayerStreamSource(  134): confidence=0.00
+01-02 06:57:00.330 V/AmlogicPlayerExtractorDemux(  134): gettype=0 mimeType.string=
+01-02 06:57:00.330 I/amffmpeg(  134): [av_probe_input_buffer]read end, exit probe format
+01-02 06:57:00.330 I/amplayer(  134): [ffmpeg_open_file] file=udp://@239.1.1.16:10016,header=
+01-02 06:57:00.330 I/amplayer(  134): [player_dec_init]ffmpeg_open_file failed(udp://@239.1.1.16:10016)*****ret=fcffffff!
+01-02 06:57:00.330 I/amplayer(  134): 
+01-02 06:57:00.330 I/amplayer(  134): pid[12]player_thread release0 begin...(sta:0x30001)
+01-02 06:57:00.330 I/amplayer(  134): [get_message:147]num=0 in_idx=1 out_idx=1 cmd=8
+01-02 06:57:00.330 I/amplayer(  134): pid[12]::[player_thread:851]cmd=8 set_mode=0 info=0 param=0
+01-02 06:57:00.330 I/amplayer(  134): player error,force video blackout
+01-02 06:57:00.330 I/amplayer(  134): [get_pts_video]No codec handler
+01-02 06:57:00.330 I/amplayer(  134): **[update_state]pid:12 status=STOPED(last:BEGIN_INIT) err=0x0 curtime=0 (ms:0) fulltime=0 lsttime=0
+01-02 06:57:00.330 I/amplayer(  134): **[update_state]abuflevel=0.00000000 vbublevel=0.00000000 abufrp=0 vbufrp=0 read_end=0
+01-02 06:57:00.330 V/AmlogicPlayer(  134): update_process pid=12, current=0,status=[STOPED]
+01-02 06:57:00.330 V/AmlogicPlayer(  134): Player status:STOPED, playback complete
+01-02 06:57:00.330 I/amplayer(  134): **[update_state]pid:12 status=EXIT(last:STOPED) err=0x0 curtime=0 (ms:0) fulltime=0 lsttime=0
+01-02 06:57:00.330 I/amplayer(  134): **[update_state]abuflevel=0.00000000 vbublevel=0.00000000 abufrp=0 vbufrp=0 read_end=0
+01-02 06:57:00.330 V/AmlogicPlayer(  134): update_process pid=12, current=0,status=[EXIT]
+01-02 06:57:00.330 V/AmlogicPlayer(  134): Player status:EXIT, playback exit
+01-02 06:57:00.330 I/amplayer(  134): 
+01-02 06:57:00.330 I/amplayer(  134): pid[12]::stop play, exit player thead!(sta:0x30004)
+01-02 06:57:00.330 I/amplayer(  134): [player_thread_wait_exit:76]thead_id=3100073024 returning
+01-02 06:57:00.330 I/amplayer(  134): [player_stop:247]wait player_theadpid[12] r = 0
+01-02 06:57:00.330 E/amthreadpool(  134): 3100073024 pool data not found!!!
+01-02 06:57:00.330 I/amplayer(  134): [player_stop:exit]pid=12
+01-02 06:57:00.330 I/amplayer(  134): [tcppool_refresh_link_and_check]pid=12
+01-02 06:57:00.330 I/amplayer(  134): [player_exit:enter]pid=12
+01-02 06:57:00.330 I/amplayer(  134): [player_exit]player_state=0x30004
+01-02 06:57:00.330 I/amplayer(  134): [player_thread_wait_exit:70]pid=[12] thead_id=3100073024
+01-02 06:57:00.330 I/amplayer(  134): [player_thread_wait_exit:76]thead_id=3100073024 returning
+01-02 06:57:00.330 I/amplayer(  134): [player_exit]player thread already exit: 3
+01-02 06:57:00.330 E/amthreadpool(  134): 3100073024 pool data not found!!!
+01-02 06:57:00.330 I/amplayer(  134): [player_release_pid:77]release pid=12
+01-02 06:57:00.330 I/amplayer(  134): [player_exit:exit]pid=12
+01-02 06:57:00.330 V/AmlogicPlayer(  134): AmlogicPlayer destructor
+01-02 06:57:00.330 V/AmlogicPlayer(  134): release
+01-02 06:57:00.330 V/AmlogicPlayer(  134): [release::3081]
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [CreatePlayer::985]
+01-02 06:57:00.330 V/AmSuperPlayer(  134): Start new player now=3
+01-02 06:57:00.330 V/MediaPlayerService(  134): [13] notify (0xb8c6bc60, 100, 1, -1)
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [initThread::1051]
+01-02 06:57:00.330 V/MediaPlayerService(  134): Client(13) destructor pid = 1611
+01-02 06:57:00.330 V/MediaPlayerService(  134): disconnect(13) from pid 1611
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [setNotifyCallback::632]
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [reset::364]
+01-02 06:57:00.330 E/MediaPlayer( 1611): error (1, -1)
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [~AmSuperPlayer::106]
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [release::339]
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [release::349]
+01-02 06:57:00.330 V/AudioSink(  134): close
+01-02 06:57:00.330 D/MediaPlayer( 1611): Couldn't open file on client side, trying server side
+01-02 06:57:00.330 V/MediaPlayerService(  134): Client(14) constructor
+01-02 06:57:00.330 V/MediaPlayerService(  134): Create new client(14) from pid 1611, uid 10028, 
+01-02 06:57:00.330 V/MediaPlayerService(  134): player type = 111
+01-02 06:57:00.330 V/MediaPlayerService(  134): Create AmSuperPlayer
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [AmSuperPlayer::76]
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [AmSuperPlayer::78]
+01-02 06:57:00.330 V/AmSuperPlayer(  134): AmSuperPlayer init now
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [onFirstRef::114]
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [initCheck::121]
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [initCheck::123]
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [setNotifyCallback::632]
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [hardwareOutput::404]
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [hardwareOutput::406]
+01-02 06:57:00.330 V/AudioSink(  134): AudioOutput(18)
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [setDataSource::129]
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [setDataSource::131]
+01-02 06:57:00.330 V/MediaPlayerService(  134):  setDataSource
+01-02 06:57:00.330 V/MediaPlayerService(  134): [14] setVideoSurfaceTexture(0xb8c6dd60)
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [setVideoSurfaceTexture::206]
+01-02 06:57:00.330 V/AmSuperPlayer(  134): [setVideoSurfaceTexture::208]
+01-02 06:57:00.330 W/MediaPlayer( 1611): mContext =  android.app.ContextImpl@417c20a0
+01-02 06:57:00.340 V/MediaPlayerService(  134): [14] setVideoSurfaceTexture(0xb8c6e898)
+01-02 06:57:00.340 V/MediaPlayerService(  134): [14] setAudioStreamType(3)
+01-02 06:57:00.340 V/MediaPlayerService(  134): [14] prepareAsync
+01-02 06:57:00.340 V/AmSuperPlayer(  134): [prepareAsync::238]
+01-02 06:57:00.340 V/AmSuperPlayer(  134): [prepareAsync_nolock::247]
+01-02 06:57:00.340 V/AmSuperPlayer(  134): [prepareAsync_nolock::249]
+01-02 06:57:00.340 V/AmSuperPlayer(  134): createPlayer
+01-02 06:57:00.340 V/AmSuperPlayer(  134): Create Amlogic Player
+01-02 06:57:00.340 V/AmlogicPlayer(  134): AmlogicPlayer constructor
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.stopbuftime is not set used def=0.000000
+01-02 06:57:00.340 V/AmlogicPlayer(  134): mStopFeedingBuf_ms = 1200
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.streamtimeadd is not set used def=0.000000
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.droptinyseek.ms is not set used def=-1.000000
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.delaybuffering.s is set to 2.000000
+01-02 06:57:00.340 V/AmlogicPlayer(  134): proj type is : telecom
+01-02 06:57:00.340 V/AmlogicPlayer(  134): proj type is telecom.
+01-02 06:57:00.340 V/AmlogicPlayer(  134): onFirstRef
+01-02 06:57:00.340 I/AmlogicPlayer(  134): found 0 not exit player threads,try exit it now
+01-02 06:57:00.340 V/AmlogicPlayer(  134): initCheck
+01-02 06:57:00.340 V/AmSuperPlayer(  134): [CreatePlayer::890]
+01-02 06:57:00.340 V/AmlogicPlayer(  134): setDataSource
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.useandroidhttp is not setting,use default false
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.widevineenable is disabled
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.dsource4local is enabled
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.dur_update is enabled
+01-02 06:57:00.340 V/AmlogicPlayer(  134): setDataSource enable buffering
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.disp_url is not setting,use default true
+01-02 06:57:00.340 V/AmlogicPlayer(  134): setDataSource url=udp://@239.1.1.17:10017, len=23
+01-02 06:57:00.340 I/InputDispatcher(  489): Window 'Window{41acd3e0 u0 com.sumavision.live/com.sumavision.live.activity.MainActivity}' spent 3569.2ms processing the last input event: KeyEvent(deviceId=1, source=0x00000701, action=1, flags=0x00000008, keyCode=19, scanCode=103, metaState=0x00000000, repeatCount=0), policyFlags=0x42000000
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.delaybuffering is not set used def=0.000000
+01-02 06:57:00.340 V/AmlogicPlayer(  134): prepareAsync
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.cachetime_interval is not set used def=1000.000000
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.lowlevel is set to 0.001000
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.midlevel is set to 0.100000
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.highlevel is set to 0.600000
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.buffertime is set to 5.000000
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.noaudio is not setting,use default false
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.novideo is not setting,use default false
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.displast_frame is not setting,use default false
+01-02 06:57:00.340 V/AmlogicPlayer(  134): buffer level setting is:0.001000-0.100000-0.600000
+01-02 06:57:00.340 I/AmlogicPlayer(  134): media.amplayer.disp_url is not setting,use default true
+01-02 06:57:00.340 V/AmlogicPlayer(  134): prepareAsync,file_name=udp://@239.1.1.17:10017
+01-02 06:57:00.340 I/amplayer(  134): loglevel changed to 35
+01-02 06:57:00.340 I/amplayer(  134): LibPlayer version:Version:2.1.0.
+01-02 06:57:00.340 I/amplayer(  134): LibPlayer git version:
+01-02 06:57:00.340 I/amplayer(  134): LibPlayer version serial:2010000be003064
+01-02 06:57:00.340 I/amplayer(  134): LibPlayer Last Changed:
+01-02 06:57:00.340 I/amplayer(  134): LibPlayer Last Build: Fri Mar  4 18:58:05 HKT 2016
+01-02 06:57:00.340 I/amplayer(  134): LibPlayer Builer Name: dailybuild
+01-02 06:57:00.340 I/Choreographer( 1611): Skipped 213 frames!  The application may be doing too much work on its main thread.
+01-02 06:57:00.340 I/VideoView( 1611): Layout changed,left=0 top=0 right=1280 bottom=720
+01-02 06:57:00.340 I/VideoView( 1611): Layout changed,oldLeft=0 oldTop=0 oldRight=1280 oldBottom=720
+01-02 06:57:00.340 I/VideoView( 1611): .left=0.top=0.right=1280.bottom=720.oldLeft=0.oldTop=0.oldRight=1280.oldBottom=720.Rotation=0
+01-02 06:57:00.340 I/amplayer(  134): [player_start:enter]p=0xb8c726a8 black=1
+01-02 06:57:00.340 V/MediaPlayerService(  134): [14] setParameter(2000)
+01-02 06:57:00.340 V/AmSuperPlayer(  134): [setParameter::453]
+01-02 06:57:00.340 I/amplayer(  134): ***player_para=0xb8c73450,start_param=0xb8c726a8
+01-02 06:57:00.340 I/amplayer(  134): [player_thread_create:59]creat thread success,tid=3100043744
+01-02 06:57:00.340 I/amplayer(  134): [player_start:exit]pid = 13 
+01-02 06:57:00.340 V/AmlogicPlayer(  134): Start player,pid=13
+01-02 06:57:00.340 I/amplayer(  134): 
+01-02 06:57:00.340 I/amplayer(  134): pid[13]::enter into player_thread
+01-02 06:57:00.340 I/amplayer(  134): hassub 1 starttime:-1.000000(ms) duration_url:-1(ms) 
+01-02 06:57:00.340 I/amplayer(  134): set buffering exit time to 5.000000 S,enter time t 0.120000 S
+01-02 06:57:00.340 I/amplayer(  134): [player_update_vdec_profile]str=mpeg12:;
+01-02 06:57:00.340 I/amplayer(  134): mpeg4:;
+01-02 06:57:00.340 I/amplayer(  134): vc1:progressive, interlace, wmv3;
+01-02 06:57:00.340 I/amplayer(  134): h264:;
+01-02 06:57:00.340 I/amplayer(  134): hevc:;
+01-02 06:57:00.340 I/amplayer(  134): mjpeg:;
+01-02 06:57:00.340 I/amplayer(  134): real:rmvb,;
+01-02 06:57:00.340 I/amplayer(  134): avc:;
+01-02 06:57:00.340 I/amplayer(  134): o player_thread
+01-02 06:57:00.340 I/amplayer(  134): 
+01-02 06:57:00.340 I/amplayer(  134): [parse_sysparam_str]j=0 vc1: start:17 end:50
+01-02 06:57:00.340 I/amplayer(  134): [vc1 profile] progress:1; interlace:1; wmv1:0; wmv2:0; wmv3:1
+01-02 06:57:00.340 I/amplayer(  134): [parse_sysparam_str]j=1 h264: start:51 end:57
+01-02 06:57:00.340 I/amplayer(  134): h264 decoder exist.
+01-02 06:57:00.340 I/amplayer(  134): [parse_sysparam_str]j=2 real: start:73 end:84
+01-02 06:57:00.340 I/amplayer(  134): [parse_sysparam_str]j=3 mpeg12: start:0 end:8
+01-02 06:57:00.340 I/amplayer(  134): [parse_sysparam_str]j=4 mpeg4: start:9 end:16
+01-02 06:57:00.340 I/amplayer(  134): [parse_sysparam_str]j=5 mjpeg: start:65 end:72
+01-02 06:57:00.340 I/amplayer(  134): [parse_sysparam_str]j=8 hevc: start:58 end:64
+01-02 06:57:00.340 I/amplayer(  134): hevc decoder exist.
+01-02 06:57:00.340 I/amplayer(  134): pid[13]::Init State: mute_on=0 black=1 t_pos:1069463633s read_max_cnt=0
+01-02 06:57:00.340 I/amplayer(  134): file::::[udp://@239.1.1.17:10017],len=23
+01-02 06:57:00.340 I/amplayer(  134): **[update_state]pid:13 status=BEGIN_INIT(last:UNKNOW_STATE) err=0x0 curtime=0 (ms:0) fulltime=0 lsttime=0
+01-02 06:57:00.340 I/amplayer(  134): **[update_state]abuflevel=0.00000000 vbublevel=0.00000000 abufrp=0 vbufrp=0 read_end=0
+01-02 06:57:00.340 V/AmlogicPlayer(  134): update_process pid=13, current=0,status=[BEGIN_INIT]
+01-02 06:57:00.340 V/AmlogicPlayer(  134): Playing percent =0,mPlayTime:0,mStreamTime:0
+01-02 06:57:00.340 I/amffmpeg(  134): [dash_read_probe:256] dash_probe!
+01-02 06:57:00.340 V/AmlogicPlayerStreamSource(  134): confidence=0.00
+01-02 06:57:00.340 V/AmlogicPlayerExtractorDemux(  134): gettype=0 mimeType.string=
+01-02 06:57:00.340 I/amffmpeg(  134): try get addr info,node=239.1.1.17,services=10017
+01-02 06:57:00.340 I/amffmpeg(  134): try get addr info,node=(null),services=10017
+01-02 06:57:00.340 I/amffmpeg(  134): [udp @ 0xb8c6be00] [udp_open:559]start the udp circular receive
+01-02 06:57:00.340 I/amffmpeg(  134): getloopbuf size=0
+01-02 06:57:00.340 I/amffmpeg(  134): ffio_fdopen (h->is_slowmedia=1,flags=1
+01-02 06:57:00.350 I/amffmpeg(  134): lpbuffer block size=32768
+01-02 06:57:00.350 I/amffmpeg(  134): url_lpopen used lp buf size=8388608
+01-02 06:57:00.350 I/amffmpeg(  134): url_lpseek:offset=0 whence=65536,buffer=b1bf3020,rp=b1bf3020,wp=b1bf3020,end=b23f3020,pos=0
+01-02 06:57:00.350 I/amffmpeg(  134): url_lpseek:offset=0 whence=65536,buffer=b1bf3020,rp=b1bf3020,wp=b1bf3020,end=b23f3020,pos=0
+01-02 06:57:00.350 I/amffmpeg(  134): ffio_fdopen Register lpbuf
+01-02 06:57:00.350 I/amffmpeg(  134): auto_switch_protol_t:list::
+01-02 06:57:00.350 I/amffmpeg(  134): [udp @ 0xb8c6be00] [circular_buffer_task:348]Task starting!!!
+01-02 06:57:00.350 I/MediaPlayer( 1611):  
+01-02 06:57:00.350 I/MediaPlayer( 1611):  
+01-02 06:57:00.350 I/MediaPlayer( 1611): ======================================================
+01-02 06:57:00.350 I/MediaPlayer( 1611): SoftDetectorEventHandler, handleMessage  msg = 10
+01-02 06:57:00.350 I/MediaPlayer( 1611): ID = 14
+01-02 06:57:00.350 I/MediaPlayer( 1611): TYPE = PLAY_QUIT
+01-02 06:57:00.350 I/MediaPlayer( 1611): PLAY_TIME = 0
+01-02 06:57:00.350 I/MediaPlayer( 1611): TIME = 91620352
+01-02 06:57:00.350 I/MediaPlayer( 1611): ======================================================
+01-02 06:57:00.350 I/MediaPlayer( 1611):  
+01-02 06:57:00.350 I/MediaPlayer( 1611):  
+01-02 06:57:00.350 I/MediaPlayer( 1611):  
+01-02 06:57:00.350 I/MediaPlayer( 1611):  
+01-02 06:57:00.350 I/MediaPlayer( 1611): ======================================================
+01-02 06:57:00.350 I/MediaPlayer( 1611): SoftDetectorEventHandler, handleMessage  msg = 1
+01-02 06:57:00.350 I/MediaPlayer( 1611): ID = 14
+01-02 06:57:00.350 I/MediaPlayer( 1611): TYPE = PLAY_PREPARE
+01-02 06:57:00.350 I/MediaPlayer( 1611): URL = udp://@239.1.1.17:10017
+01-02 06:57:00.350 I/MediaPlayer( 1611): START_TIME = 91620354
+01-02 06:57:00.350 I/MediaPlayer( 1611): ======================================================
+01-02 06:57:00.350 I/MediaPlayer( 1611):  
+01-02 06:57:00.350 I/MediaPlayer( 1611):  
+01-02 06:57:00.560 V/InputMethodManager(  489): retry check: 
+01-02 06:57:01.570 W/InputMethodManagerService(  489): Starting input on non-focused client android.view.inputmethod.InputMethodManager$1@41a80810 (uid=1000 pid=489)
+01-02 06:57:02.070 V/InputMethodManager(  489): retry check: 
+01-02 06:57:02.130 I/WindowManager(  489): mapkey no map key list
+01-02 06:57:02.130 I/WindowManager(  489): interceptKeyBeforeDispatching enter! isAutoStandby = true
+01-02 06:57:02.130 I/WindowManager(  489):  ClearAllTimer() enter!
+01-02 06:57:02.130 D/RemoteIME(  723): keycode: 20, realAction: false
+01-02 06:57:02.400 I/WindowManager(  489): mapkey no map key list
+01-02 06:57:02.400 D/RemoteIME(  723): keycode: 20, realAction: true
+01-02 06:57:02.430 I/MediaPlayerService(  134): [14] reset
+01-02 06:57:02.430 V/AmSuperPlayer(  134): [reset::364]
+01-02 06:57:02.430 I/AmSuperPlayer(  134): media.amplayer.enable is enabled
+01-02 06:57:02.430 I/AmSuperPlayer(  134): media.stagefright.enable-player is disabled
+01-02 06:57:02.430 V/AmSuperPlayer(  134): [CreatePlayer::969]
+01-02 06:57:02.430 V/AmlogicPlayer(  134): stop
+01-02 06:57:02.430 I/amplayer(  134): [player_stop:enter]pid=13
+01-02 06:57:02.430 I/amplayer(  134): [player_stop]player_status=10001
+01-02 06:57:02.430 I/amplayer(  134): [player_thread_wait_exit:70]pid=[13] thead_id=3100043744
+01-02 06:57:03.070 W/InputMethodManagerService(  489): Starting input on non-focused client android.view.inputmethod.InputMethodManager$1@41a80810 (uid=1000 pid=489)
+01-02 06:57:03.350 I/amplayer(  134): ...ffmpeg callback interrupted..locked. 0 mS
+01-02 06:57:03.350 I/amplayer(  134): ...ffmpeg callback interrupted..locked. 0 mS
+01-02 06:57:03.350 I/amffmpeg(  134): auto_switch_protol_t:nsc::
+01-02 06:57:03.350 I/amffmpeg(  134): [udp @ 0xb8c6be00] [circular_buffer_task:355]Eixt
+01-02 06:57:03.570 V/InputMethodManager(  489): retry check: 
+01-02 06:57:04.350 I/amplayer(  134): ...ffmpeg callback interrupted..locked. 1002 mS
+01-02 06:57:04.350 I/amffmpeg(  134): is_ncs_file=0
+01-02 06:57:04.350 I/amffmpeg(  134): auto_switch_protol_t:mmsh::
+01-02 06:57:04.570 W/InputMethodManagerService(  489): Starting input on non-focused client android.view.inputmethod.InputMethodManager$1@41a80810 (uid=1000 pid=489)
+01-02 06:57:05.070 V/InputMethodManager(  489): retry check: 
+01-02 06:57:05.350 I/amplayer(  134): ...ffmpeg callback interrupted..locked. 2003 mS
+01-02 06:57:05.350 I/amffmpeg(  134): url_lpseek:offset=0 whence=65536,buffer=b1bf3020,rp=b1bf3020,wp=b1bf3020,end=b23f3020,pos=0
+01-02 06:57:05.350 I/amffmpeg(  134): url_lpseek:offset=-1 whence=2,buffer=b1bf3020,rp=b1bf3020,wp=b1bf3020,end=b23f3020,pos=0
+01-02 06:57:05.350 I/amffmpeg(  134): udp://@239.1.1.17:10017:size=-1
+01-02 06:57:06.070 W/InputMethodManagerService(  489): Starting input on non-focused client android.view.inputmethod.InputMethodManager$1@41a80810 (uid=1000 pid=489)
+01-02 06:57:06.350 I/amplayer(  134): ...ffmpeg callback interrupted..locked. 3004 mS
+01-02 06:57:06.350 I/amffmpeg(  134): [av_probe_input_buffer]read 0 bytes for probe format
+01-02 06:57:06.350 I/amffmpeg(  134): ---------------------mp2_read_probe
+01-02 06:57:06.350 I/amffmpeg(  134): ---------------------mp3_read_probe
+01-02 06:57:06.350 V/AmlogicPlayerStreamSource(  134): confidence=0.00
+01-02 06:57:06.350 V/AmlogicPlayerExtractorDemux(  134): gettype=0 mimeType.string=
+01-02 06:57:06.350 I/amffmpeg(  134): [av_probe_input_buffer]read end, exit probe format
+01-02 06:57:06.350 I/amplayer(  134): [ffmpeg_open_file] file=udp://@239.1.1.17:10017,header=
+01-02 06:57:06.350 I/amplayer(  134): [player_dec_init]ffmpeg_open_file failed(udp://@239.1.1.17:10017)*****ret=fcffffff!
+01-02 06:57:06.350 I/amplayer(  134): 
+01-02 06:57:06.350 I/amplayer(  134): pid[13]player_thread release0 begin...(sta:0x30001)
+01-02 06:57:06.350 I/amplayer(  134): [get_message:147]num=0 in_idx=1 out_idx=1 cmd=8
+01-02 06:57:06.350 I/amplayer(  134): pid[13]::[player_thread:851]cmd=8 set_mode=0 info=0 param=0
+01-02 06:57:06.350 I/amplayer(  134): player error,force video blackout
+01-02 06:57:06.360 I/amplayer(  134): [get_pts_video]No codec handler
+01-02 06:57:06.360 I/amplayer(  134): **[update_state]pid:13 status=STOPED(last:BEGIN_INIT) err=0x0 curtime=0 (ms:0) fulltime=0 lsttime=0
+01-02 06:57:06.360 I/amplayer(  134): **[update_state]abuflevel=0.00000000 vbublevel=0.00000000 abufrp=0 vbufrp=0 read_end=0
+01-02 06:57:06.360 V/AmlogicPlayer(  134): update_process pid=13, current=0,status=[STOPED]
+01-02 06:57:06.360 V/AmlogicPlayer(  134): Player status:STOPED, playback complete
+01-02 06:57:06.360 I/amplayer(  134): **[update_state]pid:13 status=EXIT(last:STOPED) err=0x0 curtime=0 (ms:0) fulltime=0 lsttime=0
+01-02 06:57:06.360 I/amplayer(  134): **[update_state]abuflevel=0.00000000 vbublevel=0.00000000 abufrp=0 vbufrp=0 read_end=0
+01-02 06:57:06.360 V/AmlogicPlayer(  134): update_process pid=13, current=0,status=[EXIT]
+01-02 06:57:06.360 V/AmlogicPlayer(  134): Player status:EXIT, playback exit
+01-02 06:57:06.360 I/amplayer(  134): 
+01-02 06:57:06.360 I/amplayer(  134): pid[13]::stop play, exit player thead!(sta:0x30004)
+01-02 06:57:06.360 I/amplayer(  134): [player_thread_wait_exit:76]thead_id=3100043744 returning
+01-02 06:57:06.360 I/amplayer(  134): [player_stop:247]wait player_theadpid[13] r = 0
+01-02 06:57:06.360 E/amthreadpool(  134): 3100043744 pool data not found!!!
+01-02 06:57:06.360 I/amplayer(  134): [player_stop:exit]pid=13
+01-02 06:57:06.360 I/amplayer(  134): [tcppool_refresh_link_and_check]pid=13
+01-02 06:57:06.360 I/amplayer(  134): [player_exit:enter]pid=13
+01-02 06:57:06.360 I/amplayer(  134): [player_exit]player_state=0x30004
+01-02 06:57:06.360 I/amplayer(  134): [player_thread_wait_exit:70]pid=[13] thead_id=3100043744
+01-02 06:57:06.360 I/amplayer(  134): [player_thread_wait_exit:76]thead_id=3100043744 returning
+01-02 06:57:06.360 I/amplayer(  134): [player_exit]player thread already exit: 3
+01-02 06:57:06.360 E/amthreadpool(  134): 3100043744 pool data not found!!!
+01-02 06:57:06.360 I/amplayer(  134): [player_release_pid:77]release pid=13
+01-02 06:57:06.360 I/amplayer(  134): [player_exit:exit]pid=13
+01-02 06:57:06.360 V/AmlogicPlayer(  134): AmlogicPlayer destructor
+01-02 06:57:06.360 V/AmlogicPlayer(  134): release
+01-02 06:57:06.360 V/AmlogicPlayer(  134): [release::3081]
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [CreatePlayer::985]
+01-02 06:57:06.360 V/AmSuperPlayer(  134): Start new player now=3
+01-02 06:57:06.360 V/MediaPlayerService(  134): [14] notify (0xb8c6dc18, 100, 1, -1)
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [initThread::1051]
+01-02 06:57:06.360 V/MediaPlayerService(  134): Client(14) destructor pid = 1611
+01-02 06:57:06.360 V/MediaPlayerService(  134): disconnect(14) from pid 1611
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [setNotifyCallback::632]
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [reset::364]
+01-02 06:57:06.360 E/MediaPlayer( 1611): error (1, -1)
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [~AmSuperPlayer::106]
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [release::339]
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [release::349]
+01-02 06:57:06.360 V/AudioSink(  134): close
+01-02 06:57:06.360 D/MediaPlayer( 1611): Couldn't open file on client side, trying server side
+01-02 06:57:06.360 V/MediaPlayerService(  134): Client(15) constructor
+01-02 06:57:06.360 V/MediaPlayerService(  134): Create new client(15) from pid 1611, uid 10028, 
+01-02 06:57:06.360 V/MediaPlayerService(  134): player type = 111
+01-02 06:57:06.360 V/MediaPlayerService(  134): Create AmSuperPlayer
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [AmSuperPlayer::76]
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [AmSuperPlayer::78]
+01-02 06:57:06.360 V/AmSuperPlayer(  134): AmSuperPlayer init now
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [onFirstRef::114]
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [initCheck::121]
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [initCheck::123]
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [setNotifyCallback::632]
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [hardwareOutput::404]
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [hardwareOutput::406]
+01-02 06:57:06.360 V/AudioSink(  134): AudioOutput(18)
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [setDataSource::129]
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [setDataSource::131]
+01-02 06:57:06.360 V/MediaPlayerService(  134):  setDataSource
+01-02 06:57:06.360 V/MediaPlayerService(  134): [15] setVideoSurfaceTexture(0xb8c6bda8)
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [setVideoSurfaceTexture::206]
+01-02 06:57:06.360 V/AmSuperPlayer(  134): [setVideoSurfaceTexture::208]
+01-02 06:57:06.360 W/MediaPlayer( 1611): mContext =  android.app.ContextImpl@417c20a0
+01-02 06:57:06.370 V/MediaPlayerService(  134): [15] setVideoSurfaceTexture(0xb8c6d890)
+01-02 06:57:06.370 V/MediaPlayerService(  134): [15] setAudioStreamType(3)
+01-02 06:57:06.370 V/MediaPlayerService(  134): [15] prepareAsync
+01-02 06:57:06.370 V/AmSuperPlayer(  134): [prepareAsync::238]
+01-02 06:57:06.370 V/AmSuperPlayer(  134): [prepareAsync_nolock::247]
+01-02 06:57:06.370 V/AmSuperPlayer(  134): [prepareAsync_nolock::249]
+01-02 06:57:06.370 V/AmSuperPlayer(  134): createPlayer
+01-02 06:57:06.370 V/AmSuperPlayer(  134): Create Amlogic Player
+01-02 06:57:06.370 V/AmlogicPlayer(  134): AmlogicPlayer constructor
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.stopbuftime is not set used def=0.000000
+01-02 06:57:06.370 V/AmlogicPlayer(  134): mStopFeedingBuf_ms = 1200
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.streamtimeadd is not set used def=0.000000
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.droptinyseek.ms is not set used def=-1.000000
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.delaybuffering.s is set to 2.000000
+01-02 06:57:06.370 V/AmlogicPlayer(  134): proj type is : telecom
+01-02 06:57:06.370 V/AmlogicPlayer(  134): proj type is telecom.
+01-02 06:57:06.370 V/AmlogicPlayer(  134): onFirstRef
+01-02 06:57:06.370 I/AmlogicPlayer(  134): found 0 not exit player threads,try exit it now
+01-02 06:57:06.370 V/AmlogicPlayer(  134): initCheck
+01-02 06:57:06.370 V/AmSuperPlayer(  134): [CreatePlayer::890]
+01-02 06:57:06.370 V/AmlogicPlayer(  134): setDataSource
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.useandroidhttp is not setting,use default false
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.widevineenable is disabled
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.dsource4local is enabled
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.dur_update is enabled
+01-02 06:57:06.370 V/AmlogicPlayer(  134): setDataSource enable buffering
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.disp_url is not setting,use default true
+01-02 06:57:06.370 V/AmlogicPlayer(  134): setDataSource url=udp://@239.1.1.16:10016, len=23
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.delaybuffering is not set used def=0.000000
+01-02 06:57:06.370 V/AmlogicPlayer(  134): prepareAsync
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.cachetime_interval is not set used def=1000.000000
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.lowlevel is set to 0.001000
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.midlevel is set to 0.100000
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.highlevel is set to 0.600000
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.buffertime is set to 5.000000
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.noaudio is not setting,use default false
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.novideo is not setting,use default false
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.displast_frame is not setting,use default false
+01-02 06:57:06.370 I/InputDispatcher(  489): Window 'Window{41acd3e0 u0 com.sumavision.live/com.sumavision.live.activity.MainActivity}' spent 3970.3ms processing the last input event: KeyEvent(deviceId=1, source=0x00000701, action=1, flags=0x00000008, keyCode=20, scanCode=108, metaState=0x00000000, repeatCount=0), policyFlags=0x42000000
+01-02 06:57:06.370 V/AmlogicPlayer(  134): buffer level setting is:0.001000-0.100000-0.600000
+01-02 06:57:06.370 I/AmlogicPlayer(  134): media.amplayer.disp_url is not setting,use default true
+01-02 06:57:06.370 V/AmlogicPlayer(  134): prepareAsync,file_name=udp://@239.1.1.16:10016
+01-02 06:57:06.370 I/amplayer(  134): loglevel changed to 35
+01-02 06:57:06.370 I/amplayer(  134): LibPlayer version:Version:2.1.0.
+01-02 06:57:06.370 I/amplayer(  134): LibPlayer git version:
+01-02 06:57:06.370 I/amplayer(  134): LibPlayer version serial:2010000be003064
+01-02 06:57:06.370 I/amplayer(  134): LibPlayer Last Changed:
+01-02 06:57:06.370 I/amplayer(  134): LibPlayer Last Build: Fri Mar  4 18:58:05 HKT 2016
+01-02 06:57:06.370 I/amplayer(  134): LibPlayer Builer Name: dailybuild
+01-02 06:57:06.370 I/amplayer(  134): [player_start:enter]p=0xb8c726a8 black=1
+01-02 06:57:06.370 I/Choreographer( 1611): Skipped 237 frames!  The application may be doing too much work on its main thread.
+01-02 06:57:06.370 I/amplayer(  134): ***player_para=0xb8c6dba8,start_param=0xb8c726a8
+01-02 06:57:06.370 I/amplayer(  134): [player_thread_create:59]creat thread success,tid=3100073024
+01-02 06:57:06.370 I/amplayer(  134): [player_start:exit]pid = 14 
+01-02 06:57:06.370 V/AmlogicPlayer(  134): Start player,pid=14
+01-02 06:57:06.370 I/amplayer(  134): 
+01-02 06:57:06.370 I/amplayer(  134): pid[14]::enter into player_thread
+01-02 06:57:06.370 I/amplayer(  134): hassub 1 starttime:-1.000000(ms) duration_url:-1(ms) 
+01-02 06:57:06.370 I/amplayer(  134): set buffering exit time to 5.000000 S,enter time t 0.120000 S
+01-02 06:57:06.370 I/amplayer(  134): [player_update_vdec_profile]str=mpeg12:;
+01-02 06:57:06.370 I/amplayer(  134): mpeg4:;
+01-02 06:57:06.370 I/amplayer(  134): vc1:progressive, interlace, wmv3;
+01-02 06:57:06.370 I/amplayer(  134): h264:;
+01-02 06:57:06.370 I/amplayer(  134): hevc:;
+01-02 06:57:06.370 I/amplayer(  134): mjpeg:;
+01-02 06:57:06.370 I/amplayer(  134): real:rmvb,;
+01-02 06:57:06.370 I/amplayer(  134): avc:;
+01-02 06:57:06.370 I/amplayer(  134): o player_thread
+01-02 06:57:06.370 I/amplayer(  134): 
+01-02 06:57:06.370 I/amplayer(  134): [parse_sysparam_str]j=0 vc1: start:17 end:50
+01-02 06:57:06.370 I/VideoView( 1611): Layout changed,left=0 top=0 right=1280 bottom=720
+01-02 06:57:06.370 I/amplayer(  134): [vc1 profile] progress:1; interlace:1; wmv1:0; wmv2:0; wmv3:1
+01-02 06:57:06.370 I/amplayer(  134): [parse_sysparam_str]j=1 h264: start:51 end:57
+01-02 06:57:06.370 I/amplayer(  134): h264 decoder exist.
+01-02 06:57:06.370 I/amplayer(  134): [parse_sysparam_str]j=2 real: start:73 end:84
+01-02 06:57:06.370 I/amplayer(  134): [parse_sysparam_str]j=3 mpeg12: start:0 end:8
+01-02 06:57:06.370 I/amplayer(  134): [parse_sysparam_str]j=4 mpeg4: start:9 end:16
+01-02 06:57:06.370 I/VideoView( 1611): Layout changed,oldLeft=0 oldTop=0 oldRight=1280 oldBottom=720
+01-02 06:57:06.370 I/amplayer(  134): [parse_sysparam_str]j=5 mjpeg: start:65 end:72
+01-02 06:57:06.370 I/amplayer(  134): [parse_sysparam_str]j=8 hevc: start:58 end:64
+01-02 06:57:06.370 I/amplayer(  134): hevc decoder exist.
+01-02 06:57:06.370 I/amplayer(  134): pid[14]::Init State: mute_on=0 black=1 t_pos:1069463633s read_max_cnt=0
+01-02 06:57:06.370 I/amplayer(  134): file::::[udp://@239.1.1.16:10016],len=23
+01-02 06:57:06.370 I/amplayer(  134): **[update_state]pid:14 status=BEGIN_INIT(last:UNKNOW_STATE) err=0x0 curtime=0 (ms:0) fulltime=0 lsttime=0
+01-02 06:57:06.370 I/amplayer(  134): **[update_state]abuflevel=0.00000000 vbublevel=0.00000000 abufrp=0 vbufrp=0 read_end=0
+01-02 06:57:06.370 V/AmlogicPlayer(  134): update_process pid=14, current=0,status=[BEGIN_INIT]
+01-02 06:57:06.370 V/AmlogicPlayer(  134): Playing percent =0,mPlayTime:0,mStreamTime:0
+01-02 06:57:06.370 I/VideoView( 1611): .left=0.top=0.right=1280.bottom=720.oldLeft=0.oldTop=0.oldRight=1280.oldBottom=720.Rotation=0
+01-02 06:57:06.370 V/MediaPlayerService(  134): [15] setParameter(2000)
+01-02 06:57:06.370 V/AmSuperPlayer(  134): [setParameter::453]
+01-02 06:57:06.370 I/amffmpeg(  134): [dash_read_probe:256] dash_probe!
+01-02 06:57:06.370 V/AmlogicPlayerStreamSource(  134): confidence=0.00
+01-02 06:57:06.370 V/AmlogicPlayerExtractorDemux(  134): gettype=0 mimeType.string=
+01-02 06:57:06.370 I/amffmpeg(  134): try get addr info,node=239.1.1.16,services=10016
+01-02 06:57:06.370 I/amffmpeg(  134): try get addr info,node=(null),services=10016
+01-02 06:57:06.370 I/amffmpeg(  134): [udp @ 0xb8c75f30] [udp_open:559]start the udp circular receive
+01-02 06:57:06.370 I/amffmpeg(  134): getloopbuf size=0
+01-02 06:57:06.370 I/amffmpeg(  134): ffio_fdopen (h->is_slowmedia=1,flags=1
+01-02 06:57:06.370 I/amffmpeg(  134): lpbuffer block size=32768
+01-02 06:57:06.370 I/amffmpeg(  134): url_lpopen used lp buf size=8388608
+01-02 06:57:06.370 I/amffmpeg(  134): url_lpseek:offset=0 whence=65536,buffer=b1bf3020,rp=b1bf3020,wp=b1bf3020,end=b23f3020,pos=0
+01-02 06:57:06.370 I/amffmpeg(  134): url_lpseek:offset=0 whence=65536,buffer=b1bf3020,rp=b1bf3020,wp=b1bf3020,end=b23f3020,pos=0
+01-02 06:57:06.370 I/amffmpeg(  134): ffio_fdopen Register lpbuf
+01-02 06:57:06.370 I/amffmpeg(  134): auto_switch_protol_t:list::
+01-02 06:57:06.370 I/amffmpeg(  134): [udp @ 0xb8c75f30] [circular_buffer_task:348]Task starting!!!
+01-02 06:57:06.380 I/MediaPlayer( 1611):  
+01-02 06:57:06.380 I/MediaPlayer( 1611):  
+01-02 06:57:06.380 I/MediaPlayer( 1611): ======================================================
+01-02 06:57:06.380 I/MediaPlayer( 1611): SoftDetectorEventHandler, handleMessage  msg = 10
+01-02 06:57:06.380 I/MediaPlayer( 1611): ID = 15
+01-02 06:57:06.380 I/MediaPlayer( 1611): TYPE = PLAY_QUIT
+01-02 06:57:06.380 I/MediaPlayer( 1611): PLAY_TIME = 0
+01-02 06:57:06.380 I/MediaPlayer( 1611): TIME = 91626384
+01-02 06:57:06.380 I/MediaPlayer( 1611): ======================================================
+01-02 06:57:06.380 I/MediaPlayer( 1611):  
+01-02 06:57:06.380 I/MediaPlayer( 1611):  
+01-02 06:57:06.380 I/MediaPlayer( 1611):  
+01-02 06:57:06.380 I/MediaPlayer( 1611):  
+01-02 06:57:06.380 I/MediaPlayer( 1611): ======================================================
+01-02 06:57:06.380 I/MediaPlayer( 1611): SoftDetectorEventHandler, handleMessage  msg = 1
+01-02 06:57:06.380 I/MediaPlayer( 1611): ID = 15
+01-02 06:57:06.380 I/MediaPlayer( 1611): TYPE = PLAY_PREPARE
+01-02 06:57:06.380 I/MediaPlayer( 1611): URL = udp://@239.1.1.16:10016
+01-02 06:57:06.380 I/MediaPlayer( 1611): START_TIME = 91626386
+01-02 06:57:06.380 I/MediaPlayer( 1611): ======================================================
+01-02 06:57:06.380 I/MediaPlayer( 1611):  
+01-02 06:57:06.380 I/MediaPlayer( 1611):  
+01-02 06:57:06.570 V/InputMethodManager(  489): retry check: 
+01-02 06:57:07.570 W/InputMethodManagerService(  489): Starting input on non-focused client android.view.inputmethod.InputMethodManager$1@41a80810 (uid=1000 pid=489)
+01-02 06:57:07.900 I/WindowManager(  489): mapkey no map key list
+01-02 06:57:07.900 I/WindowManager(  489): interceptKeyBeforeDispatching enter! isAutoStandby = true
+01-02 06:57:07.900 I/WindowManager(  489):  ClearAllTimer() enter!
+01-02 06:57:07.900 D/RemoteIME(  723): keycode: 21, realAction: false
+01-02 06:57:08.070 V/InputMethodManager(  489): retry check: 
+01-02 06:57:08.170 I/WindowManager(  489): mapkey no map key list
+01-02 06:57:08.170 D/RemoteIME(  723): keycode: 21, realAction: true
+01-02 06:57:09.080 W/InputMethodManagerService(  489): Starting input on non-focused client android.view.inputmethod.InputMethodManager$1@41a80810 (uid=1000 pid=489)
+01-02 06:57:09.580 V/InputMethodManager(  489): retry check: 
+01-02 06:57:10.580 W/InputMethodManagerService(  489): Starting input on non-focused client android.view.inputmethod.InputMethodManager$1@41a80810 (uid=1000 pid=489)
+01-02 06:57:11.080 V/InputMethodManager(  489): retry check: 
+01-02 06:57:12.080 W/InputMethodManagerService(  489): Starting input on non-focused client android.view.inputmethod.InputMethodManager$1@41a80810 (uid=1000 pid=489)
+01-02 06:57:12.580 V/InputMethodManager(  489): retry check: 
+01-02 06:57:13.470 I/WindowManager(  489): mapkey no map key list
+01-02 06:57:13.470 I/WindowManager(  489): interceptKeyBeforeDispatching enter! isAutoStandby = true
+01-02 06:57:13.470 I/WindowManager(  489):  ClearAllTimer() enter!
+01-02 06:57:13.470 D/RemoteIME(  723): keycode: 22, realAction: false
+01-02 06:57:13.490 D/ConnectivityService(  489): Sampling interval elapsed, updating statistics ..
+01-02 06:57:13.500 D/ConnectivityService(  489): Done.
+01-02 06:57:13.500 D/ConnectivityService(  489): Setting timer for 30seconds
+01-02 06:57:13.580 W/InputMethodManagerService(  489): Starting input on non-focused client android.view.inputmethod.InputMethodManager$1@41a80810 (uid=1000 pid=489)
+01-02 06:57:13.740 I/WindowManager(  489): mapkey no map key list
+01-02 06:57:13.740 D/RemoteIME(  723): keycode: 22, realAction: true
+01-02 06:57:14.080 V/InputMethodManager(  489): retry check: 
+01-02 06:57:15.080 W/InputMethodManagerService(  489): Starting input on non-focused client android.view.inputmethod.InputMethodManager$1@41a80810 (uid=1000 pid=489)
+01-02 06:57:15.580 V/InputMethodManager(  489): retry check: 

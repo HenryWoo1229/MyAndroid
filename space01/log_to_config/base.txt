@@ -1,0 +1,13 @@
+[ÖÇÄÜÖÕ¶Ë»ú¶¥ºÐBase.txt]
+
+zoneCode:    2
+factorySn:   1
+machineType: 13
+regionCode:  0
+batchNum:    1630
+serialNum:   0000001
+oui:         346
+cpu:         Hi3796Mv100
+flash type:  eMMC
+hardVersion: 02.01.01.00
+softVersion: 02.00.00.01

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_quiz"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- layout_above是指相对于@+id控件的位置，该id控件保持不动，而当前控件通过调整自己位置去适应id控件-->
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:background="@android:color/holo_blue_light"
+        android:layout_marginBottom="43dp"
+        android:layout_above="@+id/linear"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/holo_green_light"
+        >
+
+        <Button
+            android:text="@string/true_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/true_button"
+            android:layout_marginRight="20dp"/>
+
+        <Button
+            android:text="@string/false_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/false_button"/>
+    </LinearLayout>
+
+    <!-- 注意这个Button的图片引用drawableRight 和图片内边距drawablePadding   -->
+    <Button
+        android:text="@string/next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_next"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:drawableRight="@mipmap/right_arrow"
+        android:drawablePadding="5dp" />
+
+    <Button
+        android:text="@string/cheat_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:id="@+id/cheat_button" />
+
+    <!-- 2.9挑战练习2：添加后退按钮
+        方法一：增加一个线性布局包裹pre和next
+        方法二：直接把pre放到true和false所在linear的下方，并且在next的左边
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pre_button"
+        android:id="@+id/button_pre"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/linear"
+        android:layout_marginTop="11dp"/>
+-->
+    <!-- 2.10挑战练习3：添加图标按钮ImageButton
+        为每个ImageButton添加 contentDescription 为视力障碍者提供点击按钮后的方便，它会读出属性值(需设备设置)
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/right_arrow"
+        android:layout_below="@id/linear"
+        android:layout_toRightOf="@id/button_pre"
+        android:layout_marginTop="11dp"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="这是一个contentDescription"/>
+-->
+
+</RelativeLayout>

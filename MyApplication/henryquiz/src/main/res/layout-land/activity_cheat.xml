@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_cheat"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.suma.henryquiz.CheatActivity">
+
+    <TextView
+        android:text="@string/show_answer_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="65dp"
+        android:layout_above="@id/show_answer_button"
+        android:id="@+id/answer_text"
+        android:textSize="22sp"/>
+
+    <Button
+        android:text="@string/show_answer_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/show_answer_button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="64dp" />
+
+    <TextView
+        android:id="@+id/show_sdk_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_red_light"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
